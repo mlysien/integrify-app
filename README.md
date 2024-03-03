@@ -14,3 +14,6 @@ Infrastructure layer between ERP systems and e-commerce systems. Can be use for 
 * Logging of synchronization process
 * Synchronization time scheduling
 * Synchronization direction management (Shop <-> ERP) 
+
+# How to use
+
