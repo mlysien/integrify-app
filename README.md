@@ -1,6 +1,6 @@
 # Integrify
 
-![alt text](https://i.ibb.co/wMzykQD/banner.png)
+![alt text](https://i.ibb.co/mF5cpfX/banner.png)
 
 # About
 Infrastructure layer between ERP systems and e-commerce systems. Can be use for synchronization orders, customers, products and stock form the connected systems.
