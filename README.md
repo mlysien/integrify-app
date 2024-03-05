@@ -22,6 +22,9 @@ Infrastructure layer between ERP systems and e-commerce systems. Can be use for 
 - [ ] CLI for management synchronization
 - [ ] GUI for preview synchronization process
 
+# Concept
+![Test Image 1](/docs/integrify.drawio.concept.png)
+
 # Architecture
 > **Modular Monolith architecture** because it is important to separate business logic to a separated modules. Synchronization process should not be dependent on erp/ecommerce system.
 
