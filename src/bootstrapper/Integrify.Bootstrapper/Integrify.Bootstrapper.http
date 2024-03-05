@@ -1,0 +1,6 @@
+@Integrify.Bootstrapper_HostAddress = http://localhost:5193
+
+GET {{Integrify.Bootstrapper_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
