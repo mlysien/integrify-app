@@ -7,6 +7,9 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// print app banner
+PrintBanner();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -15,30 +18,19 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-    {
-        var forecast = Enumerable.Range(1, 5).Select(index =>
-                new WeatherForecast
-                (
-                    DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Random.Shared.Next(-20, 55),
-                    summaries[Random.Shared.Next(summaries.Length)]
-                ))
-            .ToArray();
-        return forecast;
-    })
-    .WithName("GetWeatherForecast")
-    .WithOpenApi();
-
 app.Run();
+return;
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+void PrintBanner()
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    Console.WriteLine("""
+
+                      ██╗  ███╗   ██╗ ████████╗ ███████╗   ██████╗   ██████╗   ██╗  ███████╗ ██╗   ██╗
+                      ██║  ████╗  ██║ ╚══██╔══╝ ██╔════╝  ██╔════╝   ██╔══██╗  ██║  ██╔════╝ ╚██╗ ██╔╝
+                      ██║  ██╔██╗ ██║    ██║    █████╗    ██║  ███╗  ██████╔╝  ██║  █████╗    ╚████╔╝
+                      ██║  ██║╚██╗██║    ██║    ██╔══╝    ██║   ██║  ██╔══██╗  ██║  ██╔══╝     ╚██╔╝
+                      ██║  ██║ ╚████║    ██║    ███████╗  ╚██████╔╝  ██║  ██║  ██║  ██║         ██║
+                      ╚═╝  ╚═╝  ╚═══╝    ╚═╝    ╚══════╝   ╚═════╝   ╚═╝  ╚═╝  ╚═╝  ╚═╝         ╚═╝
+
+                      """);
 }
