@@ -8,10 +8,23 @@ namespace Integrify.Shared;
 
 public static class Extensions
 {
+    private const string ApiTitle = "Integrify API";
+    private const string ApiVersion = "v1";
+    
     public static IServiceCollection AddSharedFramework(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddEndpointsApiExplorer();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-        services.AddSwaggerGen();
+        services.AddSwaggerGen(swagger =>
+        {
+            swagger.EnableAnnotations();
+            swagger.CustomSchemaIds(x => x.FullName);
+            swagger.SwaggerDoc(ApiVersion, new OpenApiInfo
+            {
+                Title = ApiTitle,
+                Version = ApiVersion
+            });
+        });
             
         return services;
     }
