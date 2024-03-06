@@ -1,23 +1,13 @@
-var builder = WebApplication.CreateBuilder(args);
+using Integrify.Shared;
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSharedFramework(builder.Configuration);
 
 var app = builder.Build();
-
-// print app banner
 PrintBanner();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
+app.UseSharedFramework();
 app.Run();
 return;
 
