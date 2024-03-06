@@ -1,6 +1,7 @@
-@Integrify.Bootstrapper_HostAddress = http://localhost:5193
+@Integrify.Bootstrapper_HostAddress = http://localhost:5200
 
-GET {{Integrify.Bootstrapper_HostAddress}}/weatherforecast/
+# Check API is running
+GET {{Integrify.Bootstrapper_HostAddress}}/
 Accept: application/json
 
 ###
