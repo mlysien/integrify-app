@@ -1,11 +1,5 @@
+![integrify_banner](docs/integrify.banner.png)
 # Integrify
-
-<p align="center">
-  <img src="docs/integrify.logo.png" alt="logo" width="200"/>
-</p>
-<div style="text-align: justify;">
-
-# About
 Infrastructure layer between ERP systems and e-commerce systems. Can be use for synchronization orders, customers, products and stock form the connected systems.
 
 > [!NOTE]  
