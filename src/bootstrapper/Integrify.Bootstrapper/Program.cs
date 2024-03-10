@@ -1,13 +1,14 @@
 using Integrify.Shared;
+using Integrify.Shared.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSharedFramework(builder.Configuration);
+builder.Services.AddModularInfrastructure();
 
 var app = builder.Build();
 PrintBanner();
 
-app.UseSharedFramework();
+app.UseModularInfrastructure();
 app.MapGet("/", () => "Integrify is running!");
 app.Run();
 return;
