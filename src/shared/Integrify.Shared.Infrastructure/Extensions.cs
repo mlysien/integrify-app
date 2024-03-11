@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Integrify.Shared.Abstractions.Time;
+using Integrify.Shared.Infrastructure.Time;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
@@ -38,6 +40,8 @@ public static class Extensions
         
         services.AddEndpointsApiExplorer();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+        services.AddSingleton<IClock, UtcTime>();
+        
         services.AddSwaggerGen(swagger =>
         {
             swagger.EnableAnnotations();
