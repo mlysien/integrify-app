@@ -39,6 +39,8 @@ public static class Extensions
         }
         
         services.AddEndpointsApiExplorer();
+        services.AddMemoryCache();
+        services.AddHttpClient();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddSingleton<IClock, UtcTime>();
         
