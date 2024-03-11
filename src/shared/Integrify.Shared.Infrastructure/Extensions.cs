@@ -22,6 +22,7 @@ public static class Extensions
     public static IServiceCollection AddModularInfrastructure(this IServiceCollection services) 
     {
         var disabledModules = new List<string>();
+        if (disabledModules == null) throw new ArgumentNullException(nameof(disabledModules));
         using (var serviceProvider = services.BuildServiceProvider())
         {
             var configuration = serviceProvider.GetRequiredService<IConfiguration>();
@@ -32,7 +33,7 @@ public static class Extensions
                     continue;
                 }
 
-                if (!bool.Parse(value))
+                if (value != null && !bool.Parse(value))
                 {
                     disabledModules.Add(key.Split(":")[0]);
                 }
@@ -113,5 +114,5 @@ public static class Extensions
         });
         
     public static Guid? TryGetCorrelationId(this HttpContext context)
-        => context.Items.TryGetValue(CorrelationIdKey, out var id) ? (Guid) id : null;
+        => context.Items.TryGetValue(CorrelationIdKey, out var id) ? (Guid) (id ?? throw new InvalidOperationException()) : null;
 }
