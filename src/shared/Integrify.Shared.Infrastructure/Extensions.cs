@@ -1,4 +1,5 @@
 ﻿using Integrify.Shared.Abstractions.Time;
+using Integrify.Shared.Infrastructure.Commands;
 using Integrify.Shared.Infrastructure.Time;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -43,6 +44,9 @@ public static class Extensions
         services.AddHttpClient();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddSingleton<IClock, UtcTime>();
+
+        services.AddCommands();
+        
         
         services.AddSwaggerGen(swagger =>
         {
