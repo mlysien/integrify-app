@@ -1,4 +1,3 @@
-using System.Reflection;
 using Integrify.Shared.Infrastructure;
 using Integrify.Shared.Infrastructure.Modules;
 
@@ -9,10 +8,17 @@ builder.Services.AddModularInfrastructure(assemblies);
 var app = builder.Build();
 PrintBanner();
 
-
 app.UseModularInfrastructure();
-app.MapGet("/", () => "Integrify is running!");
+app.MapGet("/", () =>
+{
+    var welcomeMessage = "Integrify is running!";
+    app.Logger.LogInformation(welcomeMessage);
+    
+    return welcomeMessage;
+});
+
 app.Run();
+
 return;
 
 void PrintBanner()
