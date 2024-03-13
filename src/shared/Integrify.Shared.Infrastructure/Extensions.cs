@@ -1,5 +1,7 @@
-﻿using Integrify.Shared.Abstractions.Time;
+﻿using System.Reflection;
+using Integrify.Shared.Abstractions.Time;
 using Integrify.Shared.Infrastructure.Commands;
+using Integrify.Shared.Infrastructure.Events;
 using Integrify.Shared.Infrastructure.Time;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -18,35 +20,15 @@ public static class Extensions
     public static IServiceCollection AddInitializer<T>(this IServiceCollection services) where T : class, IInitializer
         => services.AddTransient<IInitializer, T>();
         
-    public static IServiceCollection AddModularInfrastructure(this IServiceCollection services) 
+    public static IServiceCollection AddModularInfrastructure(this IServiceCollection services, IList<Assembly> assemblies) 
     {
-        var disabledModules = new List<string>();
-        if (disabledModules == null) throw new ArgumentNullException(nameof(disabledModules));
-        using (var serviceProvider = services.BuildServiceProvider())
-        {
-            var configuration = serviceProvider.GetRequiredService<IConfiguration>();
-            foreach (var (key, value) in configuration.AsEnumerable())
-            {
-                if (!key.Contains(":module:enabled"))
-                {
-                    continue;
-                }
-
-                if (value != null && !bool.Parse(value))
-                {
-                    disabledModules.Add(key.Split(":")[0]);
-                }
-            }
-        }
-        
         services.AddEndpointsApiExplorer();
         services.AddMemoryCache();
         services.AddHttpClient();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
         services.AddTime();
-        services.AddCommands();
-        
+        services.AddEvents(assemblies);
+        services.AddCommands(assemblies);
         
         services.AddSwaggerGen(swagger =>
         {
