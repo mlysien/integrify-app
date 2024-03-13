@@ -43,8 +43,8 @@ public static class Extensions
         services.AddMemoryCache();
         services.AddHttpClient();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-        services.AddSingleton<IClock, UtcTime>();
 
+        services.AddTime();
         services.AddCommands();
         
         
