@@ -1,12 +1,10 @@
 ﻿using System.Reflection;
-using Integrify.Shared.Abstractions.Time;
 using Integrify.Shared.Infrastructure.Commands;
 using Integrify.Shared.Infrastructure.Events;
 using Integrify.Shared.Infrastructure.Time;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 

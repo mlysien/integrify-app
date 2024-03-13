@@ -1,14 +1,14 @@
 using System.Reflection;
-using Integrify.Shared;
 using Integrify.Shared.Infrastructure;
+using Integrify.Shared.Infrastructure.Modules;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// todo load assemblies
-builder.Services.AddModularInfrastructure(new List<Assembly>());
+var assemblies = ModuleLoader.LoadAssemblies(builder.Configuration, "Integrify.Modules.");
+builder.Services.AddModularInfrastructure(assemblies);
 
 var app = builder.Build();
 PrintBanner();
+
 
 app.UseModularInfrastructure();
 app.MapGet("/", () => "Integrify is running!");
