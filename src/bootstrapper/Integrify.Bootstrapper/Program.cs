@@ -1,9 +1,11 @@
+using System.Reflection;
 using Integrify.Shared;
 using Integrify.Shared.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddModularInfrastructure();
+// todo load assemblies
+builder.Services.AddModularInfrastructure(new List<Assembly>());
 
 var app = builder.Build();
 PrintBanner();
