@@ -18,6 +18,6 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: restore
-      run: dotnet restore .\src\Integrify.sln
+      run: dotnet restore src/Integrify.sln
     - name: build
-      run: dotnet build .\src\Integrify.sln --no-restore
+      run: dotnet build src/Integrify.sln --no-restore
