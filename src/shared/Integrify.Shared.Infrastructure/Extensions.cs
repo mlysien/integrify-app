@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Integrify.Shared.Infrastructure.Commands;
 using Integrify.Shared.Infrastructure.Events;
+using Integrify.Shared.Infrastructure.Queries;
 using Integrify.Shared.Infrastructure.Time;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -27,7 +28,7 @@ public static class Extensions
         services.AddTime();
         services.AddEvents(assemblies);
         services.AddCommands(assemblies);
-        
+        services.AddQueries(assemblies);
         services.AddSwaggerGen(swagger =>
         {
             swagger.EnableAnnotations();

@@ -13,7 +13,7 @@ public static class Extensions
     /// </summary>
     /// <param name="services">Default IServiceCollection register</param>
     /// <param name="assemblies">List of assemblies for register all IQueryHandler classes</param>
-    public static IServiceCollection AddCommands(this IServiceCollection services, IEnumerable<Assembly> assemblies)
+    public static IServiceCollection AddQueries(this IServiceCollection services, IEnumerable<Assembly> assemblies)
     {
         services.AddSingleton<IQueryDispatcher, QueryDispatcher>();
         services.Scan(s => s.FromAssemblies(assemblies)
