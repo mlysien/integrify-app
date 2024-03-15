@@ -1,7 +1,6 @@
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
-using Serilog.Filters;
 
 namespace Integrify.Shared.Infrastructure.Logging;
 

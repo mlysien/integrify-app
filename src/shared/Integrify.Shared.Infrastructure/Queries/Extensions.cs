@@ -1,7 +1,5 @@
 using System.Reflection;
-using Integrify.Shared.Abstractions.Commands;
 using Integrify.Shared.Abstractions.Queries;
-using Integrify.Shared.Infrastructure.Commands;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Integrify.Shared.Infrastructure.Queries;
