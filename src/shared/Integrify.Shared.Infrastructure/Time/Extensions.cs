@@ -7,7 +7,7 @@ namespace Integrify.Shared.Infrastructure.Time;
 
 public static class Extensions
 {
-    public static IServiceCollection AddTime(this IServiceCollection services)
+    public static IServiceCollection AddClocks(this IServiceCollection services)
     {
         services.AddSingleton<IClock, UtcTime>();
         

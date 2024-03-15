@@ -25,7 +25,7 @@ public static class Extensions
         services.AddMemoryCache();
         services.AddHttpClient();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-        services.AddTime();
+        services.AddClocks();
         services.AddEvents(assemblies);
         services.AddCommands(assemblies);
         services.AddQueries(assemblies);
