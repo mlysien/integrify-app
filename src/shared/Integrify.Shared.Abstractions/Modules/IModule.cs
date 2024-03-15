@@ -14,6 +14,11 @@ public interface IModule
     string Name { get; }
     
     /// <summary>
+    /// Module version
+    /// </summary>
+    Version? Version { get; }
+    
+    /// <summary>
     /// Registers module dependencies
     /// </summary>
     void Register(IServiceCollection services);
