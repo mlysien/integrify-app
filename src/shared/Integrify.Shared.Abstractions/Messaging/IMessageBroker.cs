@@ -1,3 +1,5 @@
+using Integrify.Shared.Abstractions.Events;
+
 namespace Integrify.Shared.Abstractions.Messaging;
 
 /// <summary>
@@ -6,9 +8,9 @@ namespace Integrify.Shared.Abstractions.Messaging;
 public interface IMessageBroker
 {
     /// <summary>
-    /// Publishing specified message
+    /// Publishing specified event
     /// </summary>
-    /// <param name="message">Publishing message</param>
+    /// <param name="event">Publishing event</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    Task PublishAsync(IMessage message, CancellationToken cancellationToken = default);
+    Task PublishAsync(IEvent @event, CancellationToken cancellationToken = default);
 }
