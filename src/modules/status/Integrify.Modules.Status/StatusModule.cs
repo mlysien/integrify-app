@@ -9,16 +9,8 @@ namespace Integrify.Modules.Status;
 public class StatusModule: IModule
 {
     public string Name => "Status";
-    
-    public Version? Version
-    {
-        get
-        {
-            var a = Assembly.GetEntryAssembly();
-            var n = a.GetName();
-            return Assembly.GetEntryAssembly().GetName().Version;
-        }
-    }
+
+    public Version? Version => new(0, 0, 1);
 
     public void Register(IServiceCollection services)
     {
