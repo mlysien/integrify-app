@@ -39,4 +39,13 @@ public static class ModuleLoader
 
         return assemblies;
     }
+    
+    public static IList<IModule> LoadModules(IEnumerable<Assembly> assemblies)
+        => assemblies
+            .SelectMany(x => x.GetTypes())
+            .Where(x => typeof(IModule).IsAssignableFrom(x) && !x.IsInterface)
+            .OrderBy(x => x.Name)
+            .Select(Activator.CreateInstance)
+            .Cast<IModule>()
+            .ToList();
 }
