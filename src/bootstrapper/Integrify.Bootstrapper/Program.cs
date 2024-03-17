@@ -13,11 +13,12 @@ var modules = ModuleLoader.LoadModules(assemblies);
 
 
 builder.Services.AddModularInfrastructure(assemblies);
-;
+
 foreach (var module in modules)
 {
     module.Register(builder.Services);
 }
+
 var app = builder.Build();
 PrintBanner();
 
