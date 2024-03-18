@@ -31,6 +31,7 @@ public static class Extensions
         services.AddCommands(assemblies);
         services.AddQueries(assemblies);
         services.AddMessaging();
+        services.AddControllers();
         services.AddSwaggerGen(swagger =>
         {
             swagger.EnableAnnotations();

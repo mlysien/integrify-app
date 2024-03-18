@@ -28,14 +28,6 @@ foreach (var module in modules)
 }
 
 app.UseModularInfrastructure();
-app.MapGet("/", () =>
-{
-    var welcomeMessage = "Integrify is running!";
-    app.Logger.LogInformation(welcomeMessage);
-    
-    return welcomeMessage;
-});
-
 app.Run();
 
 return;
