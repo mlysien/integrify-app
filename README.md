@@ -22,6 +22,11 @@ Infrastructure layer between ERP systems and e-commerce systems. Can be use for 
 # Concept
 ![concept_image](docs/integrify.drawio.concept.png)
 
+# Tech Stack
+ - .NET 8
+ - Docker
+ - PostgreSQL (maybe)
+
 # Architecture
 > **Modular Monolith architecture** because it is important to separate business logic to a separated modules. Synchronization process should not be dependent on erp/ecommerce system.
 
