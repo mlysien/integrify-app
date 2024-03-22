@@ -5,6 +5,25 @@ Infrastructure layer between ERP systems and e-commerce systems. Can be use for 
 > [!NOTE]  
 > Project is participating in the [100commitow](https://100commitow.pl/ "100commitow.pl") competition.
 
+## 03/2024
+- [x] prepare concept schema
+- [x] create bootstapper project
+- [x] create shared layer
+- [ ] create first simple module
+- [ ] create all abstracions needed for modular monolith
+## 04/2024
+- [ ] impementation of Order module
+- [ ] impementation of Product module
+- [ ] impementation of Stock module
+- [ ] impementation of Customer module
+## 05/2024
+- [ ] create first ERP plugin
+- [ ] create first E-commerce plugin
+- [ ] create CLI for management integration process
+## 06/2024
+- [ ] create documentation website
+- [ ] adjust readme file with instrucion how to run
+
 # Core features
 - [ ] Orders synchronization
 - [ ] Customers synchronization
