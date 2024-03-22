@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
-namespace Integrify.Shared.Abstractions.Modules;
+namespace Integrify.Shared.Infrastructure.Modules;
 
 public static class Extensions
 {
