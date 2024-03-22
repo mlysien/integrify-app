@@ -20,7 +20,7 @@ public static class Extensions
     public static IServiceCollection AddInitializer<T>(this IServiceCollection services) where T : class, IInitializer
         => services.AddTransient<IInitializer, T>();
         
-    public static IServiceCollection AddModularInfrastructure(this IServiceCollection services, IList<Assembly> assemblies) 
+    public static void AddModularInfrastructure(this IServiceCollection services, IList<Assembly> assemblies) 
     {
         services.AddEndpointsApiExplorer();
         services.AddMemoryCache();
@@ -42,11 +42,9 @@ public static class Extensions
                 Version = ApiVersion
             });
         });
-            
-        return services;
     }
 
-    public static IApplicationBuilder UseModularInfrastructure(this IApplicationBuilder app)
+    public static void UseModularInfrastructure(this IApplicationBuilder app)
     {
         app.UseForwardedHeaders(new ForwardedHeadersOptions
         {
@@ -62,7 +60,6 @@ public static class Extensions
         });
         app.UseHttpsRedirection();
         app.UseRouting();
-        
-        return app;
+        app.UseEndpoints(endpoints => endpoints.MapControllers());
     }
 }

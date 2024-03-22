@@ -14,6 +14,6 @@ public class StatusController : Controller
     [ProducesResponseType(StatusCodes.Status503ServiceUnavailable)]
     public Task<ActionResult<string>> GetAsync()
     {
-        return Task.FromResult<ActionResult<string>>(Ok());
+        return Task.FromResult<ActionResult<string>>(Ok("Integrify is running!"));
     }
 }
