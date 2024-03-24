@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Integrify.Shared.Infrastructure.Commands;
+using Integrify.Shared.Infrastructure.Contexts;
 using Integrify.Shared.Infrastructure.Events;
 using Integrify.Shared.Infrastructure.Messaging;
 using Integrify.Shared.Infrastructure.Queries;
@@ -14,6 +15,7 @@ namespace Integrify.Shared.Infrastructure;
 
 public static class Extensions
 {
+    private const string CorrelationIdKey = "correlation-id";
     private const string ApiTitle = "Integrify API";
     private const string ApiVersion = "v1";
 
@@ -27,6 +29,7 @@ public static class Extensions
         services.AddHttpClient();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddClocks();
+        services.AddContext();
         services.AddEvents(assemblies);
         services.AddCommands(assemblies);
         services.AddQueries(assemblies);
@@ -50,13 +53,14 @@ public static class Extensions
         {
             ForwardedHeaders = ForwardedHeaders.All
         });
+        app.UseContext();
         app.UseSwagger();
         app.UseSwaggerUI();
         app.UseReDoc(reDoc =>
         {
             reDoc.RoutePrefix = "docs";
-            reDoc.SpecUrl("/swagger/v1/swagger.json");
-            reDoc.DocumentTitle = "Modular API";
+            reDoc.SpecUrl($"/swagger/{ApiVersion}/swagger.json");
+            reDoc.DocumentTitle = ApiTitle;
         });
         app.UseHttpsRedirection();
         app.UseRouting();
@@ -64,4 +68,8 @@ public static class Extensions
     }
 
     public static string GetModuleName(this object value) => value?.GetType().GetModuleName() ?? string.Empty;
+    
+    public static Guid? TryGetCorrelationId(this HttpContext context) 
+        => context.Items.TryGetValue(CorrelationIdKey, out var id) 
+            ? (Guid) (id ?? throw new InvalidOperationException()) : null;
 }
