@@ -16,11 +16,11 @@ public static class Extensions
 {
     private const string ApiTitle = "Integrify API";
     private const string ApiVersion = "v1";
-    
+
     public static IServiceCollection AddInitializer<T>(this IServiceCollection services) where T : class, IInitializer
         => services.AddTransient<IInitializer, T>();
-        
-    public static void AddModularInfrastructure(this IServiceCollection services, IList<Assembly> assemblies) 
+
+    public static void AddModularInfrastructure(this IServiceCollection services, IList<Assembly> assemblies)
     {
         services.AddEndpointsApiExplorer();
         services.AddMemoryCache();
@@ -62,4 +62,6 @@ public static class Extensions
         app.UseRouting();
         app.UseEndpoints(endpoints => endpoints.MapControllers());
     }
+
+    public static string GetModuleName(this object value) => value?.GetType().GetModuleName() ?? string.Empty;
 }
