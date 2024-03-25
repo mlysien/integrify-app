@@ -12,7 +12,7 @@ var assemblies = ModuleLoader.LoadAssemblies(builder.Configuration, "Integrify.M
 var modules = ModuleLoader.LoadModules(assemblies);
 
 
-builder.Services.AddModularInfrastructure(assemblies);
+builder.Services.AddModularInfrastructure(assemblies, modules);
 
 foreach (var module in modules)
 {
