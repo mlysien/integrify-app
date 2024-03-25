@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
 using System.Runtime.Serialization;
+using Integrify.Shared.Abstractions.Contracts;
 
-namespace Integrify.Shared.Abstractions.Contracts;
 
 public abstract class Contract<T> : IContract where T : class
 {
