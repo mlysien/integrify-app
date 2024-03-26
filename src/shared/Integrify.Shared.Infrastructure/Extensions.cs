@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace Integrify.Shared.Infrastructure;
@@ -44,7 +45,7 @@ public static class Extensions
                     continue;
                 }
 
-                if (!bool.Parse(value))
+                if (!bool.Parse(value ?? throw new InvalidOperationException()))
                 {
                     disabledModules.Add(key.Split(":")[0]);
                 }
@@ -174,5 +175,5 @@ public static class Extensions
         });
         
     public static Guid? TryGetCorrelationId(this HttpContext context)
-        => context.Items.TryGetValue(CorrelationIdKey, out var id) ? (Guid) id : null;
+        => context.Items.TryGetValue(CorrelationIdKey, out var id) ? (Guid) (id ?? throw new InvalidOperationException()) : null;
 }
