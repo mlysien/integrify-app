@@ -12,11 +12,9 @@ public class StatusModule: IModule
 
     public void Register(IServiceCollection services)
     {
-        
     }
 
     public void Use(IApplicationBuilder app)
     {
-        throw new NotImplementedException();
     }
 }
