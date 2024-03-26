@@ -58,7 +58,7 @@ public static class Extensions
             swagger.CustomSchemaIds(x => x.FullName);
             swagger.SwaggerDoc("v1", new OpenApiInfo
             {
-                Title = "Modular API",
+                Title = "Integrify API",
                 Version = "v1"
             });
         });
@@ -121,6 +121,7 @@ public static class Extensions
         app.UseCorrelationId();
         // app.UseErrorHandling();
         app.UseSwagger();
+        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Name of Your API v1"));
         app.UseReDoc(reDoc =>
         {
             reDoc.RoutePrefix = "docs";
