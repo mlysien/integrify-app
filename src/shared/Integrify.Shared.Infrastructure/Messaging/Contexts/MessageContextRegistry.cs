@@ -1,20 +1,12 @@
-﻿using System;
-using Integrify.Shared.Abstractions.Messaging;
+﻿using Integrify.Shared.Abstractions.Messaging;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace Inflow.Shared.Infrastructure.Messaging.Contexts;
+namespace Integrify.Shared.Infrastructure.Messaging.Contexts;
 
-public class MessageContextRegistry : IMessageContextRegistry
+public class MessageContextRegistry(IMemoryCache cache) : IMessageContextRegistry
 {
-    private readonly IMemoryCache _cache;
-
-    public MessageContextRegistry(IMemoryCache cache)
-    {
-        _cache = cache;
-    }
-
     public void Set(IMessage message, IMessageContext context)
-        => _cache.Set(message, context, new MemoryCacheEntryOptions
+        => cache.Set(message, context, new MemoryCacheEntryOptions
         {
             SlidingExpiration = TimeSpan.FromMinutes(1)
         });

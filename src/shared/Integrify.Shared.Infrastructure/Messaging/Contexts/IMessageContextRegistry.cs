@@ -1,6 +1,6 @@
 ﻿using Integrify.Shared.Abstractions.Messaging;
 
-namespace Inflow.Shared.Infrastructure.Messaging.Contexts;
+namespace Integrify.Shared.Infrastructure.Messaging.Contexts;
 
 public interface IMessageContextRegistry
 {

@@ -1,16 +1,9 @@
 ﻿using Integrify.Shared.Abstractions.Messaging;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace Inflow.Shared.Infrastructure.Messaging.Contexts;
+namespace Integrify.Shared.Infrastructure.Messaging.Contexts;
 
-public class MessageContextProvider : IMessageContextProvider
+public class MessageContextProvider(IMemoryCache cache) : IMessageContextProvider
 {
-    private readonly IMemoryCache _cache;
-
-    public MessageContextProvider(IMemoryCache cache)
-    {
-        _cache = cache;
-    }
-
-    public IMessageContext Get(IMessage message) => _cache.Get<IMessageContext>(message);
+    public IMessageContext Get(IMessage message) => cache.Get<IMessageContext>(message);
 }
