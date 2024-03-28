@@ -6,11 +6,9 @@ namespace Integrify.Shared.Infrastructure.Contracts;
 
 public static class Extensions
 {
-    public static IServiceCollection AddContracts(this IServiceCollection services)
+    public static void AddContracts(this IServiceCollection services)
     {
         services.AddSingleton<IContractRegistry, ContractRegistry>();
-
-        return services;
     }
         
     public static IApplicationBuilder ValidateContracts(this IApplicationBuilder app, IEnumerable<Assembly> assemblies)
