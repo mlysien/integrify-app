@@ -146,7 +146,7 @@ internal sealed class ContractRegistry : IContractRegistry
     }
 
     private static void ValidateProperty(PropertyInfo localProperty, PropertyInfo originalProperty,
-        string propertyName, string contractName, string module, string localModule, string path = null)
+        string? propertyName, string contractName, string module, string localModule, string path = null)
     {
         if (localProperty.PropertyType == typeof(string) && originalProperty.PropertyType == typeof(string))
         {
@@ -171,7 +171,7 @@ internal sealed class ContractRegistry : IContractRegistry
                                     $"expected: '{localProperty.PropertyType}').");
     }
 
-    private static PropertyInfo GetProperty(Type type, string name, string contractName, string module,
+    private static PropertyInfo GetProperty(Type type, string? name, string contractName, string module,
         string localModule, string path = null)
     {
         var originalName = name;

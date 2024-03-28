@@ -1,23 +1,23 @@
 using System.Linq.Expressions;
 using System.Runtime.Serialization;
-using Integrify.Shared.Abstractions.Contracts;
 
+namespace Integrify.Shared.Abstractions.Contracts;
 
 public abstract class Contract<T> : IContract where T : class
 {
-    private readonly ISet<string> _required = new HashSet<string>();
+    private readonly ISet<string?> _required = new HashSet<string?>();
     public Type Type { get; } = typeof(T);
-    public IEnumerable<string> Required => _required;
+    public IEnumerable<string?> Required => _required;
 
     protected void Require(Expression<Func<T, object>> expression) => _required.Add(GetName(expression));
 
     protected void Ignore(Expression<Func<T, object>> expression) => _required.Remove(GetName(expression));
 
-    protected string GetName(Expression<Func<T, object>> expression)
+    protected string? GetName(Expression<Func<T, object>> expression)
     {
         if (!(expression.Body is MemberExpression memberExpression))
         {
-            memberExpression = ((UnaryExpression) expression.Body).Operand as MemberExpression;
+            memberExpression = ((UnaryExpression) expression.Body).Operand as MemberExpression ?? throw new InvalidOperationException();
         }
 
         if (memberExpression is null)
@@ -31,9 +31,11 @@ public abstract class Contract<T> : IContract where T : class
         return name;
     }
 
+    [Obsolete("Obsolete")]
     protected void RequireAll() => RequireAll(typeof(T));
 
-    private void RequireAll(Type type, string parent = null)
+    [Obsolete("Obsolete")]
+    private void RequireAll(Type type, string? parent = null)
     {
         var originalContract = FormatterServices.GetUninitializedObject(type);
         var originalContractType = originalContract.GetType();
