@@ -1,6 +1,5 @@
 ﻿using System.Reflection;
 using Integrify.Shared.Abstractions.Modules;
-using Integrify.Shared.Abstractions.Time;
 using Integrify.Shared.Infrastructure.Commands;
 using Integrify.Shared.Infrastructure.Contexts;
 using Integrify.Shared.Infrastructure.Contracts;
@@ -19,19 +18,20 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace Integrify.Shared.Infrastructure;
 
 public static class Extensions
 {
+    private const string ApiName = "Integrify API";
+    private const string ApiVersion = "v1";
     private const string CorrelationIdKey = "correlation-id";
-        
+    
     public static IServiceCollection AddInitializer<T>(this IServiceCollection services) where T : class, IInitializer
         => services.AddTransient<IInitializer, T>();
         
-    public static IServiceCollection AddModularInfrastructure(this IServiceCollection services,
+    public static void AddModularInfrastructure(this IServiceCollection services,
         IList<Assembly> assemblies, IList<IModule> modules) 
     {
         var disabledModules = new List<string>();
@@ -57,10 +57,10 @@ public static class Extensions
         {
             swagger.EnableAnnotations();
             swagger.CustomSchemaIds(x => x.FullName);
-            swagger.SwaggerDoc("v1", new OpenApiInfo
+            swagger.SwaggerDoc(ApiVersion, new OpenApiInfo
             {
-                Title = "Integrify API",
-                Version = "v1"
+                Title = ApiName,
+                Version = ApiVersion
             });
         });
 
@@ -108,8 +108,6 @@ public static class Extensions
                     
                 manager.FeatureProviders.Add(new InternalControllerFeatureProvider());
             });
-            
-        return services;
     }
 
     public static IApplicationBuilder UseModularInfrastructure(this IApplicationBuilder app)
@@ -122,14 +120,13 @@ public static class Extensions
         app.UseCorrelationId();
         // app.UseErrorHandling();
         app.UseSwagger();
-        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Name of Your API v1"));
+        app.UseSwaggerUI(c => c.SwaggerEndpoint($"/swagger/{ApiVersion}/swagger.json", ApiName));
         app.UseReDoc(reDoc =>
         {
             reDoc.RoutePrefix = "docs";
-            reDoc.SpecUrl("/swagger/v1/swagger.json");
-            reDoc.DocumentTitle = "Modular API";
+            reDoc.SpecUrl($"/swagger/{ApiVersion}/swagger.json");
+            reDoc.DocumentTitle = ApiName;
         });
-        // app.UseAuth();
         app.UseContext();
         // app.UseLogging();
         app.UseRouting();
@@ -167,13 +164,15 @@ public static class Extensions
             : string.Empty;
     }
         
-    public static IApplicationBuilder UseCorrelationId(this IApplicationBuilder app)
-        => app.Use((ctx, next) =>
+    public static void UseCorrelationId(this IApplicationBuilder app)
+    {
+        app.Use((ctx, next) =>
         {
             ctx.Items.Add(CorrelationIdKey, Guid.NewGuid());
             return next();
         });
-        
+    }
+
     public static Guid? TryGetCorrelationId(this HttpContext context)
         => context.Items.TryGetValue(CorrelationIdKey, out var id) ? (Guid) (id ?? throw new InvalidOperationException()) : null;
 }
