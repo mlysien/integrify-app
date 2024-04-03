@@ -10,7 +10,7 @@ Infrastructure layer between ERP systems and e-commerce systems. Can be use for 
 - [x] create bootstapper project
 - [x] create shared layer
 - [x] create first simple module
-- [ ] create all abstracions needed for modular monolith
+- [x] create all abstracions needed for modular monolith
 ## 04/2024
 - [ ] impementation of Order module
 - [ ] impementation of Product module
