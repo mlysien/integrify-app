@@ -12,6 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\modules\order\Integrify.Modules.Order\Integrify.Modules.Order.csproj" />
       <ProjectReference Include="..\..\modules\status\Integrify.Modules.Status\Integrify.Modules.Status.csproj" />
       <ProjectReference Include="..\..\shared\Integrify.Shared.Infrastructure\Integrify.Shared.Infrastructure.csproj" />
     </ItemGroup>
