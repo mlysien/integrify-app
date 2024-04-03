@@ -29,7 +29,12 @@ public class Startup
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
     {
         logger.PrintBanner();
-        logger.LogInformation($"Modules: {string.Join(", ", _modules.Select(x => $"{x.Name} ({x.Version})"))}");
+        
+        foreach (var module in _modules)
+        {
+            logger.LogInformation($"Module {module.Name} [{module.Version}] loaded");
+        }
+        
         app.UseModularInfrastructure();
         foreach (var module in _modules)
         {
