@@ -5,10 +5,10 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace Integrify.Modules.Orders.Api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("[controller]/[action]")]
 public class OrdersController : Controller
 {
-    [HttpGet]
+    [HttpPost]
     [SwaggerOperation("Begin synchronization process")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status503ServiceUnavailable)]
