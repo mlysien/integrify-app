@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Integrify.Modules.Order;
+namespace Integrify.Modules.Order.Api;
 
 public class OrderModule : IModule
 {

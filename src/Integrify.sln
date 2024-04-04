@@ -18,7 +18,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Modules.Status", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{86C7FFEB-822F-4C7B-BA14-D784984BE2CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Modules.Order", "modules\order\Integrify.Modules.Order\Integrify.Modules.Order.csproj", "{DB5E5A03-BD3B-49BF-9A7B-46EE53E42FBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Modules.Order.Api", "modules\order\Integrify.Modules.Order.Api\Integrify.Modules.Order.Api.csproj", "{DB5E5A03-BD3B-49BF-9A7B-46EE53E42FBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
