@@ -1,7 +1,7 @@
 {
-  "order": {
+  "orders": {
     "module": {
-      "name": "Order",
+      "name": "Orders",
       "enabled": true
     }
   }

@@ -2,11 +2,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Integrify.Modules.Order.Api;
+namespace Integrify.Modules.Orders.Api;
 
-public class OrderModule : IModule
+public class OrdersModule : IModule
 {
-    public string Name => "Order";
+    public string Name => "Orders";
     
     public Version? Version => new(0, 0, 1);
     

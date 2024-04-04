@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\modules\order\Integrify.Modules.Order.Api\Integrify.Modules.Order.Api.csproj" />
+      <ProjectReference Include="..\..\modules\orders\Integrify.Modules.Orders.Api\Integrify.Modules.Orders.Api.csproj" />
       <ProjectReference Include="..\..\modules\status\Integrify.Modules.Status\Integrify.Modules.Status.csproj" />
       <ProjectReference Include="..\..\shared\Integrify.Shared.Infrastructure\Integrify.Shared.Infrastructure.csproj" />
     </ItemGroup>
