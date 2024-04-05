@@ -3,8 +3,13 @@ namespace Integrify.Shared.Abstractions.Plugins;
 /// <summary>
 /// Marker interface for plugins
 /// </summary>
-public interface IPlugin<in TContractObject> where TContractObject : class, IPluginContract
+public interface IPlugin
 {
+    /// <summary>
+    /// Plugin type
+    /// </summary>
+    PluginType Type { get; }
+    
     /// <summary>
     /// Plugin name
     /// </summary>
