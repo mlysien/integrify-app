@@ -1,7 +1,7 @@
 {
   "example": {
     "plugin": {
-      "name": "Example Shop Plugin",
+      "name": "Example Plugin",
       "enabled": true
     }
   }
