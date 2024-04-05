@@ -14,6 +14,7 @@
     <ItemGroup>
       <ProjectReference Include="..\..\modules\orders\Integrify.Modules.Orders.Api\Integrify.Modules.Orders.Api.csproj" />
       <ProjectReference Include="..\..\modules\status\Integrify.Modules.Status\Integrify.Modules.Status.csproj" />
+      <ProjectReference Include="..\..\Plugins.Inbounds.ExampleShopPlugin\Plugins.Inbounds.ExampleShopPlugin.csproj" />
       <ProjectReference Include="..\..\shared\Integrify.Shared.Infrastructure\Integrify.Shared.Infrastructure.csproj" />
     </ItemGroup>
 
