@@ -15,4 +15,9 @@ public static class Extensions
                                                                                             
                               """);
     }
+    
+    public static void PrintHeader(this ILogger logger, string header)
+    {
+        logger.LogInformation($"{header.ToUpper()}");
+    }
 }
