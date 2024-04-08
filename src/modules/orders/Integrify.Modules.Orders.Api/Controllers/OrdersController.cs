@@ -1,4 +1,5 @@
-using Integrify.Shared.Abstractions.Plugins;
+using Integrify.Modules.Orders.Core.Commands;
+using Integrify.Shared.Abstractions.Dispatchers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -7,20 +8,16 @@ namespace Integrify.Modules.Orders.Api.Controllers;
 
 [ApiController]
 [Route("[controller]/[action]")]
-public class OrdersController(IInboundPlugin inboundPlugin, IOutboundPlugin outboundPlugin) : Controller
+internal class OrdersController(IDispatcher dispatcher) : Controller
 {
     [HttpPost]
-    [SwaggerOperation("Begin synchronization process")]
+    [SwaggerOperation("Begin orders synchronization process")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status503ServiceUnavailable)]
-    public async Task<ActionResult<string>> Synchronize()
+    public async Task<ActionResult> Synchronize(OrdersSynchronization command)
     {
-        await inboundPlugin.FetchAsync();
+        await dispatcher.SendAsync(command);
         
-        // do something with orders
-        
-        await outboundPlugin.SaveAsync();
-        
-        return await Task.FromResult<ActionResult<string>>(Ok("Here we go!"));
+        return Ok();
     }
 }
