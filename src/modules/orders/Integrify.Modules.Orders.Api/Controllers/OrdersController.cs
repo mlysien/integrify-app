@@ -1,4 +1,3 @@
-using Integrify.Modules.Orders.Core.Contracts;
 using Integrify.Shared.Abstractions.Plugins;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -8,24 +7,19 @@ namespace Integrify.Modules.Orders.Api.Controllers;
 
 [ApiController]
 [Route("[controller]/[action]")]
-public class OrdersController(IPlugin sourcePlugin) : Controller
+public class OrdersController(IInboundPlugin inboundPlugin, IOutboundPlugin outboundPlugin) : Controller
 {
-    // private read only IPlugin input plugin
     [HttpPost]
     [SwaggerOperation("Begin synchronization process")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status503ServiceUnavailable)]
     public async Task<ActionResult<string>> Synchronize()
     {
-        // fetch orders from e-commerce shop
-        var orderD = await sourcePlugin.FetchAsync<OrderSourceData>();
+        await inboundPlugin.FetchAsync();
         
-        // do something with orders 
+        // do something with orders
         
-        // save in db last synchronized order id 
-        
-        // save fetched orders
-        
+        await outboundPlugin.SaveAsync();
         
         return await Task.FromResult<ActionResult<string>>(Ok("Here we go!"));
     }
