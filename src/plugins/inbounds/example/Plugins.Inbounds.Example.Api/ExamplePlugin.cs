@@ -12,8 +12,9 @@ public class ExamplePlugin : IInboundPlugin
 
     public PluginType Type => PluginType.Inbound;
     
-    public Task FetchAsync()
+    public Task<IEnumerable<object>> FetchAsync()
     {
-        return Task.CompletedTask;
+        // todo get data from external source like some Shop API
+        throw new NotImplementedException();
     }
 }

@@ -5,5 +5,5 @@ namespace Integrify.Shared.Abstractions.Plugins;
 /// </summary>
 public interface IInboundPlugin : IPlugin
 {
-    Task FetchAsync();
+    Task<IEnumerable<object>> FetchAsync();
 }
