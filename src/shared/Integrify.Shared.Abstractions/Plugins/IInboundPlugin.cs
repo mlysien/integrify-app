@@ -5,5 +5,8 @@ namespace Integrify.Shared.Abstractions.Plugins;
 /// </summary>
 public interface IInboundPlugin : IPlugin
 {
-    Task<IEnumerable<object>> FetchAsync();
+    Task<IReadOnlyCollection<TOrder>> GetOrdersAsync<TOrder>() where TOrder : class, IOrderContract;
+    
+    Task<IReadOnlyCollection<TStock>> GetStocksAsync<TStock>() where TStock : class, IStockContract;
+    
 }

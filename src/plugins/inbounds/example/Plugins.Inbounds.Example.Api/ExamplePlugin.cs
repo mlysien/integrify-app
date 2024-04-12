@@ -11,10 +11,14 @@ public class ExamplePlugin : IInboundPlugin
     public string Name => "Example Plugin";
 
     public PluginType Type => PluginType.Inbound;
-    
-    public Task<IEnumerable<object>> FetchAsync()
+
+    public Task<IReadOnlyCollection<TStock>> GetStocksAsync<TStock>() where TStock : class, IStockContract
     {
-        // todo get data from external source like some Shop API
+        throw new NotImplementedException();
+    }
+
+    Task<IReadOnlyCollection<TOrder>> IInboundPlugin.GetOrdersAsync<TOrder>()
+    {
         throw new NotImplementedException();
     }
 }

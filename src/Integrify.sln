@@ -32,6 +32,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{6C43
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugins.Inbounds.Example.Api", "plugins\inbounds\example\Plugins.Inbounds.Example.Api\Plugins.Inbounds.Example.Api.csproj", "{03B17380-6F5C-416B-8470-ED97C28DE2D1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stocks", "Stocks", "{4740F824-6AEA-46BA-BF08-11D2A4C7DFDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Modules.Stocks.Api", "modules\stocks\Integrify.Modules.Stocks.Api\Integrify.Modules.Stocks.Api.csproj", "{47407B57-6ADF-46C3-88AB-0D9457C7855C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugins.Inbounds.Example.Core", "plugins\inbounds\example\Plugins.Inbounds.Example.Core\Plugins.Inbounds.Example.Core.csproj", "{17A0CDD8-A78B-4E6A-BD7D-B8928904C5CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +56,9 @@ Global
 		{614966C6-6470-432D-911A-0CC10F8C5906} = {CC80CF04-6811-4B68-BE88-00F2955F8359}
 		{6C434072-16F5-4158-BE95-B85D695DAD53} = {4B957302-6A2D-4B35-9508-E07ACF7B19D3}
 		{03B17380-6F5C-416B-8470-ED97C28DE2D1} = {6C434072-16F5-4158-BE95-B85D695DAD53}
+		{4740F824-6AEA-46BA-BF08-11D2A4C7DFDC} = {6AB647F0-3A29-4821-BD15-2F5CDCF56C8B}
+		{47407B57-6ADF-46C3-88AB-0D9457C7855C} = {4740F824-6AEA-46BA-BF08-11D2A4C7DFDC}
+		{17A0CDD8-A78B-4E6A-BD7D-B8928904C5CA} = {6C434072-16F5-4158-BE95-B85D695DAD53}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{96A93A73-E017-4F11-8DAF-75193E3A18A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -80,5 +89,13 @@ Global
 		{03B17380-6F5C-416B-8470-ED97C28DE2D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03B17380-6F5C-416B-8470-ED97C28DE2D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03B17380-6F5C-416B-8470-ED97C28DE2D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47407B57-6ADF-46C3-88AB-0D9457C7855C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47407B57-6ADF-46C3-88AB-0D9457C7855C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47407B57-6ADF-46C3-88AB-0D9457C7855C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47407B57-6ADF-46C3-88AB-0D9457C7855C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17A0CDD8-A78B-4E6A-BD7D-B8928904C5CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17A0CDD8-A78B-4E6A-BD7D-B8928904C5CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17A0CDD8-A78B-4E6A-BD7D-B8928904C5CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17A0CDD8-A78B-4E6A-BD7D-B8928904C5CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
