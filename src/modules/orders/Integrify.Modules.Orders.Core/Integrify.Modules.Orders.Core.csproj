@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\plugins\inbounds\example\Plugins.Inbounds.Example.Api\Plugins.Inbounds.Example.Api.csproj" />
       <ProjectReference Include="..\..\..\shared\Integrify.Shared.Abstractions\Integrify.Shared.Abstractions.csproj" />
     </ItemGroup>
 
