@@ -30,11 +30,9 @@ public abstract class Contract<T> : IContract where T : class
 
         return name;
     }
-
-    [Obsolete("Obsolete")]
+    
     protected void RequireAll() => RequireAll(typeof(T));
-
-    [Obsolete("Obsolete")]
+    
     private void RequireAll(Type type, string? parent = null)
     {
         var originalContract = FormatterServices.GetUninitializedObject(type);
