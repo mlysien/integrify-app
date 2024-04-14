@@ -34,7 +34,6 @@ public class Startup
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
     {
         logger.PrintBanner();
-        
         logger.PrintHeader("Modules");
         
         foreach (var module in _modules)
@@ -47,14 +46,15 @@ public class Startup
         foreach (var plugin in _plugins)
         {
             logger.LogInformation($"Plugin '{plugin.Name}' attached as {plugin.Type.ToString().ToLower()} plugin");
+            plugin.Use(app);
         }
         
-        app.UseModularInfrastructure();
         foreach (var module in _modules)
         {
             module.Use(app);
         }
-
+        
+        app.UseModularInfrastructure();
         app.ValidateContracts(_modulesAssemblies);
         app.UseEndpoints(endpoints =>
         {
