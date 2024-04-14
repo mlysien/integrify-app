@@ -14,7 +14,7 @@ internal class OrdersController(IDispatcher dispatcher) : Controller
     [SwaggerOperation("Begin orders synchronization process")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status503ServiceUnavailable)]
-    public async Task<ActionResult> Synchronize(OrdersSynchronization command)
+    public async Task<ActionResult> Synchronize(SynchronizeOrders command)
     {
         await dispatcher.SendAsync(command);
         
