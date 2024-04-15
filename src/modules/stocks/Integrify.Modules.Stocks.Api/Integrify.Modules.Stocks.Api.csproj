@@ -16,4 +16,11 @@
       <ProjectReference Include="..\Integrify.Modules.Stocks.Core\Integrify.Modules.Stocks.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="module.stocks.json" />
+      <Content Include="module.stocks.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>
