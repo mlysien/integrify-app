@@ -1,5 +1,5 @@
 {
-  "orders": {
+  "stocks": {
     "module": {
       "name": "Stocks",
       "enabled": true

@@ -1,5 +1,5 @@
 {
-  "orders": {
+  "products": {
     "module": {
       "name": "Products",
       "enabled": true
