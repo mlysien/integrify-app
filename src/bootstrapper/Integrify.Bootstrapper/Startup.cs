@@ -25,9 +25,15 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddModularInfrastructure(_modulesAssemblies, _modules);
+        
         foreach (var module in _modules)
         {
             module.Register(services);
+        }
+        
+        foreach (var plugin in _plugins)
+        {
+            plugin.Register(services);
         }
     }
 
@@ -39,6 +45,7 @@ public class Startup
         foreach (var module in _modules)
         {
             logger.LogInformation($"Module '{module.Name}' [{module.Version}] loaded");
+            module.Use(app);
         }
         
         logger.PrintHeader("Plugins");
@@ -47,11 +54,6 @@ public class Startup
         {
             logger.LogInformation($"Plugin '{plugin.Name}' attached as {plugin.Type.ToString().ToLower()} plugin");
             plugin.Use(app);
-        }
-        
-        foreach (var module in _modules)
-        {
-            module.Use(app);
         }
         
         app.UseModularInfrastructure();

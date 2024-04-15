@@ -13,8 +13,8 @@ internal sealed class SynchronizeOrdersHandler(
 {
     public async Task HandleAsync(SynchronizeOrders command, CancellationToken cancellationToken = default)
     {
-        await messageBroker.PublishAsync(new OrderSynchronizationStarted(), cancellationToken);
-        
         logger.LogInformation("Order synchronization started");
+        
+        await messageBroker.PublishAsync(new OrderSynchronizationStarted(), cancellationToken);
     }
 }
