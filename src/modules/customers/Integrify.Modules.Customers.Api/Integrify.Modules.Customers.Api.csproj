@@ -16,4 +16,11 @@
       <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="module.customers.json" />
+      <Content Include="module.customers.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

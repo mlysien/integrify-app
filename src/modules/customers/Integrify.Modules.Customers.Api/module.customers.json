@@ -1,0 +1,8 @@
+{
+  "orders": {
+    "module": {
+      "name": "Customers",
+      "enabled": true
+    }
+  }
+}
