@@ -15,6 +15,7 @@ public class ExamplePlugin : IInboundPlugin
     public string Name => "Example Plugin";
 
     public PluginType Type => PluginType.Inbound;
+    
     public void Register(IServiceCollection services)
     {
         throw new NotImplementedException();
@@ -23,15 +24,5 @@ public class ExamplePlugin : IInboundPlugin
     public void Use(IApplicationBuilder app)
     {
         app.UseContracts().Register<OrderSynchronizationContract>();
-    }
-
-    public Task<IReadOnlyCollection<TStock>> GetStocksAsync<TStock>() where TStock : class, IStockContract
-    {
-        throw new NotImplementedException();
-    }
-
-    Task<IReadOnlyCollection<TOrder>> IInboundPlugin.GetOrdersAsync<TOrder>()
-    {
-        throw new NotImplementedException();
     }
 }
