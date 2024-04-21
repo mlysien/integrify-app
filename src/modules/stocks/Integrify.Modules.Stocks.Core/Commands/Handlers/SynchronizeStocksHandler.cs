@@ -1,11 +1,18 @@
+using Integrify.Modules.Stocks.Core.Events;
 using Integrify.Shared.Abstractions.Commands;
+using Integrify.Shared.Abstractions.Messaging;
+using Microsoft.Extensions.Logging;
 
 namespace Integrify.Modules.Stocks.Core.Commands.Handlers;
 
-public class SynchronizeStocksHandler : ICommandHandler<SynchronizeStocks>
+public class SynchronizeStocksHandler(  
+    ILogger<SynchronizeStocksHandler> logger, 
+    IMessageBroker messageBroker) : ICommandHandler<SynchronizeStocks>
 {
-    public Task HandleAsync(SynchronizeStocks command, CancellationToken cancellationToken = default)
+    public async Task HandleAsync(SynchronizeStocks command, CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        logger.LogInformation("Stocks synchronization started");
+
+        await messageBroker.PublishAsync(new StocksSynchronizationRequested(), cancellationToken);
     }
 }
