@@ -1,0 +1,8 @@
+{
+  "synchronizer": {
+    "module": {
+      "name": "Synchronizer",
+      "enabled": true
+    }
+  }
+}

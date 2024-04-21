@@ -6,4 +6,15 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\shared\Integrify.Shared.Abstractions\Integrify.Shared.Abstractions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="module.synchronizer.json" />
+      <Content Include="module.synchronizer.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

@@ -16,6 +16,7 @@
       <ProjectReference Include="..\..\modules\orders\Integrify.Modules.Orders.Api\Integrify.Modules.Orders.Api.csproj" />
       <ProjectReference Include="..\..\modules\products\Integrify.Modules.Products.Api\Integrify.Modules.Products.Api.csproj" />
       <ProjectReference Include="..\..\modules\stocks\Integrify.Modules.Stocks.Api\Integrify.Modules.Stocks.Api.csproj" />
+      <ProjectReference Include="..\..\modules\synchronizer\Integrify.Modules.Synchronizer.Api\Integrify.Modules.Synchronizer.Api.csproj" />
       <ProjectReference Include="..\..\plugins\inbounds\example\Plugins.Inbounds.Example.Api\Plugins.Inbounds.Example.Api.csproj" />
       <ProjectReference Include="..\..\shared\Integrify.Shared.Infrastructure\Integrify.Shared.Infrastructure.csproj" />
     </ItemGroup>
