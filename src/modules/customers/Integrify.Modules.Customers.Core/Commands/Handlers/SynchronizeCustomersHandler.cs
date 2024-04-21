@@ -7,7 +7,7 @@ namespace Integrify.Modules.Customers.Core.Commands.Handlers;
 internal class SynchronizeCustomersHandler(IMessageBroker messageBroker) : ICommandHandler<SynchronizeCustomers>
 {
     public async Task HandleAsync(SynchronizeCustomers command, CancellationToken cancellationToken = default)
-    {
-        await messageBroker.PublishAsync(new CustomersSynchronizationStarted(), cancellationToken);
+    { 
+        await messageBroker.PublishAsync(new CustomersSynchronizationRequested(), cancellationToken);
     }
 }
