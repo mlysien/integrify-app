@@ -1,4 +1,5 @@
-﻿using Integrify.Shared.Abstractions.Modules;
+﻿using Integrify.Modules.Synchronizer.Core;
+using Integrify.Shared.Abstractions.Modules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,13 +11,13 @@ public class SynchronizerModule : IModule
     
     public Version? Version => new(0, 0, 1);
     
-    public void Register(IServiceCollection services)
+    public void Register(IServiceCollection servicesCollection)
     {
      
     }
 
-    public void Use(IApplicationBuilder app)
+    public void Use(IApplicationBuilder applicationBuilder)
     {
-
+        applicationBuilder.UseCoreLayer();
     }
 }
