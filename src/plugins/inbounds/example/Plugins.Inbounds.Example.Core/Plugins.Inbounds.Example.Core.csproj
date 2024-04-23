@@ -9,7 +9,7 @@
     <ItemGroup>
       <ProjectReference Include="..\..\..\..\shared\Integrify.Shared.Abstractions\Integrify.Shared.Abstractions.csproj" />
       <ProjectReference Include="..\..\..\..\shared\Integrify.Shared.Infrastructure\Integrify.Shared.Infrastructure.csproj" />
-      <ProjectReference Include="..\Plugins.Inbounds.Example.Service\Plugins.Inbounds.Example.Service.csproj" />
+      <ProjectReference Include="..\Plugins.Inbounds.Example.Port\Plugins.Inbounds.Example.Port.csproj" />
     </ItemGroup>
 
     <ItemGroup>
