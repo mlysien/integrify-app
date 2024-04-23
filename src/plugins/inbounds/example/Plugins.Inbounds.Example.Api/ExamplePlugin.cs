@@ -16,11 +16,10 @@ public class ExamplePlugin : IInboundPlugin
     
     public void Register(IServiceCollection serviceCollection)
     {
-        serviceCollection.AddCoreLayer();
+        serviceCollection.AddInboundPluginCoreLayer();
     }
 
     public void Use(IApplicationBuilder applicationBuilder)
     {
-        applicationBuilder.UseCoreLayer();
     }
 }
