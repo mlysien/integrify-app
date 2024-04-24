@@ -12,16 +12,13 @@ internal class InboundCustomersApi : IInboundCustomersApi
 
     public async Task<IReadOnlyCollection<CustomerDto>> GetCustomersCollectionAsync()
     {
-        return await Task.Run(() =>
+        return await Task.Run(() => new List<CustomerDto>()
         {
-            return new List<CustomerDto>()
-            {
-                new(Guid.NewGuid(), "Nikodem Wojdat"),
-                new(Guid.NewGuid(), "Marcin Maniecki"),
-                new(Guid.NewGuid(), "Bohdan Smal"),
-                new(Guid.NewGuid(), "Nataliia Kalicka"),
-                new(Guid.NewGuid(), "Cezary Blachowski"),
-            };
+            new(Guid.NewGuid(), "Nikodem Wojdat"),
+            new(Guid.NewGuid(), "Marcin Maniecki"),
+            new(Guid.NewGuid(), "Bohdan Smal"),
+            new(Guid.NewGuid(), "Nataliia Kalicka"),
+            new(Guid.NewGuid(), "Cezary Blachowski"),
         });
     }
 }
