@@ -44,7 +44,7 @@ public class Startup
         
         foreach (var module in _modules)
         {
-            logger.LogInformation($"Module '{module.Name}' [{module.Version}] loaded");
+            logger.LogInformation("Module {0}, version: {1} loaded", module.Name, module.Version);
             module.Use(app);
         }
         
