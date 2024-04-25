@@ -1,18 +1,18 @@
 using Integrify.Modules.Synchronizer.Core.Events.Customers;
-using Integrify.Shared.Abstractions.Integrations;
 using Integrify.Shared.Abstractions.Messaging;
+using Integrify.Shared.Abstractions.Synchronizations;
 using Microsoft.Extensions.Logging;
 using Plugins.Inbounds.Example.Port.Api;
 
-namespace Integrify.Modules.Synchronizer.Core.Integrations.Handlers;
+namespace Integrify.Modules.Synchronizer.Core.Synchronizations.Handlers;
 
-public class CustomersIntegrationHandler(
-    ILogger<CustomersIntegrationHandler> logger,
+public class CustomersSynchronizationHandler(
+    ILogger<CustomersSynchronizationHandler> logger,
     IInboundCustomersApi customersApi, 
     IMessageBroker messageBroker)
-    : IIntegrationHandler<CustomersIntegration>
+    : ISynchronizationHandler<CustomersSynchronization>
 {
-    public async Task HandleAsync(CustomersIntegration command, CancellationToken cancellationToken = default)
+    public async Task HandleAsync(CustomersSynchronization command, CancellationToken cancellationToken = default)
     {
         var customersCollection = await customersApi.GetCustomersCollectionAsync();
 
