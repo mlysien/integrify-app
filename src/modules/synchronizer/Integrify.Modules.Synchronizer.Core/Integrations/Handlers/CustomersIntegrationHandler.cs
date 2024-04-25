@@ -8,7 +8,8 @@ namespace Integrify.Modules.Synchronizer.Core.Integrations.Handlers;
 
 public class CustomersIntegrationHandler(
     ILogger<CustomersIntegrationHandler> logger,
-    IInboundCustomersApi customersApi, IMessageBroker messageBroker)
+    IInboundCustomersApi customersApi, 
+    IMessageBroker messageBroker)
     : IIntegrationHandler<CustomersIntegration>
 {
     public async Task HandleAsync(CustomersIntegration command, CancellationToken cancellationToken = default)
