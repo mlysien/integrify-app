@@ -6,6 +6,7 @@ using Integrify.Shared.Infrastructure.Contracts;
 using Integrify.Shared.Infrastructure.Controllers;
 using Integrify.Shared.Infrastructure.Dispatchers;
 using Integrify.Shared.Infrastructure.Events;
+using Integrify.Shared.Infrastructure.Integrations;
 using Integrify.Shared.Infrastructure.Messaging;
 using Integrify.Shared.Infrastructure.Modules;
 using Integrify.Shared.Infrastructure.Queries;
@@ -78,6 +79,7 @@ public static class Extensions
         // todo services.AddErrorHandling();
         services.AddContext();
         services.AddCommands(assemblies);
+        services.AddIntegrations(assemblies);
         services.AddQueries(assemblies);
         services.AddEvents(assemblies);
         // todo services.AddDomainEvents(assemblies);
