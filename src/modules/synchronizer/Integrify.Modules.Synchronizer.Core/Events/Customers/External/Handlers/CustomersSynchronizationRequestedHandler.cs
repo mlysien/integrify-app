@@ -1,4 +1,5 @@
 using Integrify.Modules.Synchronizer.Core.Commands;
+using Integrify.Modules.Synchronizer.Core.Integrations;
 using Integrify.Shared.Abstractions.Commands;
 using Integrify.Shared.Abstractions.Events;
 using Integrify.Shared.Abstractions.Messaging;
@@ -13,6 +14,6 @@ internal sealed class CustomersSynchronizationRequestedHandler(ICommandDispatche
     public async Task HandleAsync(CustomersSynchronizationRequested @event,
         CancellationToken cancellationToken = default)
     {
-        await commandDispatcher.SendAsync(new CustomersSynchronization(), cancellationToken);
+        await commandDispatcher.SendAsync(new CustomersIntegration(), cancellationToken);
     }
 }
