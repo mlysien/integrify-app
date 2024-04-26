@@ -41,6 +41,7 @@ public static class ModuleLoader
         return assemblies;
     }
     
+    // todo move to separate Loader
     public static IList<Assembly> LoadPluginsAssemblies(IConfiguration configuration, string pluginPart)
     {
         var assemblies = AppDomain.CurrentDomain.GetAssemblies().ToList();

@@ -2,7 +2,11 @@
   "orders": {
     "module": {
       "name": "Orders",
-      "enabled": true
+      "enabled": true,
+      "synchronization":{
+        "source": "shop",
+        "target": "erp"
+      }
     }
   }
 }

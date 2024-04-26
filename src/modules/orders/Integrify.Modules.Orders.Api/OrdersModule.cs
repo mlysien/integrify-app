@@ -1,22 +1,33 @@
-﻿using Integrify.Shared.Abstractions.Modules;
+﻿using Integrify.Shared.Abstractions.Synchronizations;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Integrify.Modules.Orders.Api;
 
-public class OrdersModule : IModule
+public class OrdersModule : ISynchronizableModule
 {
-    public string Name => "Orders";
+    private string _moduleName = string.Empty;
+    private SynchronizationDirection _direction = null!;
     
-    public Version? Version => new(0, 0, 1);
-    
-    public void Use(IApplicationBuilder app)
-    {
-       
-    }
+    public string Name => _moduleName;
+
+    public SynchronizationDirection Direction => _direction;
 
     public void Register(IServiceCollection services)
     {
-        // todo register 
+    }
+    
+    public void Use(IApplicationBuilder app)
+    {
+    }
+
+    public void Configure(IConfigurationSection configuration)
+    {
+        var from = configuration.GetValue<SynchronizationSystems>("module:synchronization:from");
+        var to = configuration.GetValue<SynchronizationSystems>("module:synchronization:to");
+        
+        _direction = new SynchronizationDirection(from, to);
+        _moduleName = configuration["module:name"] ?? "Undefined";
     }
 }

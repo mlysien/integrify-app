@@ -2,7 +2,11 @@
   "stocks": {
     "module": {
       "name": "Stocks",
-      "enabled": true
+      "enabled": true,
+      "synchronization":{
+        "source": "erp",
+        "target": "shop"
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 using System.Reflection;
 using Integrify.Shared.Abstractions.Modules;
 using Integrify.Shared.Abstractions.Plugins;
+using Integrify.Shared.Abstractions.Synchronizations;
 using Integrify.Shared.Infrastructure;
 using Integrify.Shared.Infrastructure.Contracts;
 using Integrify.Shared.Infrastructure.Modules;
@@ -20,6 +21,11 @@ public class Startup
         _pluginsAssemblies = ModuleLoader.LoadPluginsAssemblies(configuration, "Integrify.Plugins.");
         _modules = ModuleLoader.LoadModules(_modulesAssemblies);
         _plugins = ModuleLoader.LoadPlugins(_pluginsAssemblies);
+
+        foreach (var module in _modules)
+        {
+            module.Configure(configuration.GetSection(module.GetModuleName()));
+        }
     }
 
     public void ConfigureServices(IServiceCollection services)
@@ -41,13 +47,23 @@ public class Startup
     {
         logger.PrintBanner();
         logger.PrintHeader("Modules");
-        
+
         foreach (var module in _modules)
         {
-            logger.LogInformation("Module {0}, version: {1} loaded", module.Name, module.Version);
+            if (module is ISynchronizableModule)
+            {
+                var m = module as ISynchronizableModule;
+                logger.LogInformation("{0} module loaded. Synchronization direction: {1} -> {2}", 
+                    m?.Name, m?.Direction.Source, m?.Direction.Target);
+            }
+            else
+            {
+                logger.LogInformation("{0} module loaded.", module.Name);
+            }
+
             module.Use(app);
         }
-        
+
         logger.PrintHeader("Plugins");
         
         foreach (var plugin in _plugins)

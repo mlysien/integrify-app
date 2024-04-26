@@ -16,6 +16,7 @@
       <Content Include="module.synchronizer.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
+      <None Remove="synchronization.config.json" />
     </ItemGroup>
 
 </Project>
