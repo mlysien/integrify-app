@@ -2,7 +2,11 @@
   "products": {
     "module": {
       "name": "Products",
-      "enabled": true
+      "enabled": true,
+      "synchronization":{
+        "from": "erp",
+        "to": "shop"
+      }
     }
   }
 }

@@ -2,7 +2,11 @@
   "customers": {
     "module": {
       "name": "Customers",
-      "enabled": true
+      "enabled": true,
+      "synchronization":{
+        "from": "shop",
+        "to": "erp"
+      }
     }
   }
 }
