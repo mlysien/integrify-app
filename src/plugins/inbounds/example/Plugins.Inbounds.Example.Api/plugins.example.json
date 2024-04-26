@@ -1,8 +1,0 @@
-{
-  "example": {
-    "plugin": {
-      "name": "Example Plugin",
-      "enabled": true
-    }
-  }
-}
