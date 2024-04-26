@@ -1,0 +1,28 @@
+{
+  "module": {
+    "customers": {
+      "synchronization": {
+        "input": "erp",
+        "output": "shop"
+      }
+    },
+    "orders": {
+      "synchronization": {
+        "input": "shop",
+        "output": "erp"
+      }
+    },
+    "products": {
+      "synchronization": {
+        "input": "erp",
+        "output": "shop"
+      }
+    },
+    "stocks": {
+      "synchronization": {
+        "input": "erp",
+        "output": "shop"
+      }
+    }
+  }
+}
