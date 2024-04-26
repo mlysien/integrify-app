@@ -24,10 +24,10 @@ public class OrdersModule : ISynchronizableModule
 
     public void Configure(IConfigurationSection configuration)
     {
-        var from = configuration.GetValue<SynchronizationSystems>("module:synchronization:from");
-        var to = configuration.GetValue<SynchronizationSystems>("module:synchronization:to");
+        var source = configuration.GetValue<SynchronizationSystems>("module:synchronization:source");
+        var target = configuration.GetValue<SynchronizationSystems>("module:synchronization:target");
         
-        _direction = new SynchronizationDirection(from, to);
+        _direction = new SynchronizationDirection(source, target);
         _moduleName = configuration["module:name"] ?? "Undefined";
     }
 }
