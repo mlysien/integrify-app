@@ -7,7 +7,7 @@ namespace Integrify.Modules.Synchronizer.Api;
 
 public class SynchronizerModule : IModule
 {
-    public string Name => "Synchrnizer";
+    public string Name => "Synchronizer";
     
     public Version? Version => new(0, 0, 1);
     
