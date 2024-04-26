@@ -4,8 +4,8 @@
       "name": "Customers",
       "enabled": true,
       "synchronization":{
-        "from": "shop",
-        "to": "erp"
+        "source": "shop",
+        "target": "erp"
       }
     }
   }

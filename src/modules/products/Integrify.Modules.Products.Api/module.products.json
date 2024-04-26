@@ -4,8 +4,8 @@
       "name": "Products",
       "enabled": true,
       "synchronization":{
-        "from": "erp",
-        "to": "shop"
+        "source": "erp",
+        "target": "shop"
       }
     }
   }
