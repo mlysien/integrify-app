@@ -2,24 +2,28 @@
   "module": {
     "customers": {
       "synchronization": {
+        "enabled": true,
         "input": "erp",
         "output": "shop"
       }
     },
     "orders": {
       "synchronization": {
+        "enabled": true,
         "input": "shop",
         "output": "erp"
       }
     },
     "products": {
       "synchronization": {
+        "enabled": true,
         "input": "erp",
         "output": "shop"
       }
     },
     "stocks": {
       "synchronization": {
+        "enabled": true,
         "input": "erp",
         "output": "shop"
       }
