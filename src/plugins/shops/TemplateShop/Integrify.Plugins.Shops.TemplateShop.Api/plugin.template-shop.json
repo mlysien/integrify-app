@@ -1,0 +1,8 @@
+{
+  "templateshop": {
+    "plugin": {
+      "name": "Template Plugin",
+      "enabled": true
+    }
+  }
+}

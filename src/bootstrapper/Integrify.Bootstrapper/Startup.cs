@@ -68,7 +68,7 @@ public class Startup
         
         foreach (var plugin in _plugins)
         {
-            logger.LogInformation($"Plugin '{plugin.Name}' attached as {plugin.Type.ToString().ToLower()} plugin");
+            logger.LogInformation("{0} plugin loaded.", plugin.Name);
             plugin.Use(app);
         }
         

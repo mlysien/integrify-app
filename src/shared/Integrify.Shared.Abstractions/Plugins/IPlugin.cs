@@ -14,11 +14,6 @@ public interface IPlugin
     string Name { get; }
     
     /// <summary>
-    /// Plugin type
-    /// </summary>
-    PluginType Type { get; }
-    
-    /// <summary>
     /// Registers module dependencies
     /// </summary>
     void Register(IServiceCollection services);
