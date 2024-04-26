@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Integrify.Shared.Abstractions.Modules;
@@ -14,11 +15,6 @@ public interface IModule
     string Name { get; }
     
     /// <summary>
-    /// Module version
-    /// </summary>
-    Version? Version { get; }
-    
-    /// <summary>
     /// Registers module dependencies
     /// </summary>
     void Register(IServiceCollection services);
@@ -27,4 +23,10 @@ public interface IModule
     /// Adds module middleware 
     /// </summary>
     void Use(IApplicationBuilder app);
+
+    /// <summary>
+    /// Load configuration section of module
+    /// </summary>
+    /// <param name="configurationSection">Module configuration section</param>
+    void Configure(IConfigurationSection configurationSection);
 }
