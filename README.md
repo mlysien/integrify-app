@@ -12,10 +12,10 @@ Infrastructure layer between ERP systems and e-commerce systems. Can be use for 
 - [x] create first simple module
 - [x] create all abstracions needed for modular monolith
 ## 04/2024
-- [ ] impementation of Order module
-- [ ] impementation of Product module
-- [ ] impementation of Stock module
-- [ ] impementation of Customer module
+- [x] impementation of Order module
+- [x] impementation of Product module
+- [x] impementation of Stock module
+- [x] impementation of Customer module
 ## 05/2024
 - [ ] create first ERP plugin
 - [ ] create first E-commerce plugin
@@ -51,5 +51,3 @@ Infrastructure layer between ERP systems and e-commerce systems. Can be use for 
 
 # License
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-
-🫥🫥🫥🏐🏖️🫥🫥🫥🫥🥓🫑🧀🥗🏵️🍗🥩🌶️🏔️
