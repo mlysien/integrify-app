@@ -8,6 +8,6 @@ public static class Extensions
 {
     public static void AddAdapterLayer(this IServiceCollection servicesCollection)
     {
-        servicesCollection.AddScoped<ICustomerSourceApi, CustomersApi>();
+        servicesCollection.AddScoped<ICustomerSourceApi, CustomerSourceApi>();
     }
 }
