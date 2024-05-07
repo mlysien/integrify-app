@@ -4,5 +4,7 @@ namespace Integrify.Modules.Customers.Port.Api;
 
 public interface ICustomerSourceApi
 {
-    Task<IReadOnlyCollection<CustomerSourceDto>> GetCustomersCollectionAsync();
+    Task<IReadOnlyCollection<CustomerDto>> GetCustomersCollectionAsync();
+
+    Task<CustomerDto> GetSingleCustomer(Guid id);
 }
