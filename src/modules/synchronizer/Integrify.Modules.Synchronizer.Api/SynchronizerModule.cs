@@ -1,5 +1,4 @@
-﻿using Integrify.Modules.Synchronizer.Core;
-using Integrify.Shared.Abstractions.Modules;
+﻿using Integrify.Shared.Abstractions.Modules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,7 +17,6 @@ public class SynchronizerModule : IModule
 
     public void Use(IApplicationBuilder applicationBuilder)
     {
-        applicationBuilder.UseCoreLayer();
     }
 
     public void Configure(IConfigurationSection configurationSection)
