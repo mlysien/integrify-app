@@ -1,4 +1,3 @@
-using Integrify.Modules.Customers.Core.Events;
 using Integrify.Modules.Customers.Port.Api;
 using Integrify.Shared.Abstractions.Commands;
 using Microsoft.Extensions.Logging;
