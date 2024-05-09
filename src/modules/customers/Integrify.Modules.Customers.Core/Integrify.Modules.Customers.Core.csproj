@@ -11,8 +11,4 @@
       <ProjectReference Include="..\Integrify.Modules.Customers.Port\Integrify.Modules.Customers.Port.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Events\" />
-    </ItemGroup>
-
 </Project>

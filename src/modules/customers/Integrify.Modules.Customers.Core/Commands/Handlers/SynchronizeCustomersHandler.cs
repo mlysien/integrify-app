@@ -1,4 +1,4 @@
-using Integrify.Modules.Customers.Port.Api;
+using Integrify.Modules.Customers.Port;
 using Integrify.Shared.Abstractions.Commands;
 using Microsoft.Extensions.Logging;
 
@@ -6,20 +6,20 @@ namespace Integrify.Modules.Customers.Core.Commands.Handlers;
 
 internal class SynchronizeCustomersHandler(
     ILogger<SynchronizeCustomersHandler> logger,
-    ICustomerSourceApi customerSourceApi,
-    ICustomerTargetApi customerTargetApi) : ICommandHandler<SynchronizeCustomers>
+    ICustomerSourcePort sourcePort,
+    ICustomerTargetPort targetPort) : ICommandHandler<SynchronizeCustomers>
 {
     public async Task HandleAsync(SynchronizeCustomers command, CancellationToken cancellationToken = default)
     { 
         logger.LogInformation("Customers synchronization started");
         
-        var customersCollection = await customerSourceApi.GetCustomersCollectionAsync();
+        var customersCollection = await sourcePort.GetCollectionAsync();
 
-        foreach (var customerDto in customersCollection)
+        foreach (var customer in customersCollection)
         {
-            logger.LogInformation("Processing Customer with Id: {0}", customerDto.Id);
+            logger.LogInformation("Processing Customer with Id: {0}", customer.Id);
             
-            await customerTargetApi.SaveCustomerAsync(customerDto);
+            await targetPort.SaveAsync(customer);
         }
     }
 }
