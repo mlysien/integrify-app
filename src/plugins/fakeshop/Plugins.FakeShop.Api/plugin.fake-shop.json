@@ -1,0 +1,8 @@
+{
+  "fakeShop": {
+    "plugin": {
+      "name": "FakeShop",
+      "enabled": true
+    }
+  }
+}
