@@ -10,7 +10,6 @@ using Integrify.Shared.Infrastructure.Messaging;
 using Integrify.Shared.Infrastructure.Modules;
 using Integrify.Shared.Infrastructure.Queries;
 using Integrify.Shared.Infrastructure.Serialization;
-using Integrify.Shared.Infrastructure.Storage;
 using Integrify.Shared.Infrastructure.Synchronizations;
 using Integrify.Shared.Infrastructure.Time;
 using Microsoft.AspNetCore.Builder;
@@ -70,7 +69,6 @@ public static class Extensions
 
         services.AddMemoryCache();
         services.AddHttpClient();
-        services.AddRequestStorage();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddSerialization();
         services.AddModuleInfo(modules);
