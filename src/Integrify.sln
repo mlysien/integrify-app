@@ -74,6 +74,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Integrations.Prod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Integrations.Orders.Api", "integrations\orders\Integrify.Integrations.Orders.Api\Integrify.Integrations.Orders.Api.csproj", "{8687A6F3-E566-401E-82D3-63B4A1926BEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Integrations.Customers.Core", "integrations\customers\Integrify.Integrations.Customers.Core\Integrify.Integrations.Customers.Core.csproj", "{004074CE-1E27-4077-BC62-67159201A0C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Integrations.Customers.Port", "integrations\customers\Integrify.Integrations.Customers.Port\Integrify.Integrations.Customers.Port.csproj", "{221FF96C-76FC-4D14-9842-1AAF035EAE41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{8352A16F-2DF6-40A5-87F0-CD0CA3213855}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Gateway.Api", "gateway\Integrify.Gateway.Api\Integrify.Gateway.Api.csproj", "{2C2CE18E-8C69-4126-AE78-0583F602959A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +119,9 @@ Global
 		{20EB6407-8605-4FFE-A51F-944473D251E9} = {092239E2-E99D-41DE-ABDE-4EACFDBE4528}
 		{D9370BA4-890E-48ED-A404-C1FDEF08FB95} = {F9356A39-EC98-4A6D-9ABD-5491AD55CFC7}
 		{8687A6F3-E566-401E-82D3-63B4A1926BEC} = {6AD84724-9F07-4F9E-AF1A-D67AB4F5E328}
+		{004074CE-1E27-4077-BC62-67159201A0C7} = {BC6988BD-55B2-43AA-AB18-443DC6539060}
+		{221FF96C-76FC-4D14-9842-1AAF035EAE41} = {BC6988BD-55B2-43AA-AB18-443DC6539060}
+		{2C2CE18E-8C69-4126-AE78-0583F602959A} = {8352A16F-2DF6-40A5-87F0-CD0CA3213855}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{96A93A73-E017-4F11-8DAF-75193E3A18A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -193,5 +204,17 @@ Global
 		{8687A6F3-E566-401E-82D3-63B4A1926BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8687A6F3-E566-401E-82D3-63B4A1926BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8687A6F3-E566-401E-82D3-63B4A1926BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{004074CE-1E27-4077-BC62-67159201A0C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{004074CE-1E27-4077-BC62-67159201A0C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{004074CE-1E27-4077-BC62-67159201A0C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{004074CE-1E27-4077-BC62-67159201A0C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{221FF96C-76FC-4D14-9842-1AAF035EAE41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{221FF96C-76FC-4D14-9842-1AAF035EAE41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{221FF96C-76FC-4D14-9842-1AAF035EAE41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{221FF96C-76FC-4D14-9842-1AAF035EAE41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C2CE18E-8C69-4126-AE78-0583F602959A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C2CE18E-8C69-4126-AE78-0583F602959A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C2CE18E-8C69-4126-AE78-0583F602959A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C2CE18E-8C69-4126-AE78-0583F602959A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
