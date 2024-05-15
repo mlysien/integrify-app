@@ -1,16 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Integrify.Integrations.Customers.Core;
+using Integrify.Shared.Abstractions.Integrations;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Integrify.Integrations.Customers.Api;
 
-internal sealed class CustomersIntegration : ICustomersIntegration
+internal sealed class CustomersIntegration : IIntegration
 {
-    public Task BeginIntegration()
+    public void AddIntegrationDependencies(IServiceCollection serviceCollection)
     {
-        throw new NotImplementedException();
-    }
-
-    public void Register(IServiceCollection serviceCollection)
-    {
-        serviceCollection.AddScoped<ICustomersIntegration, CustomersIntegration>();
+        serviceCollection.AddIntegrationCoreLayer();
     }
 }
