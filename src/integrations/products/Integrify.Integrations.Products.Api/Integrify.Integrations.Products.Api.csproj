@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\shared\Integrify.Shared.Abstractions\Integrify.Shared.Abstractions.csproj" />
+      <ProjectReference Include="..\Integrify.Integrations.Products.Core\Integrify.Integrations.Products.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.5" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.6.1" />
+    </ItemGroup>
+
+</Project>
