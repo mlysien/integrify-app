@@ -10,7 +10,6 @@ using Integrify.Shared.Infrastructure.Messaging;
 using Integrify.Shared.Infrastructure.Modules;
 using Integrify.Shared.Infrastructure.Queries;
 using Integrify.Shared.Infrastructure.Serialization;
-using Integrify.Shared.Infrastructure.Synchronizations;
 using Integrify.Shared.Infrastructure.Time;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -77,7 +76,6 @@ public static class Extensions
         // todo services.AddErrorHandling();
         services.AddContext();
         services.AddCommands(assemblies);
-        services.AddSynchronizations(assemblies);
         services.AddQueries(assemblies);
         services.AddEvents(assemblies);
         // todo services.AddDomainEvents(assemblies);
