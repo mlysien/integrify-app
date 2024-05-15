@@ -1,7 +1,6 @@
 using System.Reflection;
 using Integrify.Shared.Abstractions.Modules;
 using Integrify.Shared.Abstractions.Plugins;
-using Integrify.Shared.Abstractions.Synchronizations;
 using Integrify.Shared.Infrastructure;
 using Integrify.Shared.Infrastructure.Contracts;
 using Integrify.Shared.Infrastructure.Modules;
@@ -50,16 +49,9 @@ public class Startup
 
         foreach (var module in _modules)
         {
-            if (module is ISynchronizableModule)
-            {
-                var m = module as ISynchronizableModule;
-                logger.LogInformation("{0} module loaded. Synchronization direction: {1} -> {2}", 
-                    m?.Name, m?.Direction.Source, m?.Direction.Target);
-            }
-            else
-            {
+  
                 logger.LogInformation("{0} module loaded.", module.Name);
-            }
+            
 
             module.Use(app);
         }
