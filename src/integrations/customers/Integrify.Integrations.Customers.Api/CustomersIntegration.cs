@@ -6,6 +6,8 @@ namespace Integrify.Integrations.Customers.Api;
 
 internal sealed class CustomersIntegration : IIntegration
 {
+    public string Name => "Customers";
+
     public void AddIntegrationDependencies(IServiceCollection serviceCollection)
     {
         serviceCollection.AddIntegrationCoreLayer();

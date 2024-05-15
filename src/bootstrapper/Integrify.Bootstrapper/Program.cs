@@ -1,16 +1,28 @@
+using Integrify.Bootstrapper;
+using Integrify.Shared.Infrastructure;
+using Integrify.Shared.Infrastructure.Integrations;
 using Integrify.Shared.Infrastructure.Logging;
-using Integrify.Shared.Infrastructure.Modules;
 
-namespace Integrify.Bootstrapper;
+const string integrationAssemblyPrefix = "Integrify.Integrations.";
 
-public static class Program
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddInfrastructureLayer();
+builder.Host.UseLogging();
+
+var integrations = IntegrationLoader.LoadIntegrations(integrationAssemblyPrefix);
+
+foreach (var integration in integrations)
 {
-    public static Task Main(string[] args)
-        => CreateHostBuilder(args).Build().RunAsync();
-
-    private static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>())
-            .ConfigureModules()
-            .UseLogging();
+    integration.AddIntegrationDependencies(builder.Services);
 }
+
+var app = builder.Build();
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
+
+logger.PrintBanner();
+foreach (var integration in integrations)
+{
+    logger.LogInformation("{0} integration detected.", integration.Name);
+}
+app.UseInfrastructureLayer();
+app.Run();

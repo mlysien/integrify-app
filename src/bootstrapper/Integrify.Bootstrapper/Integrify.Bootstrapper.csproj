@@ -12,6 +12,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\integrations\customers\Integrify.Integrations.Customers.Api\Integrify.Integrations.Customers.Api.csproj" />
+      <ProjectReference Include="..\..\integrations\orders\Integrify.Integrations.Orders.Api\Integrify.Integrations.Orders.Api.csproj" />
+      <ProjectReference Include="..\..\integrations\products\Integrify.Integrations.Products.Api\Integrify.Integrations.Products.Api.csproj" />
+      <ProjectReference Include="..\..\integrations\stocks\Integrify.Integrations.Stocks.Api\Integrify.Integrations.Stocks.Api.csproj" />
       <ProjectReference Include="..\..\shared\Integrify.Shared.Infrastructure\Integrify.Shared.Infrastructure.csproj" />
     </ItemGroup>
 
