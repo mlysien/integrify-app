@@ -1,7 +1,0 @@
-@Integrify.Bootstrapper_HostAddress = http://localhost:5200
-
-# Check API is running
-GET {{Integrify.Bootstrapper_HostAddress}}/
-Accept: application/json
-
-###

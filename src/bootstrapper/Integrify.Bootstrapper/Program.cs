@@ -9,9 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddInfrastructureLayer();
 builder.Host.UseLogging();
 
-var integrations = IntegrationLoader.LoadIntegrations(integrationAssemblyPrefix);
+var integrationsList = IntegrationLoader.LoadIntegrations(integrationAssemblyPrefix);
 
-foreach (var integration in integrations)
+foreach (var integration in integrationsList)
 {
     integration.AddIntegrationDependencies(builder.Services);
 }
@@ -20,9 +20,11 @@ var app = builder.Build();
 var logger = app.Services.GetRequiredService<ILogger<Program>>();
 
 logger.PrintBanner();
-foreach (var integration in integrations)
+
+foreach (var integration in integrationsList)
 {
     logger.LogInformation("{0} integration detected.", integration.Name);
 }
+
 app.UseInfrastructureLayer();
 app.Run();
