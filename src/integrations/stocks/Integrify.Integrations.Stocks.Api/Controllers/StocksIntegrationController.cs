@@ -6,7 +6,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace Integrify.Integrations.Stocks.Api.Controllers;
 
 [ApiController]
-[Tags("entity")]
+[Tags("Stocks Integration")]
 [Route("[controller]/[action]")]
 public class StocksIntegrationController(IStocksIntegration stocksIntegration) : Controller
 {

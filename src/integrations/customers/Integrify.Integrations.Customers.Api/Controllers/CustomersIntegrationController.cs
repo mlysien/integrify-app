@@ -6,6 +6,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace Integrify.Integrations.Customers.Api.Controllers;
 
 [ApiController]
+[Tags("Customers Integration")]
 [Route("[controller]/[action]")]
 public class CustomersIntegrationController(ICustomersIntegration customersIntegration) : Controller
 {

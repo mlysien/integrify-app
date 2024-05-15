@@ -6,6 +6,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace Integrify.Integrations.Orders.Api.Controllers;
 
 [ApiController]
+[Tags("Orders Integration")]
 [Route("[controller]/[action]")]
 public class OrdersIntegrationController(IOrdersIntegration ordersIntegration) : Controller
 {
