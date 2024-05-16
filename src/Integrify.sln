@@ -1,9 +1,5 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrapper", "Bootstrapper", "{423165FA-F244-4F42-BF96-E19DAA93C0B1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Bootstrapper", "bootstrapper\Integrify.Bootstrapper\Integrify.Bootstrapper.csproj", "{96A93A73-E017-4F11-8DAF-75193E3A18A5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{AA035825-A4B6-42C2-8441-46933529ABDC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Shared.Abstractions", "shared\Integrify.Shared.Abstractions\Integrify.Shared.Abstractions.csproj", "{00C3D8DA-F2CC-43E8-A56D-B3B1DAFA6BE9}"
@@ -46,13 +42,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Integrations.Stoc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Integrations.Stocks.Port", "integrations\stocks\Integrify.Integrations.Stocks.Port\Integrify.Integrations.Stocks.Port.csproj", "{66EA8B78-2F3E-47AA-96B8-D4E3EFCEF580}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Worker", "Worker", "{78FCD3E3-4894-4C45-ADA6-43227EAD3E3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Clients.Worker.Service", "clients\worker\Integrify.Clients.Worker.Service\Integrify.Clients.Worker.Service.csproj", "{D5E93C83-A646-48FD-BE6A-4194769584AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{96A93A73-E017-4F11-8DAF-75193E3A18A5} = {423165FA-F244-4F42-BF96-E19DAA93C0B1}
 		{00C3D8DA-F2CC-43E8-A56D-B3B1DAFA6BE9} = {AA035825-A4B6-42C2-8441-46933529ABDC}
 		{39493257-A4F2-46C7-9CF7-CBDA3F67842A} = {AA035825-A4B6-42C2-8441-46933529ABDC}
 		{BC6988BD-55B2-43AA-AB18-443DC6539060} = {737F21F0-EA81-48E4-8D70-B49BBA4EFD82}
@@ -71,12 +70,10 @@ Global
 		{0ECC3348-AF19-41C4-8E24-06B5A086E9F7} = {F9356A39-EC98-4A6D-9ABD-5491AD55CFC7}
 		{8DC41EE5-8798-464F-A4A8-7A26D2BE97E1} = {092239E2-E99D-41DE-ABDE-4EACFDBE4528}
 		{66EA8B78-2F3E-47AA-96B8-D4E3EFCEF580} = {092239E2-E99D-41DE-ABDE-4EACFDBE4528}
+		{78FCD3E3-4894-4C45-ADA6-43227EAD3E3D} = {6BF3F9C7-CCC6-4F01-8FFF-E264190DCC4F}
+		{D5E93C83-A646-48FD-BE6A-4194769584AB} = {78FCD3E3-4894-4C45-ADA6-43227EAD3E3D}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{96A93A73-E017-4F11-8DAF-75193E3A18A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96A93A73-E017-4F11-8DAF-75193E3A18A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96A93A73-E017-4F11-8DAF-75193E3A18A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96A93A73-E017-4F11-8DAF-75193E3A18A5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{00C3D8DA-F2CC-43E8-A56D-B3B1DAFA6BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{00C3D8DA-F2CC-43E8-A56D-B3B1DAFA6BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00C3D8DA-F2CC-43E8-A56D-B3B1DAFA6BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -133,5 +130,9 @@ Global
 		{66EA8B78-2F3E-47AA-96B8-D4E3EFCEF580}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66EA8B78-2F3E-47AA-96B8-D4E3EFCEF580}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66EA8B78-2F3E-47AA-96B8-D4E3EFCEF580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E93C83-A646-48FD-BE6A-4194769584AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E93C83-A646-48FD-BE6A-4194769584AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E93C83-A646-48FD-BE6A-4194769584AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E93C83-A646-48FD-BE6A-4194769584AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
