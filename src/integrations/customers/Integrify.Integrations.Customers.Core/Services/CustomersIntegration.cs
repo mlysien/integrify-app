@@ -4,7 +4,7 @@ namespace Integrify.Integrations.Customers.Core.Services;
 
 internal sealed class CustomersIntegration(ILogger<CustomersIntegration> logger) : ICustomersIntegration
 {
-    public Task RunIntegration()
+    public Task RunCustomersIntegration()
     {
         logger.LogInformation("Customers integration started");
 

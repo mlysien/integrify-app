@@ -1,4 +1,5 @@
-﻿using Integrify.Integrations.Customers.Core;
+﻿using Integrify.Integrations.Customers.Api.Services;
+using Integrify.Integrations.Customers.Core;
 using Integrify.Shared.Abstractions.Integrations;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,6 +11,7 @@ internal sealed class CustomersIntegration : IIntegration
 
     public void AddIntegrationDependencies(IServiceCollection serviceCollection)
     {
+        serviceCollection.AddIntegrationApi();
         serviceCollection.AddIntegrationCoreLayer();
     }
 }
