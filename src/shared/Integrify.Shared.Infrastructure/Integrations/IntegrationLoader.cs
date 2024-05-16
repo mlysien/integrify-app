@@ -3,7 +3,7 @@ using Integrify.Shared.Abstractions.Integrations;
 
 namespace Integrify.Shared.Infrastructure.Integrations;
 
-public static class IntegrationLoader
+internal static class IntegrationLoader
 {
     public static IList<IIntegration> LoadIntegrations(string assemblyPrefix)
     {
