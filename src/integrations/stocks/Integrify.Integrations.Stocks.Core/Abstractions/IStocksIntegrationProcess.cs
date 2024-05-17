@@ -1,6 +1,8 @@
+using Integrify.Shared.Abstractions.Integrations;
+
 namespace Integrify.Integrations.Stocks.Core.Abstractions;
 
-public interface IStocksIntegrationProcess
-{
-    Task ExecuteIntegrationProcess();
-}
+/// <summary>
+/// Marker interface for stocks integration process
+/// </summary>
+public interface IStocksIntegrationProcess : IIntegrationProcess;

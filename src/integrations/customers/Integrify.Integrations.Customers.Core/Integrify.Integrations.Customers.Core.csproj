@@ -14,6 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\shared\Integrify.Shared.Abstractions\Integrify.Shared.Abstractions.csproj" />
       <ProjectReference Include="..\Integrify.Integrations.Customers.Port\Integrify.Integrations.Customers.Port.csproj" />
     </ItemGroup>
 

@@ -1,6 +1,8 @@
+using Integrify.Shared.Abstractions.Integrations;
+
 namespace Integrify.Integrations.Customers.Core.Abstractions;
 
-public interface ICustomersIntegrationProcess
-{
-    Task ExecuteIntegrationProcess();
-}
+/// <summary>
+/// Marker interface for customers integration process
+/// </summary>
+public interface ICustomersIntegrationProcess : IIntegrationProcess;
