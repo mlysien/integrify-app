@@ -7,6 +7,6 @@ internal sealed class StocksShopSimulatorDrivenAdapter : IStocksIntegrationDrive
 {
     public Task SaveStockAsync(StockModel stockModel)
     {
-        throw new NotImplementedException();
+        return Task.CompletedTask;
     }
 }

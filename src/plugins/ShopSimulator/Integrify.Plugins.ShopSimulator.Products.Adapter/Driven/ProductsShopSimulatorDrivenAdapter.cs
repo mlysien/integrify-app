@@ -7,6 +7,6 @@ internal sealed class ProductsShopSimulatorDrivenAdapter : IProductsIntegrationD
 {
     public Task SaveProductAsync(ProductModel productModel)
     {
-        throw new NotImplementedException();
+        return Task.CompletedTask;
     }
 }

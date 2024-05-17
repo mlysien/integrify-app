@@ -1,4 +1,3 @@
-using Integrify.Integrations.Customers.Port.Driven;
 using Integrify.Integrations.Customers.Port.Driving;
 using Integrify.Integrations.Customers.Port.Models;
 
@@ -6,13 +5,38 @@ namespace Integrify.Plugins.ShopSimulator.Customers.Adapter.Driving;
 
 public class CustomersShopSimulatorDrivingAdapter : ICustomersIntegrationDrivingPort
 {
-    public Task<IReadOnlyCollection<CustomerModel>> GetCustomersCollection()
+    public async Task<IReadOnlyCollection<CustomerModel>> GetCustomersCollectionAsync()
     {
-        throw new NotImplementedException();
+        return await Task.Run(() => new List<CustomerModel>()
+        {
+            new()
+            {
+                Id = Guid.NewGuid(),
+                IsActive = true,
+                Name = "Ludwika Misiek"
+            },
+            new()
+            {
+                Id = Guid.NewGuid(),
+                IsActive = false,
+                Name = "Andrzej Zyzik"
+            },
+            new()
+            {
+                Id = Guid.NewGuid(),
+                IsActive = true,
+                Name = "Aleksander Surdel"
+            }
+        });
     }
 
-    public Task<CustomerModel> GetSingleCustomer(Guid id)
+    public async Task<CustomerModel> GetSingleCustomerAsync(Guid id)
     {
-        throw new NotImplementedException();
+        return await Task.Run(() => new CustomerModel()
+        {
+            Id = Guid.NewGuid(),
+            IsActive = true,
+            Name = "Aleksander Surdel"
+        });
     }
 }
