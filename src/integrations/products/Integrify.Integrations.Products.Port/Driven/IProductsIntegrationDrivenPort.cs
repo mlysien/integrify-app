@@ -4,5 +4,5 @@ namespace Integrify.Integrations.Products.Port.Driven;
 
 public interface IProductsIntegrationDrivenPort
 {
-    Task SaveProductAsync(ProductModel productModel);
+    Task SaveProductAsync(ProductIntegrationModel productIntegrationModel);
 }

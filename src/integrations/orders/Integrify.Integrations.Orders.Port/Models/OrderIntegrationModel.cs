@@ -1,9 +1,11 @@
+using Integrify.Shared.Abstractions.Integrations;
+
 namespace Integrify.Integrations.Orders.Port.Models;
 
 /// <summary>
-/// 
+/// Represents integration model of order entity 
 /// </summary>
-public sealed class OrderModel
+public sealed class OrderIntegrationModel : IIntegrationModel
 {
     public Guid Id { get; set; }
 

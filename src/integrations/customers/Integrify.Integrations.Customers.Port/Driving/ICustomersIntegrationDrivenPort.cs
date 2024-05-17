@@ -4,7 +4,7 @@ namespace Integrify.Integrations.Customers.Port.Driving;
 
 public interface ICustomersIntegrationDrivingPort
 {
-    Task<IReadOnlyCollection<CustomerModel>> GetCustomersCollectionAsync();
+    Task<IReadOnlyCollection<CustomerIntegrationModel>> GetCustomersCollectionAsync();
 
-    Task<CustomerModel> GetSingleCustomerAsync(Guid id);
+    Task<CustomerIntegrationModel> GetSingleCustomerAsync(Guid id);
 }

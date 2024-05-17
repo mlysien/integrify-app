@@ -5,7 +5,7 @@ namespace Integrify.Plugins.ShopSimulator.Orders.Adapter.Driven;
 
 public class OrdersShopSimulatorDrivenAdapter : IOrdersIntegrationDrivenPort
 {
-    public Task SaveOrderAsync(OrderModel orderModel)
+    public Task SaveOrderAsync(OrderIntegrationModel orderIntegrationModel)
     {
         throw new NotImplementedException();
     }

@@ -5,7 +5,7 @@ namespace Integrify.Plugins.ErpSimulator.Orders.Adapter.Driven;
 
 public class OrdersErpSimulatorDrivenAdapter : IOrdersIntegrationDrivenPort
 {
-    public Task SaveOrderAsync(OrderModel orderModel)
+    public Task SaveOrderAsync(OrderIntegrationModel orderIntegrationModel)
     {
         return Task.CompletedTask;
     }

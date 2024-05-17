@@ -4,5 +4,5 @@ namespace Integrify.Integrations.Stocks.Port.Driven;
 
 public interface IStocksIntegrationDrivenPort
 {
-    Task SaveStockAsync(StockModel stockModel);
+    Task SaveStockAsync(StockIntegrationModel stockIntegrationModel);
 }

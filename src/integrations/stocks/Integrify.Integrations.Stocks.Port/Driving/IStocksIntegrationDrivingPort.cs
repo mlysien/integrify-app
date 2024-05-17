@@ -4,7 +4,7 @@ namespace Integrify.Integrations.Stocks.Port.Driving;
 
 public interface IStocksIntegrationDrivingPort
 {
-    Task<IReadOnlyCollection<StockModel>> GetStocksCollectionAsync();
+    Task<IReadOnlyCollection<StockIntegrationModel>> GetStocksCollectionAsync();
 
-    Task<StockModel> GetSingleStockAsync(Guid id);
+    Task<StockIntegrationModel> GetSingleStockAsync(Guid id);
 }

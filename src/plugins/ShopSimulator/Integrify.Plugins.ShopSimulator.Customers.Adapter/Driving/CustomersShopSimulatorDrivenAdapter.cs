@@ -5,9 +5,9 @@ namespace Integrify.Plugins.ShopSimulator.Customers.Adapter.Driving;
 
 public class CustomersShopSimulatorDrivingAdapter : ICustomersIntegrationDrivingPort
 {
-    public async Task<IReadOnlyCollection<CustomerModel>> GetCustomersCollectionAsync()
+    public async Task<IReadOnlyCollection<CustomerIntegrationModel>> GetCustomersCollectionAsync()
     {
-        return await Task.Run(() => new List<CustomerModel>()
+        return await Task.Run(() => new List<CustomerIntegrationModel>()
         {
             new()
             {
@@ -30,9 +30,9 @@ public class CustomersShopSimulatorDrivingAdapter : ICustomersIntegrationDriving
         });
     }
 
-    public async Task<CustomerModel> GetSingleCustomerAsync(Guid id)
+    public async Task<CustomerIntegrationModel> GetSingleCustomerAsync(Guid id)
     {
-        return await Task.Run(() => new CustomerModel()
+        return await Task.Run(() => new CustomerIntegrationModel()
         {
             Id = Guid.NewGuid(),
             IsActive = true,

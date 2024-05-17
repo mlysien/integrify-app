@@ -5,9 +5,9 @@ namespace Integrify.Plugins.ErpSimulator.Stocks.Adapter.Driving;
 
 public class StocksErpSimulatorDrivingAdapter : IStocksIntegrationDrivingPort
 {
-    public async Task<IReadOnlyCollection<StockModel>> GetStocksCollectionAsync()
+    public async Task<IReadOnlyCollection<StockIntegrationModel>> GetStocksCollectionAsync()
     {
-        return await Task.Run(() => new List<StockModel>
+        return await Task.Run(() => new List<StockIntegrationModel>
         {
             new()
             {
@@ -37,9 +37,9 @@ public class StocksErpSimulatorDrivingAdapter : IStocksIntegrationDrivingPort
         });
     }
 
-    public async Task<StockModel> GetSingleStockAsync(Guid id)
+    public async Task<StockIntegrationModel> GetSingleStockAsync(Guid id)
     {
-        return await Task.Run(() => new StockModel()
+        return await Task.Run(() => new StockIntegrationModel()
         {
             Id = Guid.NewGuid(),
             Amount = 100

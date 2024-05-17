@@ -4,5 +4,5 @@ namespace Integrify.Integrations.Customers.Port.Driven;
 
 public interface ICustomersIntegrationDrivenPort
 {
-    Task SaveCustomerAsync(CustomerModel customerModel);
+    Task SaveCustomerAsync(CustomerIntegrationModel customerIntegrationModel);
 }

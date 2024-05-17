@@ -10,6 +10,6 @@ public interface IOrdersIntegrationDrivenPort
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="orderModel"></param>
-    Task SaveOrderAsync(OrderModel orderModel);
+    /// <param name="orderIntegrationModel"></param>
+    Task SaveOrderAsync(OrderIntegrationModel orderIntegrationModel);
 }

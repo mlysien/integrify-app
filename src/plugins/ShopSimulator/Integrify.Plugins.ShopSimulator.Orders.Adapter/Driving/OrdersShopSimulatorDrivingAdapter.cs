@@ -5,9 +5,9 @@ namespace Integrify.Plugins.ShopSimulator.Orders.Adapter.Driving;
 
 internal sealed class OrdersShopSimulatorDrivingAdapter : IOrdersIntegrationDrivingPort
 {
-    public async Task<IReadOnlyCollection<OrderModel>> GetOrdersCollectionAsync()
+    public async Task<IReadOnlyCollection<OrderIntegrationModel>> GetOrdersCollectionAsync()
     {
-        return await Task.Run(() => new List<OrderModel>()
+        return await Task.Run(() => new List<OrderIntegrationModel>()
         {
             new()
             {
@@ -32,9 +32,9 @@ internal sealed class OrdersShopSimulatorDrivingAdapter : IOrdersIntegrationDriv
         });
     }
 
-    public async Task<OrderModel> GetSingleOrderAsync(Guid id)
+    public async Task<OrderIntegrationModel> GetSingleOrderAsync(Guid id)
     {
-        return await Task.Run(() => new OrderModel
+        return await Task.Run(() => new OrderIntegrationModel
         {
             Id = Guid.NewGuid(),
             CreatedAt = DateTime.Now.AddDays(-2)   

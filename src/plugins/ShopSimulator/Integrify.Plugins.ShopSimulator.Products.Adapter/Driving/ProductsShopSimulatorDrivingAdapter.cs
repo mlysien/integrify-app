@@ -5,12 +5,12 @@ namespace Integrify.Plugins.ShopSimulator.Products.Adapter.Driving;
 
 internal sealed class ProductsShopSimulatorDrivingAdapter : IProductsIntegrationDrivingPort
 {
-    public Task<IReadOnlyCollection<ProductModel>> GetProductsCollectionAsync()
+    public Task<IReadOnlyCollection<ProductIntegrationModel>> GetProductsCollectionAsync()
     {
         throw new NotImplementedException();
     }
 
-    public Task<ProductModel> GetSingleProductAsync(Guid id)
+    public Task<ProductIntegrationModel> GetSingleProductAsync(Guid id)
     {
         throw new NotImplementedException();
     }

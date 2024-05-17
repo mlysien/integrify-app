@@ -5,7 +5,7 @@ namespace Integrify.Plugins.ErpSimulator.Customers.Adapter.Driven;
 
 internal sealed class CustomersErpSimulatorDrivenAdapter : ICustomersIntegrationDrivenPort
 {
-    public Task SaveCustomerAsync(CustomerModel customerModel)
+    public Task SaveCustomerAsync(CustomerIntegrationModel customerIntegrationModel)
     {
         return Task.CompletedTask;
     }
