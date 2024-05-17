@@ -5,7 +5,7 @@ namespace Integrify.Plugins.ErpSimulator.Stocks.Adapter.Driven;
 
 public class StocksErpSimulatorDrivenAdapter : IStocksIntegrationDrivenPort
 {
-    public Task SaveStockAsync(StockIntegrationModel stockIntegrationModel)
+    public Task PushAsync(StockIntegrationModel integrationModel)
     {
         throw new NotImplementedException();
     }

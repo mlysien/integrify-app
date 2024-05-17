@@ -1,8 +1,9 @@
 using Integrify.Integrations.Stocks.Port.Models;
+using Integrify.Shared.Abstractions.Ports;
 
 namespace Integrify.Integrations.Stocks.Port.Driven;
 
-public interface IStocksIntegrationDrivenPort
-{
-    Task SaveStockAsync(StockIntegrationModel stockIntegrationModel);
-}
+/// <summary>
+/// Marker interface for stocks integration driven port
+/// </summary>
+public interface IStocksIntegrationDrivenPort : IDrivenPort<StockIntegrationModel>;

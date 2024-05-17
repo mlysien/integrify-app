@@ -1,8 +1,9 @@
 using Integrify.Integrations.Products.Port.Models;
+using Integrify.Shared.Abstractions.Ports;
 
 namespace Integrify.Integrations.Products.Port.Driven;
 
-public interface IProductsIntegrationDrivenPort
-{
-    Task SaveProductAsync(ProductIntegrationModel productIntegrationModel);
-}
+/// <summary>
+/// Marker interface for products integration driven port
+/// </summary>
+public interface IProductsIntegrationDrivenPort : IDrivenPort<ProductIntegrationModel>;

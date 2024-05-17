@@ -14,7 +14,7 @@ internal sealed class CustomersIntegrationProcess(
     {
         logger.LogInformation("Customers integration started");
 
-        var customersCollection = await drivingPort.GetCustomersCollectionAsync();
+        var customersCollection = await drivingPort.FetchCollectionAsync();
 
         logger.LogInformation("Received {count} customers", customersCollection.Count);
 
@@ -27,7 +27,7 @@ internal sealed class CustomersIntegrationProcess(
                 logger.LogInformation("Customer is not active, skipped");
             }
             
-            await drivenPort.SaveCustomerAsync(customerModel);
+            await drivenPort.PushAsync(customerModel);
         }
     }
 }

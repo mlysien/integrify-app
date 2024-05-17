@@ -14,7 +14,7 @@ internal class OrdersIntegrationProcess(
     {
         logger.LogInformation("Orders integration started");
 
-        var ordersCollection = await drivingPort.GetOrdersCollectionAsync();
+        var ordersCollection = await drivingPort.FetchCollectionAsync();
 
         logger.LogInformation("Received {count} orders", ordersCollection.Count);
 
@@ -23,7 +23,7 @@ internal class OrdersIntegrationProcess(
             logger.LogInformation("Processing order with Id: {id}, createdAt: {date}", 
                 orderModel.Id, orderModel.CreatedAt);
 
-            await drivenPort.SaveOrderAsync(orderModel);
+            await drivenPort.PushAsync(orderModel);
         }
     }
 }

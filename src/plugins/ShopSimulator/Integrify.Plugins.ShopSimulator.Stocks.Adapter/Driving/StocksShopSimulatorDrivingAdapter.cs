@@ -5,12 +5,12 @@ namespace Integrify.Plugins.ShopSimulator.Stocks.Adapter.Driving;
 
 internal sealed class StocksShopSimulatorDrivingAdapter : IStocksIntegrationDrivingPort
 {
-    public Task<IReadOnlyCollection<StockIntegrationModel>> GetStocksCollectionAsync()
+    public Task<IReadOnlyCollection<StockIntegrationModel>> FetchCollectionAsync()
     {
         throw new NotImplementedException();
     }
 
-    public Task<StockIntegrationModel> GetSingleStockAsync(Guid id)
+    public Task<StockIntegrationModel> GetSingleAsync(Guid id)
     {
         throw new NotImplementedException();
     }

@@ -14,7 +14,7 @@ internal sealed class ProductsIntegrationProcess(
     {
         logger.LogInformation("Products integration started");
         
-        var productsCollection = await drivingPort.GetProductsCollectionAsync();
+        var productsCollection = await drivingPort.FetchCollectionAsync();
 
         logger.LogInformation("Received {count} products", productsCollection.Count);
 
@@ -23,7 +23,7 @@ internal sealed class ProductsIntegrationProcess(
             logger.LogInformation("Processing product with Id: {id}, Name: {name}", 
                 productModel.Id, productModel.Name);
 
-            await drivenPort.SaveProductAsync(productModel);
+            await drivenPort.PushAsync(productModel);
         }
     }
 }

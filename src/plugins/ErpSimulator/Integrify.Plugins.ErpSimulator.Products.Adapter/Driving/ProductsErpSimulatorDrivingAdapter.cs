@@ -5,7 +5,7 @@ namespace Integrify.Plugins.ErpSimulator.Products.Adapter.Driving;
 
 public class ProductsErpSimulatorDrivingAdapter : IProductsIntegrationDrivingPort
 {
-    public async Task<IReadOnlyCollection<ProductIntegrationModel>> GetProductsCollectionAsync()
+    public async Task<IReadOnlyCollection<ProductIntegrationModel>> FetchCollectionAsync()
     {
         return await Task.Run(() => new List<ProductIntegrationModel>()
             {
@@ -25,9 +25,9 @@ public class ProductsErpSimulatorDrivingAdapter : IProductsIntegrationDrivingPor
         );
     }
 
-    public Task<ProductIntegrationModel> GetSingleProductAsync(Guid id)
+    public async Task<ProductIntegrationModel> GetSingleAsync(Guid id)
     {
-        return Task.Run(() => new ProductIntegrationModel()
+        return await Task.Run(() => new ProductIntegrationModel()
         {
             Id = Guid.NewGuid(),
             Name = "Windows10 Home Edition",

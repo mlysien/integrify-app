@@ -1,10 +1,9 @@
 using Integrify.Integrations.Stocks.Port.Models;
+using Integrify.Shared.Abstractions.Ports;
 
 namespace Integrify.Integrations.Stocks.Port.Driving;
 
-public interface IStocksIntegrationDrivingPort
-{
-    Task<IReadOnlyCollection<StockIntegrationModel>> GetStocksCollectionAsync();
-
-    Task<StockIntegrationModel> GetSingleStockAsync(Guid id);
-}
+/// <summary>
+/// Marker interface for stocks integration driving port
+/// </summary>
+public interface IStocksIntegrationDrivingPort : IDrivingPort<StockIntegrationModel>;

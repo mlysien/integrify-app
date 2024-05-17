@@ -1,10 +1,9 @@
 using Integrify.Integrations.Customers.Port.Models;
+using Integrify.Shared.Abstractions.Ports;
 
 namespace Integrify.Integrations.Customers.Port.Driving;
 
-public interface ICustomersIntegrationDrivingPort
-{
-    Task<IReadOnlyCollection<CustomerIntegrationModel>> GetCustomersCollectionAsync();
-
-    Task<CustomerIntegrationModel> GetSingleCustomerAsync(Guid id);
-}
+/// <summary>
+/// Marker interface for customers integration driving port
+/// </summary>
+public interface ICustomersIntegrationDrivingPort : IDrivingPort<CustomerIntegrationModel>;

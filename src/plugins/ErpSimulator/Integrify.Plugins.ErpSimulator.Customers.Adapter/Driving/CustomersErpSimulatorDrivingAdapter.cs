@@ -5,12 +5,12 @@ namespace Integrify.Plugins.ErpSimulator.Customers.Adapter.Driving;
 
 public class CustomersErpSimulatorDrivingAdapter : ICustomersIntegrationDrivingPort
 {
-    public Task<IReadOnlyCollection<CustomerIntegrationModel>> GetCustomersCollectionAsync()
+    public Task<IReadOnlyCollection<CustomerIntegrationModel>> FetchCollectionAsync()
     {
         throw new NotImplementedException();
     }
 
-    public Task<CustomerIntegrationModel> GetSingleCustomerAsync(Guid id)
+    public Task<CustomerIntegrationModel> GetSingleAsync(Guid id)
     {
         throw new NotImplementedException();
     }

@@ -5,7 +5,7 @@ namespace Integrify.Plugins.ShopSimulator.Stocks.Adapter.Driven;
 
 internal sealed class StocksShopSimulatorDrivenAdapter : IStocksIntegrationDrivenPort
 {
-    public Task SaveStockAsync(StockIntegrationModel stockIntegrationModel)
+    public Task PushAsync(StockIntegrationModel integrationModel)
     {
         return Task.CompletedTask;
     }

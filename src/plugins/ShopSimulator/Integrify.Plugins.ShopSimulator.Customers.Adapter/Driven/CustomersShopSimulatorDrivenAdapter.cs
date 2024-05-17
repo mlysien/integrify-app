@@ -5,8 +5,8 @@ namespace Integrify.Plugins.ShopSimulator.Customers.Adapter.Driven;
 
 public class CustomersShopSimulatorDrivenAdapter : ICustomersIntegrationDrivenPort
 {
-    public Task SaveCustomerAsync(CustomerIntegrationModel customerIntegrationModel)
+    public Task PushAsync(CustomerIntegrationModel integrationModel)
     {
-        throw new NotImplementedException();
+        return Task.CompletedTask;
     }
 }

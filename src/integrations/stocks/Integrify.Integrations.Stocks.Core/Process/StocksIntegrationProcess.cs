@@ -14,7 +14,7 @@ internal sealed class StocksIntegrationProcess(
     {
         logger.LogInformation("Stocks integration started");
         
-        var stocksCollection = await drivingPort.GetStocksCollectionAsync();
+        var stocksCollection = await drivingPort.FetchCollectionAsync();
 
         logger.LogInformation("Received {count} stocks", stocksCollection.Count);
 
@@ -23,7 +23,7 @@ internal sealed class StocksIntegrationProcess(
             logger.LogInformation("Processing stock with Id: {id}, Amount: {amount}", 
                 stockModel.Id, stockModel.Amount);
 
-            await drivenPort.SaveStockAsync(stockModel);
+            await drivenPort.PushAsync(stockModel);
         }
     }
 }

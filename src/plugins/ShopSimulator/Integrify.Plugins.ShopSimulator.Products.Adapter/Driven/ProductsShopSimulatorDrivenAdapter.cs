@@ -5,7 +5,7 @@ namespace Integrify.Plugins.ShopSimulator.Products.Adapter.Driven;
 
 internal sealed class ProductsShopSimulatorDrivenAdapter : IProductsIntegrationDrivenPort
 {
-    public Task SaveProductAsync(ProductIntegrationModel productIntegrationModel)
+    public Task PushAsync(ProductIntegrationModel integrationModel)
     {
         return Task.CompletedTask;
     }
