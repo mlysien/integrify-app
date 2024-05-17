@@ -20,4 +20,8 @@
       <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Integrify.Integrations.Orders.Port\Integrify.Integrations.Orders.Port.csproj" />
+    </ItemGroup>
+
 </Project>
