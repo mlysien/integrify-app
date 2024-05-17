@@ -9,6 +9,8 @@ namespace Integrify.Plugins.ErpSimulator.Api;
 
 public class ErpSimulatorPlugin : IPlugin
 {
+    public string Name => "Erp simulator";
+    
     public void AddPluginDependencies(IServiceCollection serviceCollection)
     {
         serviceCollection.AddCustomersAdapters();

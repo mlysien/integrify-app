@@ -9,6 +9,8 @@ namespace Integrify.Plugins.ShopSimulator.Api;
 
 public class ShopSimulatorPlugin : IPlugin
 {
+    public string Name => "Shop simulator";
+
     public void AddPluginDependencies(IServiceCollection serviceCollection)
     {
         serviceCollection.AddCustomersAdapters();
