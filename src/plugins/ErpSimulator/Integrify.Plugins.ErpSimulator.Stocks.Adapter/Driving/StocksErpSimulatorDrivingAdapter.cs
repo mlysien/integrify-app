@@ -5,13 +5,44 @@ namespace Integrify.Plugins.ErpSimulator.Stocks.Adapter.Driving;
 
 public class StocksErpSimulatorDrivingAdapter : IStocksIntegrationDrivingPort
 {
-    public Task<IReadOnlyCollection<StockModel>> GetStocksCollectionAsync()
+    public async Task<IReadOnlyCollection<StockModel>> GetStocksCollectionAsync()
     {
-        throw new NotImplementedException();
+        return await Task.Run(() => new List<StockModel>
+        {
+            new()
+            {
+                Id = Guid.NewGuid(),
+                Amount = 100
+            },
+            new()
+            {
+                Id = Guid.NewGuid(),
+                Amount = 4
+            },
+            new()
+            {
+                Id = Guid.NewGuid(),
+                Amount = 12
+            },
+            new()
+            {
+                Id = Guid.NewGuid(),
+                Amount = 39
+            },
+            new()
+            {
+                Id = Guid.NewGuid(),
+                Amount = 41
+            }
+        });
     }
 
-    public Task<StockModel> GetSingleStockAsync(Guid id)
+    public async Task<StockModel> GetSingleStockAsync(Guid id)
     {
-        throw new NotImplementedException();
+        return await Task.Run(() => new StockModel()
+        {
+            Id = Guid.NewGuid(),
+            Amount = 100
+        });
     }
 }

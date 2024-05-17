@@ -5,13 +5,33 @@ namespace Integrify.Plugins.ErpSimulator.Products.Adapter.Driving;
 
 public class ProductsErpSimulatorDrivingAdapter : IProductsIntegrationDrivingPort
 {
-    public Task<IReadOnlyCollection<ProductModel>> GetProductsCollection()
+    public async Task<IReadOnlyCollection<ProductModel>> GetProductsCollectionAsync()
     {
-        throw new NotImplementedException();
+        return await Task.Run(() => new List<ProductModel>()
+            {
+                new()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Windows10 Home Edition",
+                    Price = 100.0
+                },
+                new()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Apple iPhoneX",
+                    Price = 450.25
+                }
+            }
+        );
     }
 
-    public Task<ProductModel> GetSingleProduct(Guid id)
+    public Task<ProductModel> GetSingleProductAsync(Guid id)
     {
-        throw new NotImplementedException();
+        return Task.Run(() => new ProductModel()
+        {
+            Id = Guid.NewGuid(),
+            Name = "Windows10 Home Edition",
+            Price = 100.0
+        });
     }
 }

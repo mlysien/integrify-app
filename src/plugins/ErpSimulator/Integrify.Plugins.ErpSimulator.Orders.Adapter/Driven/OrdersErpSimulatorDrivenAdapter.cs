@@ -7,6 +7,6 @@ public class OrdersErpSimulatorDrivenAdapter : IOrdersIntegrationDrivenPort
 {
     public Task SaveOrderAsync(OrderModel orderModel)
     {
-        throw new NotImplementedException();
+        return Task.CompletedTask;
     }
 }
