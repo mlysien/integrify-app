@@ -4,7 +4,7 @@ namespace Integrify.Integrations.Products.Port.Driving;
 
 public interface IProductsIntegrationDrivingPort
 {
-    Task<IReadOnlyCollection<ProductModel>> GetProductsCollection();
+    Task<IReadOnlyCollection<ProductModel>> GetProductsCollectionAsync();
 
-    Task<ProductModel> GetSingleProduct(Guid id);
+    Task<ProductModel> GetSingleProductAsync(Guid id);
 }
