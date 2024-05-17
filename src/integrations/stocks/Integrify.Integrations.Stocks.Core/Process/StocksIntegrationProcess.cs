@@ -1,4 +1,4 @@
-using Integrify.Integrations.Stocks.Core.Services;
+using Integrify.Integrations.Stocks.Core.Abstractions;
 using Integrify.Integrations.Stocks.Port.Driven;
 using Integrify.Integrations.Stocks.Port.Driving;
 using Microsoft.Extensions.Logging;

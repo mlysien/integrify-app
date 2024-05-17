@@ -1,4 +1,4 @@
-using Integrify.Integrations.Products.Core.Services;
+using Integrify.Integrations.Products.Core.Abstractions;
 using Integrify.Integrations.Products.Port.Driven;
 using Integrify.Integrations.Products.Port.Driving;
 using Microsoft.Extensions.Logging;
@@ -10,7 +10,7 @@ internal sealed class ProductsIntegrationProcess(
     IProductsIntegrationDrivingPort drivingPort,
     IProductsIntegrationDrivenPort drivenPort) : IProductsIntegrationProcess
 {
-    public async Task ExecuteOrdersIntegrationProcess()
+    public async Task ExecuteIntegrationProcess()
     {
         logger.LogInformation("Products integration started");
         

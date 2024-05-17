@@ -1,15 +1,16 @@
+using Integrify.Integrations.Customers.Core.Abstractions;
 using Integrify.Integrations.Customers.Port.Driven;
 using Integrify.Integrations.Customers.Port.Driving;
 using Microsoft.Extensions.Logging;
 
-namespace Integrify.Integrations.Customers.Core.Services;
+namespace Integrify.Integrations.Customers.Core.Process;
 
-internal sealed class CustomersIntegration(
-    ILogger<CustomersIntegration> logger,
+internal sealed class CustomersIntegrationProcess(
+    ILogger<CustomersIntegrationProcess> logger,
     ICustomersIntegrationDrivingPort drivingPort,
-    ICustomersIntegrationDrivenPort drivenPort) : ICustomersIntegration
+    ICustomersIntegrationDrivenPort drivenPort) : ICustomersIntegrationProcess
 {
-    public async Task RunCustomersIntegration()
+    public async Task ExecuteIntegrationProcess()
     {
         logger.LogInformation("Customers integration started");
 

@@ -1,4 +1,4 @@
-using Integrify.Integrations.Orders.Core.Services;
+using Integrify.Integrations.Orders.Core.Abstractions;
 using Integrify.Integrations.Orders.Port.Driven;
 using Integrify.Integrations.Orders.Port.Driving;
 using Microsoft.Extensions.Logging;
@@ -10,7 +10,7 @@ internal class OrdersIntegrationProcess(
     IOrdersIntegrationDrivingPort drivingPort,
     IOrdersIntegrationDrivenPort drivenPort) : IOrdersIntegrationProcess
 {
-    public async Task ExecuteOrdersIntegrationProcess()
+    public async Task ExecuteIntegrationProcess()
     {
         logger.LogInformation("Orders integration started");
 

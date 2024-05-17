@@ -1,4 +1,4 @@
-﻿using Integrify.Integrations.Products.Api.Services;
+﻿using Integrify.Integrations.Products.Api.Public;
 using Integrify.Integrations.Products.Core;
 using Integrify.Shared.Abstractions.Integrations;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,7 +11,7 @@ internal sealed class ProductsIntegration : IIntegration
     
     public void AddIntegrationDependencies(IServiceCollection serviceCollection)
     {
-        serviceCollection.AddProductsIntegrationApi();
+        serviceCollection.AddScoped<IProductsIntegrationApi, ProductsIntegrationApi>();
         serviceCollection.AddIntegrationCoreLayer();
     }
 }

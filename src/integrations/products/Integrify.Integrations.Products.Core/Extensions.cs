@@ -1,5 +1,5 @@
-﻿using Integrify.Integrations.Products.Core.Process;
-using Integrify.Integrations.Products.Core.Services;
+﻿using Integrify.Integrations.Products.Core.Abstractions;
+using Integrify.Integrations.Products.Core.Process;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Integrify.Integrations.Products.Core;

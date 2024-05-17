@@ -1,4 +1,4 @@
-namespace Integrify.Integrations.Stocks.Core.Services;
+namespace Integrify.Integrations.Stocks.Core.Abstractions;
 
 public interface IStocksIntegrationProcess
 {
