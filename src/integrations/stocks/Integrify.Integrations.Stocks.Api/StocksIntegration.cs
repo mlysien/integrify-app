@@ -1,4 +1,5 @@
-﻿using Integrify.Integrations.Stocks.Core;
+﻿using Integrify.Integrations.Stocks.Api.Services;
+using Integrify.Integrations.Stocks.Core;
 using Integrify.Shared.Abstractions.Integrations;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,6 +11,7 @@ internal sealed class StocksIntegration : IIntegration
     
     public void AddIntegrationDependencies(IServiceCollection serviceCollection)
     {
-        serviceCollection.AddIntegrationCoreLayer();
+        serviceCollection.AddStocksIntegrationApi();
+        serviceCollection.AddStocksIntegrationCoreLayer();
     }
 }
