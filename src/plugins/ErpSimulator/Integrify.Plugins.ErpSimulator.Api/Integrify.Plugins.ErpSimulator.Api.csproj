@@ -8,6 +8,10 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\shared\Integrify.Shared.Abstractions\Integrify.Shared.Abstractions.csproj" />
+      <ProjectReference Include="..\Integrify.Plugins.ErpSimulator.Customers.Adapter\Integrify.Plugins.ErpSimulator.Customers.Adapter.csproj" />
+      <ProjectReference Include="..\Integrify.Plugins.ErpSimulator.Orders.Adapter\Integrify.Plugins.ErpSimulator.Orders.Adapter.csproj" />
+      <ProjectReference Include="..\Integrify.Plugins.ErpSimulator.Products.Adapter\Integrify.Plugins.ErpSimulator.Products.Adapter.csproj" />
+      <ProjectReference Include="..\Integrify.Plugins.ErpSimulator.Stocks.Adapter\Integrify.Plugins.ErpSimulator.Stocks.Adapter.csproj" />
     </ItemGroup>
 
 </Project>

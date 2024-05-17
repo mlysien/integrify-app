@@ -7,6 +7,8 @@ public class CustomersErpSimulatorDrivenAdapter : ICustomersIntegrationDrivenPor
 {
     public Task SaveCustomerAsync(CustomerModel customerModel)
     {
-        throw new NotImplementedException();
+        // todo: here should be some business logic for saving customer model into real ERP system
+         
+        return Task.CompletedTask;
     }
 }
