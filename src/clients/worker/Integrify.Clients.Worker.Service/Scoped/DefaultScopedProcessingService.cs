@@ -8,6 +8,7 @@ using Integrify.Shared.Abstractions.Plugins;
 namespace Integrify.Clients.Worker.Service.Scoped;
 
 public sealed class DefaultScopedProcessingService(
+    ILogger<DefaultScopedProcessingService> logger,
     IList<IIntegration> integrations,
     IList<IPlugin> plugins,
     ICustomersIntegrationApi customersIntegrationApi,
@@ -24,6 +25,7 @@ public sealed class DefaultScopedProcessingService(
             if (string.IsNullOrEmpty(command))
             {
                 Console.Clear();
+                logger.PrintBanner();
                 continue;
             }
 
@@ -76,7 +78,7 @@ public sealed class DefaultScopedProcessingService(
 
     private string? ReadInput()
     {
-        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+        Console.ForegroundColor = ConsoleColor.Magenta;
         Console.Write(">> ");
         Console.ResetColor();
         var command = Console.ReadLine();
@@ -85,7 +87,7 @@ public sealed class DefaultScopedProcessingService(
 
     private void PrintLoadedPlugins()
     {
-        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+        Console.ForegroundColor = ConsoleColor.Magenta;
         Console.WriteLine("Loaded plugins:");
         Console.ResetColor();
         foreach (var plugin in plugins)

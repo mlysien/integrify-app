@@ -24,7 +24,7 @@ internal sealed class CustomersIntegrationProcess(
 
             if (customerModel.IsActive is not true)
             {
-                logger.LogInformation("Customer is not active, skipped");
+                logger.LogWarning("Customer is not active, skipped");
             }
             
             await drivenPort.PushAsync(customerModel);
