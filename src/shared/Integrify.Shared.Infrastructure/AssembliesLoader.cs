@@ -2,9 +2,9 @@
 
 namespace Integrify.Shared.Infrastructure;
 
-internal class AssembliesLoader
+internal abstract class AssembliesLoader
 {
-    public static IList<Assembly> Load(string assemblyPrefix)
+    public static IEnumerable<Assembly> Load(string assemblyPrefix)
     {
         var assemblies = AppDomain.CurrentDomain.GetAssemblies().ToList();
         var locations = assemblies.Where(x => !x.IsDynamic).Select(x => x.Location).ToArray();
