@@ -8,8 +8,7 @@ namespace Integrify.Integrations.Customers.Core.Process;
 internal sealed class CustomersIntegrationProcess(
     ILogger<CustomersIntegrationProcess> logger,
     ICustomersIntegrationDrivingPort drivingPort,
-    ICustomersIntegrationDrivenPort drivenPort) 
-    : ICustomersIntegrationProcess
+    ICustomersIntegrationDrivenPort drivenPort) : ICustomersIntegrationProcess
 {
     public async Task ExecuteIntegrationProcess()
     {

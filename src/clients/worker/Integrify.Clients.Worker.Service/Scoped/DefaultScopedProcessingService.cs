@@ -28,7 +28,7 @@ public sealed class DefaultScopedProcessingService(
                 logger.PrintBanner();
                 continue;
             }
-            
+
             if (command.Contains("sync"))
             {
                 var customersApi = nameof(customersIntegrationApi);
