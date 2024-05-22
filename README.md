@@ -1,47 +1,42 @@
 ![integrify_banner](docs/integrify.banner.png)
-# Integrify
-Infrastructure layer between ERP systems and e-commerce systems. Can be use for synchronization orders, customers, products and stock form the connected systems.
 
-> [!NOTE]  
-> Project is participating in the [100commitow](https://100commitow.pl/ "100commitow.pl") competition.
+# Overview ✨ 
+**Integrify** is an infrastructure tool that enables the creation of integration processes between e-commerce systems, such as stores, and ERP systems. It provides infrastructure based on several areas of integration:
+* Customers,
+* Orders,
+* Products,
+* Stocks.
 
-## 03/2024
-- [x] prepare concept schema
-- [x] create bootstapper project
-- [x] create shared layer
-- [x] create first simple module
-- [x] create all abstracions needed for modular monolith
-## 04/2024
-- [x] impementation of Order module
-- [x] impementation of Product module
-- [x] impementation of Stock module
-- [x] impementation of Customer module
-## 05/2024
-- [ ] create first ERP plugin
-- [ ] create first E-commerce plugin
-- [ ] create CLI for management integration process
-## 06/2024
-- [ ] create documentation website
-- [ ] adjust readme file with instrucion how to run
+In the integration process, external plugins are used as adapters for external e-commerce systems. The plugins provide data to the integration area, and after the integration process is complete, they transmit the data to another area.
 
-# Core features
-- [ ] Orders synchronization
-- [ ] Customers synchronization
-- [ ] Products synchronization 
-- [ ] Stock status synchronization
-- [ ] Creating orders documents (receipt/invoice)
-- [ ] Logging of synchronization process
-- [ ] Synchronization time scheduling
-- [ ] Synchronization direction management (Shop <-> ERP) 
+# Motivation 🔮
+The motivation to create this tool was born a few years ago when I was working as a .NET developer in the integration area team. I noticed a problem in creating custom integrations between e-commerce systems, which was the lack of a single infrastructure layer between the store and the ERP system. Each integration with an external e-commerce system required a significant amount of work to rebuild the application. 
 
-# Nice to have features
-- [ ] CLI for management synchronization
-- [ ] GUI for preview synchronization process
+The creation of the Integrify tool is intended to help solve the above problem to some extent. The application has been designed to separate the integration processes of areas from the implementation of integration with external e-commerce systems.
 
-# Concept
-![concept_image](docs/integrify.drawio.concept.png)
+# Dictionary 📘
 
-# Architecture
+**Integration** - specified area contains integration process focuses only on integration model included in the area.
+
+**Integration model** - shared model for ports, adapters and integration processes. 
+
+**Integration process** - uses integration area ports and model for execute integration strategy.
+
+**Port** - abstract interface of integration area contains methods allows to execute integration procesess
+
+**Adapter** - implements of specified integration area port. Contains the exact implementation of integration with an external e-commerce system.
+
+**Plugin** - provides adapters of integrations with an external e-commerce systems. Defines which adapters will be used by ports in the integration processes.
+
+
+# How to use 💻
+// todo 
+
+# Architecutre 📐
+// todo but it's hexagonal architecture
 
 # License
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
+> [!NOTE]  
+> Project is participating in the [100commitow](https://100commitow.pl/ "100commitow.pl") competition.
