@@ -28,6 +28,8 @@ The creation of the Integrify tool is intended to help solve the above problem t
 
 **Plugin** - provides adapters of integrations with an external e-commerce systems. Defines which adapters will be used by ports in the integration processes.
 
+# Documentation 
+
 
 # How to use 💻
 // todo 
