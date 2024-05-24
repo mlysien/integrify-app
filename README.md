@@ -42,3 +42,4 @@ The creation of the Integrify tool is intended to help solve the above problem t
 
 > [!NOTE]  
 > Project is participating in the [100commitow](https://100commitow.pl/ "100commitow.pl") competition.
+
