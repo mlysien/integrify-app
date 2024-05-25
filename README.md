@@ -32,7 +32,13 @@ The creation of the Integrify tool is intended to help solve the above problem t
 
 
 # How to use 💻
-// todo 
+// todo  
+
+## CLI
+
+## Own development 
+
+
 
 # Architecutre 📐
 // todo but it's hexagonal architecture
