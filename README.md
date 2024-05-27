@@ -38,8 +38,6 @@ The creation of the Integrify tool is intended to help solve the above problem t
 
 ## Own development 
 
-
-
 # Architecutre 📐
 // todo but it's hexagonal architecture
 
