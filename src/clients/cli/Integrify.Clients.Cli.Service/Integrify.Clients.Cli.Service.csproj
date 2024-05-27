@@ -19,5 +19,6 @@
       <ProjectReference Include="..\..\..\plugins\ErpSimulator\Integrify.Plugins.ErpSimulator.Api\Integrify.Plugins.ErpSimulator.Api.csproj" />
       <ProjectReference Include="..\..\..\plugins\ShopSimulator\Integrify.Plugins.ShopSimulator.Api\Integrify.Plugins.ShopSimulator.Api.csproj" />
       <ProjectReference Include="..\..\..\shared\Integrify.Shared.Infrastructure\Integrify.Shared.Infrastructure.csproj" />
+      <ProjectReference Include="..\Integrify.Clients.Cli.Interpreter\Integrify.Clients.Cli.Interpreter.csproj" />
     </ItemGroup>
 </Project>
