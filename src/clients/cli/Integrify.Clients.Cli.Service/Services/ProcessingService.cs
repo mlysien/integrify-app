@@ -1,3 +1,4 @@
+using Integrify.Clients.Cli.Interpreter;
 using Integrify.Integrations.Customers.Api.Public;
 using Integrify.Integrations.Orders.Api.Public;
 using Integrify.Integrations.Products.Api.Public;
@@ -9,6 +10,7 @@ namespace Integrify.Clients.Cli.Service.Services;
 
 public sealed class ProcessingService(
     ILogger<ProcessingService> logger,
+    IInterpreter interpreter,
     IList<IIntegration> integrations,
     IList<IPlugin> plugins,
     ICustomersIntegrationApi customersIntegrationApi,
@@ -29,6 +31,8 @@ public sealed class ProcessingService(
                 continue;
             }
 
+            await interpreter.Interpret(command);
+            
             if (command.Contains("sync"))
             {
                 var customersApi = nameof(customersIntegrationApi);
@@ -65,16 +69,6 @@ public sealed class ProcessingService(
                 
                 
             }
-            
-            switch (command)
-            {
-                case "integrations":
-                    PrintAvailableIntegrations();
-                    break;
-                case "plugins":
-                    PrintLoadedPlugins();
-                    break;
-            }
         }
     }
 
@@ -85,33 +79,5 @@ public sealed class ProcessingService(
         Console.ResetColor();
         var command = Console.ReadLine();
         return command;
-    }
-
-    private void PrintLoadedPlugins()
-    {
-        Console.ForegroundColor = ConsoleColor.Magenta;
-        Console.WriteLine("Loaded plugins:");
-        Console.ResetColor();
-        foreach (var plugin in plugins)
-        {            
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write("* ");
-            Console.ResetColor();
-            Console.WriteLine(plugin.Name);
-        }
-    }
-    
-    private void PrintAvailableIntegrations()
-    {
-        Console.ForegroundColor = ConsoleColor.DarkMagenta;
-        Console.WriteLine("Available integrations:");
-        Console.ResetColor();
-        foreach (var integration in integrations)
-        {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write("* ");
-            Console.ResetColor();
-            Console.WriteLine(integration.Name);
-        }
     }
 }

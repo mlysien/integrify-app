@@ -1,9 +1,19 @@
+using Integrify.Clients.Cli.Interpreter.Commands.Abstractions;
+
 namespace Integrify.Clients.Cli.Interpreter;
 
-public class CommandsInterpreter : IInterpreter
+public class CommandsInterpreter(IInfoCommand infoCommand) : IInterpreter
 {
-    public Task Interpret(string commandLine)
+    public async Task Interpret(string commandLine)
     {
-        throw new NotImplementedException();
+        var commands = new List<ICommand> { infoCommand };
+        var keyword = commandLine.Split(" ").First();
+        var options = commandLine.Split(" ").Skip(1).ToArray();
+        var command = commands.FirstOrDefault(cmd => cmd.Keyword == keyword);
+
+        if (command is not null)
+        {
+            await command.Execute(options);
+        }
     }
 }
