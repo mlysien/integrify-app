@@ -14,6 +14,18 @@ The motivation to create this tool was born a few years ago when I was working a
 
 The creation of the Integrify tool is intended to help solve the above problem to some extent. The application has been designed to separate the integration processes of areas from the implementation of integration with external e-commerce systems.
 
+
+# How to use? 💻
+![cli](asserts/integrify.cli.gif)
+
+### CLI commands:
+* `help` - displays available commands with information how to use them.
+* `info` - displays information about loaded plugins and integration areas.
+* `sync` - begins integration process of specified integration area.
+
+# Architecutre 📐
+![schema](asserts/integrify.schema.png)
+
 # Dictionary 📘
 
 **Integration** - specified area contains integration process focuses only on integration model included in the area.
@@ -27,22 +39,6 @@ The creation of the Integrify tool is intended to help solve the above problem t
 **Adapter** - implements of specified integration area port. Contains the exact implementation of integration with an external e-commerce system.
 
 **Plugin** - provides adapters of integrations with an external e-commerce systems. Defines which adapters will be used by ports in the integration processes.
-
-# Documentation 
-
-
-# CLI
-![cli](asserts/integrify.cli.gif)
-
-### Available commands:
-* `help` - displays available commands with information how to use them.
-* `info` - displays information about loaded plugins and integration areas.
-* `sync` - begins integration process of specified integration area.
-
-## Own development 
-
-# Architecutre 📐
-// todo but it's hexagonal architecture
 
 # License
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
