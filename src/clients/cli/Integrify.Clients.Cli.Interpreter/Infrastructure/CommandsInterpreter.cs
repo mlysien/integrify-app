@@ -1,13 +1,10 @@
+using Integrify.Clients.Cli.Interpreter.Abstractions;
 using Integrify.Clients.Cli.Interpreter.Commands.Abstractions;
 
-namespace Integrify.Clients.Cli.Interpreter;
+namespace Integrify.Clients.Cli.Interpreter.Infrastructure;
 
-public class CommandsInterpreter(
-    IInfoCommand infoCommand,
-    ISyncCommand syncCommand) : IInterpreter
+internal sealed class CommandsInterpreter(IInfoCommand infoCommand, ISyncCommand syncCommand) : IInterpreter
 {
-    
-    
     public async Task Interpret(string commandLine)
     {
         var commands = new List<ICommand> { infoCommand, syncCommand };
@@ -29,8 +26,11 @@ public class CommandsInterpreter(
     private void PrintHelp(IList<ICommand> commands)
     {
         Console.ForegroundColor = ConsoleColor.Magenta;
-        Console.WriteLine("Integrify is an infrastructure tool, try commands:");
+        Console.WriteLine("Integrify is an integration tool for synchronise data between ERP and e-commerce systems");
         Console.ResetColor();
+        Console.WriteLine("For start working with it, use one of available commands:");
+        Console.WriteLine();
+        
         foreach (var command in commands)
         {            
             command.Help();

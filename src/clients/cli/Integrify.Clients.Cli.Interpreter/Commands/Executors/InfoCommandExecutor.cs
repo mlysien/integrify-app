@@ -4,25 +4,27 @@ using Integrify.Shared.Abstractions.Plugins;
 
 namespace Integrify.Clients.Cli.Interpreter.Commands.Executors;
 
-public class InfoCommand(IList<IPlugin> plugins, IList<IIntegration> integrations) : IInfoCommand
+public class InfoCommandExecutor(IList<IPlugin> plugins, IList<IIntegration> integrations) : IInfoCommand
 {
     public string Keyword => "info";
 
-    public Task Execute(params string[] options)
+    public async Task Execute(params string[] options)
     {
-        if (options.Contains("--areas"))
+        var option = options.FirstOrDefault()?.ToLower();
+        
+        if (option != null && option.Contains("--areas"))
         {
-            PrintAvailableIntegrations();
-            return Task.CompletedTask;
+            PrintAvailableIntegrationAreas();
+            return;
         }
 
-        if (options.Contains("--plugins"))
+        if (option != null && option.Contains("--plugins"))
         {
             PrintLoadedPlugins();
-            return Task.CompletedTask;
+            return;
         }
-        
-        return Task.CompletedTask;
+
+        Help();
     }
 
     public void Help()
@@ -30,11 +32,10 @@ public class InfoCommand(IList<IPlugin> plugins, IList<IIntegration> integration
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.Write($"{Keyword}");
         Console.ResetColor();
-        Console.WriteLine(" - prints loaded plugins and available integration areas.");
-        Console.WriteLine("How to use:");
+        Console.WriteLine(" - prints loaded plugins or available integration areas.");
+        Console.Write("How to use: ");
         Console.ForegroundColor = ConsoleColor.DarkCyan;
-        Console.WriteLine($"{Keyword} --areas");
-        Console.WriteLine($"{Keyword} --plugins");
+        Console.WriteLine($"{Keyword} --plugins or --areas");
         Console.ResetColor();
     }
 
@@ -43,6 +44,7 @@ public class InfoCommand(IList<IPlugin> plugins, IList<IIntegration> integration
         Console.ForegroundColor = ConsoleColor.Magenta;
         Console.WriteLine("Loaded plugins:");
         Console.ResetColor();
+        
         foreach (var plugin in plugins)
         {          
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -52,11 +54,12 @@ public class InfoCommand(IList<IPlugin> plugins, IList<IIntegration> integration
         }
     }
     
-    private void PrintAvailableIntegrations()
+    private void PrintAvailableIntegrationAreas()
     {
         Console.ForegroundColor = ConsoleColor.DarkMagenta;
-        Console.WriteLine("Available integrations:");
+        Console.WriteLine("Available integration areas:");
         Console.ResetColor();
+        
         foreach (var integration in integrations)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;

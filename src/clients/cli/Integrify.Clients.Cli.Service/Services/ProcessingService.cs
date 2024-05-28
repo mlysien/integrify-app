@@ -1,4 +1,5 @@
 using Integrify.Clients.Cli.Interpreter;
+using Integrify.Clients.Cli.Interpreter.Abstractions;
 using Integrify.Integrations.Customers.Api.Public;
 using Integrify.Integrations.Orders.Api.Public;
 using Integrify.Integrations.Products.Api.Public;

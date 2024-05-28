@@ -1,4 +1,4 @@
-﻿namespace Integrify.Clients.Cli.Interpreter;
+﻿namespace Integrify.Clients.Cli.Interpreter.Abstractions;
 
 public interface IInterpreter
 {

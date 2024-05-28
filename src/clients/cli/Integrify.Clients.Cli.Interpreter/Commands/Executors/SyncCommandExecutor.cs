@@ -26,14 +26,14 @@ public class SyncCommandExecutor(
 
         var integrationApis = new Dictionary<string, IIntegrationApi>
         {
-            { nameof(customersIntegrationApi), customersIntegrationApi },
-            { nameof(ordersIntegrationApi), ordersIntegrationApi },
-            { nameof(productsIntegrationApi), productsIntegrationApi },
-            { nameof(stocksIntegrationApi), stocksIntegrationApi }
+            { nameof(customersIntegrationApi).Replace("IntegrationApi", string.Empty), customersIntegrationApi },
+            { nameof(ordersIntegrationApi).Replace("IntegrationApi", string.Empty), ordersIntegrationApi },
+            { nameof(productsIntegrationApi).Replace("IntegrationApi", string.Empty), productsIntegrationApi },
+            { nameof(stocksIntegrationApi).Replace("IntegrationApi", string.Empty), stocksIntegrationApi }
         };
 
         var area = options.FirstOrDefault()?.ToLower();
-        var integrationApi = integrationApis.FirstOrDefault(api => area != null && api.Key.Contains(area)).Value;
+        var integrationApi = integrationApis.FirstOrDefault(api => area != null && api.Key.Equals(area)).Value;
         
         if (integrationApi is not null)
         {
@@ -47,10 +47,9 @@ public class SyncCommandExecutor(
         Console.Write($"{Keyword}");
         Console.ResetColor();
         Console.WriteLine(" - begin synchronization process of specified integration area.");
-        Console.WriteLine("How to use:");
+        Console.Write("How to use: ");
         Console.ForegroundColor = ConsoleColor.DarkCyan;
         Console.WriteLine($"{Keyword} [integration area]");
         Console.ResetColor();
-
     }
 }

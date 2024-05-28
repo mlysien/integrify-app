@@ -9,7 +9,7 @@ public static class Extensions
 {
     public static void AddCommands(this IServiceCollection serviceCollection)
     {
-        serviceCollection.AddScoped<IInfoCommand, InfoCommand>();
+        serviceCollection.AddScoped<IInfoCommand, InfoCommandExecutor>();
         serviceCollection.AddScoped<ISyncCommand, SyncCommandExecutor>();
     }
 }

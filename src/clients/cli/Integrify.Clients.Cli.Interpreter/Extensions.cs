@@ -1,4 +1,6 @@
+using Integrify.Clients.Cli.Interpreter.Abstractions;
 using Integrify.Clients.Cli.Interpreter.Commands;
+using Integrify.Clients.Cli.Interpreter.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Integrify.Clients.Cli.Interpreter;
