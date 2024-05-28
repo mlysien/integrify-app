@@ -31,10 +31,13 @@ The creation of the Integrify tool is intended to help solve the above problem t
 # Documentation 
 
 
-# How to use 💻
-// todo  
+# CLI
+![cli](asserts/integrify.cli.gif)
 
-## CLI
+### Available commands:
+* `help` - displays available commands with information how to use them.
+* `info` - displays information about loaded plugins and integration areas.
+* `sync` - begins integration process of specified integration area.
 
 ## Own development 
 
