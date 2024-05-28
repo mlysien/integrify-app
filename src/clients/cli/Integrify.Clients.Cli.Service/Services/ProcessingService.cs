@@ -8,15 +8,7 @@ using Integrify.Shared.Abstractions.Plugins;
 
 namespace Integrify.Clients.Cli.Service.Services;
 
-public sealed class ProcessingService(
-    ILogger<ProcessingService> logger,
-    IInterpreter interpreter,
-    IList<IIntegration> integrations,
-    IList<IPlugin> plugins,
-    ICustomersIntegrationApi customersIntegrationApi,
-    IOrdersIntegrationApi ordersIntegrationApi,
-    IProductsIntegrationApi productsIntegrationApi,
-    IStocksIntegrationApi stocksIntegrationApi) : IProcessingService
+public sealed class ProcessingService(ILogger<ProcessingService> logger,IInterpreter interpreter) : IProcessingService
 {
     public async Task ProcessAsync(CancellationToken cancellationToken)
     {
@@ -32,43 +24,6 @@ public sealed class ProcessingService(
             }
 
             await interpreter.Interpret(command);
-            
-            if (command.Contains("sync"))
-            {
-                var customersApi = nameof(customersIntegrationApi);
-                var ordersApi = nameof(ordersIntegrationApi);
-                var productsApi = nameof(productsIntegrationApi);
-                var stocksApi = nameof(stocksIntegrationApi);
-                
-                foreach (var integration in integrations)
-                {
-                    if (command.Contains(integration.Name.ToLower()))
-                    {
-                        if (customersApi.Contains(integration.Name.ToLower()))
-                        {
-                            await customersIntegrationApi.RunIntegration();
-                        }
-                        
-                        if (ordersApi.Contains(integration.Name.ToLower()))
-                        {
-                            await ordersIntegrationApi.RunIntegration();
-                        }
-                        
-                        if (productsApi.Contains(integration.Name.ToLower()))
-                        {
-                            await productsIntegrationApi.RunIntegration();
-                        }
-                        
-                        if (stocksApi.Contains(integration.Name.ToLower()))
-                        {
-                            await stocksIntegrationApi.RunIntegration();
-                        }
-                    }
-                }
-                
-                
-                
-            }
         }
     }
 
