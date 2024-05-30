@@ -3,27 +3,41 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-
   	site: 'https://mlysien.github.io/integrify',
-  	base: 'integrify',
+  	base: '',
+	icon: '/public/favicon.ico',
   	integrations: [
 		starlight({
-			title: 'My Docs',
+			
+			title: 'integrify',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/mlysien/integrify',
 			},
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Overview',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', link: '/guides/example/' },
+						{ label: 'About', link: '/overview/about' },
+						{ label: 'Motivation', link: '/overview/motivation' }
 					],
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Architecture',
+					items: [
+						{ label: 'Concept', link: '/architecture/concept' },
+						{ label: 'Adapters', link: '/architecture/adapters' },
+						{ label: 'Ports', link: '/architecture/ports' },
+						{ label: 'Plugins', link: '/architecture/plugins' },
+						{ label: 'Integrations', link: '/architecture/integrations' }
+					],
 				},
+				{
+					label: 'How to use?',
+					items: [
+						{ label: 'CLI', link: '/architecture/concept' },
+						{ label: 'Self-develop', link: '/architecture/adapters' },
+					],
+				}
 			],
 		}),
 	],
