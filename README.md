@@ -1,4 +1,4 @@
-![integrify_banner](docs/integrify.banner.png)
+![integrify_banner](assets/integrify.banner.png)
 
 # Overview ✨ 
 **Integrify** is an infrastructure tool that enables the creation of integration processes between e-commerce systems, such as stores, and ERP systems. It provides infrastructure based on several areas of integration:
@@ -16,7 +16,7 @@ The creation of the Integrify tool is intended to help solve the above problem t
 
 
 # How to use? 💻
-![cli](asserts/integrify.cli.gif)
+![cli](assets/integrify.cli.gif)
 
 ### CLI commands:
 * `help` - displays available commands with information how to use them.
@@ -24,7 +24,7 @@ The creation of the Integrify tool is intended to help solve the above problem t
 * `sync` - begins integration process of specified integration area.
 
 # Architecutre 📐
-![schema](asserts/integrify.schema.png)
+![schema](assets/integrify.schema.png)
 
 # Dictionary 📘
 
