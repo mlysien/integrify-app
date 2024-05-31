@@ -1,6 +1,6 @@
 using Integrify.Shared.Abstractions.Integrations;
 
-namespace Integrify.Integrations.Customers.Port.Models;
+namespace Integrify.Integrations.Customers.Model;
 
 /// <summary>
 /// Represents integration model of customer entity 
