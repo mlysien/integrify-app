@@ -4,7 +4,7 @@ using Integrify.Shared.Abstractions.Plugins;
 
 namespace Integrify.Clients.Cli.Interpreter.Commands.Executors;
 
-public class InfoCommandExecutor(IList<IPlugin> plugins, IList<IIntegration> integrations) : IInfoCommand
+public class InfoCommandExecutor(IList<IPlugin> plugins, IList<IIntegrationArea> integrations) : IInfoCommand
 {
     public string Keyword => "info";
 

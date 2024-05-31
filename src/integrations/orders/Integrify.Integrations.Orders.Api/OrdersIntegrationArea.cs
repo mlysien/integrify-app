@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Integrify.Integrations.Orders.Api;
 
-internal sealed class OrdersIntegration : IIntegration
+internal sealed class OrdersIntegrationArea : IIntegrationArea
 {
     public string Name => "Orders";
     

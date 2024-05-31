@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Integrify.Integrations.Customers.Api;
 
-internal sealed class CustomersIntegration : IIntegration
+internal sealed class CustomersIntegrationArea : IIntegrationArea
 {
     public string Name => "Customers";
 

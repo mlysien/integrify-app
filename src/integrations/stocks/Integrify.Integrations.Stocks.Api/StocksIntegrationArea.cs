@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Integrify.Integrations.Stocks.Api;
 
-internal sealed class StocksIntegration : IIntegration
+internal sealed class StocksIntegrationArea : IIntegrationArea
 {
     public string Name => "Stocks";
     

@@ -5,7 +5,7 @@ namespace Integrify.Shared.Abstractions.Integrations;
 /// <summary>
 /// Interface for define integration 
 /// </summary>
-public interface IIntegration
+public interface IIntegrationArea
 {
     /// <summary>
     /// Integration name
