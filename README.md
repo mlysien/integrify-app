@@ -47,6 +47,10 @@ The creation of the Integrify tool is intended to help solve the above problem t
 
 **Plugin** - provides adapters of integrations with an external e-commerce systems. Defines which adapters will be used by ports in the integration processes.
 
+# Feel free to fork! 🙌
+
+..and build your own integrations using this tool as a template! All important informations you find in  [official documentation](https://mlysien.github.io/integrify/ "Integrify documentation").  Have fun!
+
 # License
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
