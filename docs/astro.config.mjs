@@ -24,11 +24,11 @@ export default defineConfig({
 				{
 					label: 'Architecture',
 					items: [
-						{ label: 'Concept', link: '/architecture/concept' },
-						{ label: 'Adapters', link: '/architecture/adapters' },
-						{ label: 'Ports', link: '/architecture/ports' },
+						{ label: 'Approach', link: '/architecture/approach' },
+						{ label: 'Integrations', link: '/architecture/integrations' },
 						{ label: 'Plugins', link: '/architecture/plugins' },
-						{ label: 'Integrations', link: '/architecture/integrations' }
+						{ label: 'Adapters', link: '/architecture/adapters' },
+						{ label: 'Ports', link: '/architecture/ports' }
 					],
 				},
 				{
