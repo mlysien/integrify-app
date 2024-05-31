@@ -1,4 +1,4 @@
-using Integrify.Integrations.Orders.Port.Models;
+using Integrify.Integrations.Orders.Model;
 using Integrify.Shared.Abstractions.Ports;
 
 namespace Integrify.Integrations.Orders.Port.Driven;

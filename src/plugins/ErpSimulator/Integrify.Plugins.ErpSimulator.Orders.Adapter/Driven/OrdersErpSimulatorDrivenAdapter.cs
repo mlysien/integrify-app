@@ -1,5 +1,5 @@
+using Integrify.Integrations.Orders.Model;
 using Integrify.Integrations.Orders.Port.Driven;
-using Integrify.Integrations.Orders.Port.Models;
 
 namespace Integrify.Plugins.ErpSimulator.Orders.Adapter.Driven;
 

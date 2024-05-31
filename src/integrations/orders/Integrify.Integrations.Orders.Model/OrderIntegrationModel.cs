@@ -1,6 +1,6 @@
 using Integrify.Shared.Abstractions.Integrations;
 
-namespace Integrify.Integrations.Orders.Port.Models;
+namespace Integrify.Integrations.Orders.Model;
 
 /// <summary>
 /// Represents integration model of order entity 

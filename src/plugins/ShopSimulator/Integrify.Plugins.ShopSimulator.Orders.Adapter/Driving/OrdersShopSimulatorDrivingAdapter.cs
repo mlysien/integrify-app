@@ -1,5 +1,5 @@
+using Integrify.Integrations.Orders.Model;
 using Integrify.Integrations.Orders.Port.Driving;
-using Integrify.Integrations.Orders.Port.Models;
 
 namespace Integrify.Plugins.ShopSimulator.Orders.Adapter.Driving;
 
