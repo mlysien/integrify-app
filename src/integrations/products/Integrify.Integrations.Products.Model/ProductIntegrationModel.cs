@@ -1,6 +1,6 @@
 using Integrify.Shared.Abstractions.Integrations;
 
-namespace Integrify.Integrations.Products.Port.Models;
+namespace Integrify.Integrations.Products.Model;
 
 /// <summary>
 /// Represents integration model of product entity 

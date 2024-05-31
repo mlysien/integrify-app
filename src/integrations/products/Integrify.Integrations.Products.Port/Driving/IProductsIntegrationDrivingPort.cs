@@ -1,4 +1,4 @@
-using Integrify.Integrations.Products.Port.Models;
+using Integrify.Integrations.Products.Model;
 using Integrify.Shared.Abstractions.Ports;
 
 namespace Integrify.Integrations.Products.Port.Driving;

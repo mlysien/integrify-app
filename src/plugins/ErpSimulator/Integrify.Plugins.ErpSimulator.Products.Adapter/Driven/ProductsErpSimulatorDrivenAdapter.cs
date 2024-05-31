@@ -1,5 +1,5 @@
+using Integrify.Integrations.Products.Model;
 using Integrify.Integrations.Products.Port.Driven;
-using Integrify.Integrations.Products.Port.Models;
 
 namespace Integrify.Plugins.ErpSimulator.Products.Adapter.Driven;
 
