@@ -14,6 +14,16 @@ The motivation to create this tool was born a few years ago when I was working a
 
 The creation of the Integrify tool is intended to help solve the above problem to some extent. The application has been designed to separate the integration processes of areas from the implementation of integration with external e-commerce systems.
 
+# Features 🎁
+
+* CLI for management integration process
+* Integration of **Customers** area
+* Integration of **Orders** area
+* Integration of **Products** area
+* Integration of **Stocks** area
+* Integration models for each area
+* Plugins for integrate with e-commerce systems
+* Easy to extend and maintenance
 
 # How to use? 💻
 ![cli](assets/integrify.cli.gif)
@@ -22,9 +32,6 @@ The creation of the Integrify tool is intended to help solve the above problem t
 * `help` - displays available commands with information how to use them.
 * `info` - displays information about loaded plugins and integration areas.
 * `sync` - begins integration process of specified integration area.
-
-# Architecutre 📐
-![schema](assets/integrify.schema.png)
 
 # Dictionary 📘
 
