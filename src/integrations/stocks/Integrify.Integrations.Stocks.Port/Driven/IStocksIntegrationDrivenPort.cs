@@ -1,4 +1,4 @@
-using Integrify.Integrations.Stocks.Port.Models;
+using Integrify.Integrations.Stocks.Model;
 using Integrify.Shared.Abstractions.Ports;
 
 namespace Integrify.Integrations.Stocks.Port.Driven;

@@ -1,6 +1,6 @@
 using Integrify.Shared.Abstractions.Integrations;
 
-namespace Integrify.Integrations.Stocks.Port.Models;
+namespace Integrify.Integrations.Stocks.Model;
 
 /// <summary>
 /// Represents integration model of stock entity 

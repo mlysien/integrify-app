@@ -1,5 +1,5 @@
+using Integrify.Integrations.Stocks.Model;
 using Integrify.Integrations.Stocks.Port.Driving;
-using Integrify.Integrations.Stocks.Port.Models;
 
 namespace Integrify.Plugins.ShopSimulator.Stocks.Adapter.Driving;
 

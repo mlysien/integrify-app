@@ -80,6 +80,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Integrations.Orde
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Integrations.Products.Model", "integrations\products\Integrify.Integrations.Products.Model\Integrify.Integrations.Products.Model.csproj", "{6336BF7E-FB8A-49E6-BCA6-7A27F65431B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Integrations.Stocks.Model", "integrations\stocks\Integrify.Integrations.Stocks.Model\Integrify.Integrations.Stocks.Model.csproj", "{22862C9C-F651-446A-A3BF-3D0661DDC5D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -122,6 +124,7 @@ Global
 		{1696B0B8-891C-4775-85DF-202D32FF1CDD} = {BC6988BD-55B2-43AA-AB18-443DC6539060}
 		{BAD5F5AD-2FD3-4A65-B395-7CC1F692971C} = {6AD84724-9F07-4F9E-AF1A-D67AB4F5E328}
 		{6336BF7E-FB8A-49E6-BCA6-7A27F65431B6} = {F9356A39-EC98-4A6D-9ABD-5491AD55CFC7}
+		{22862C9C-F651-446A-A3BF-3D0661DDC5D5} = {092239E2-E99D-41DE-ABDE-4EACFDBE4528}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{00C3D8DA-F2CC-43E8-A56D-B3B1DAFA6BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -240,5 +243,9 @@ Global
 		{6336BF7E-FB8A-49E6-BCA6-7A27F65431B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6336BF7E-FB8A-49E6-BCA6-7A27F65431B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6336BF7E-FB8A-49E6-BCA6-7A27F65431B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22862C9C-F651-446A-A3BF-3D0661DDC5D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22862C9C-F651-446A-A3BF-3D0661DDC5D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22862C9C-F651-446A-A3BF-3D0661DDC5D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22862C9C-F651-446A-A3BF-3D0661DDC5D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
