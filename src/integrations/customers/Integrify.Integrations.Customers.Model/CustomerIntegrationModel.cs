@@ -1,4 +1,5 @@
 using Integrify.Shared.Abstractions.Integrations;
+using Integrify.Shared.Abstractions.ValueObjects;
 
 namespace Integrify.Integrations.Customers.Model;
 
@@ -7,7 +8,7 @@ namespace Integrify.Integrations.Customers.Model;
 /// </summary>
 public sealed class CustomerIntegrationModel : IIntegrationModel
 {
-    public Guid Id { get; set; }
+    public IntegrationId Id { get; set; }
     
     public required string Name { get; set; }
 

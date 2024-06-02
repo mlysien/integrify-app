@@ -1,4 +1,5 @@
 using Integrify.Shared.Abstractions.Integrations;
+using Integrify.Shared.Abstractions.ValueObjects;
 
 namespace Integrify.Integrations.Orders.Model;
 
@@ -7,7 +8,7 @@ namespace Integrify.Integrations.Orders.Model;
 /// </summary>
 public sealed class OrderIntegrationModel : IIntegrationModel
 {
-    public Guid Id { get; set; }
+    public IntegrationId Id { get; set; }
 
     public DateTime CreatedAt { get; set; }
 }

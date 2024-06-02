@@ -1,5 +1,6 @@
 using Integrify.Integrations.Products.Model;
 using Integrify.Integrations.Products.Port.Driving;
+using Integrify.Shared.Abstractions.ValueObjects;
 
 namespace Integrify.Plugins.ErpSimulator.Products.Adapter.Driving;
 
@@ -11,13 +12,13 @@ public class ProductsErpSimulatorDrivingAdapter : IProductsIntegrationDrivingPor
             {
                 new()
                 {
-                    Id = Guid.NewGuid(),
+                    Id = new IntegrationId(Guid.NewGuid()),
                     Name = "Windows10 Home Edition",
                     Price = 100.0
                 },
                 new()
                 {
-                    Id = Guid.NewGuid(),
+                    Id = new IntegrationId(Guid.NewGuid()),
                     Name = "Apple iPhoneX",
                     Price = 450.25
                 }
@@ -29,7 +30,7 @@ public class ProductsErpSimulatorDrivingAdapter : IProductsIntegrationDrivingPor
     {
         return await Task.Run(() => new ProductIntegrationModel()
         {
-            Id = Guid.NewGuid(),
+            Id = new IntegrationId(Guid.NewGuid()),
             Name = "Windows10 Home Edition",
             Price = 100.0
         });

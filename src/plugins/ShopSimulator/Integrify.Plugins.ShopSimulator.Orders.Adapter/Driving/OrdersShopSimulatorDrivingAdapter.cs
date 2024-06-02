@@ -1,5 +1,6 @@
 using Integrify.Integrations.Orders.Model;
 using Integrify.Integrations.Orders.Port.Driving;
+using Integrify.Shared.Abstractions.ValueObjects;
 
 namespace Integrify.Plugins.ShopSimulator.Orders.Adapter.Driving;
 
@@ -11,22 +12,22 @@ internal sealed class OrdersShopSimulatorDrivingAdapter : IOrdersIntegrationDriv
         {
             new()
             {
-                Id = Guid.NewGuid(),
+                Id = new IntegrationId(Guid.NewGuid()),
                 CreatedAt = DateTime.Now.AddDays(-2)
             },
             new()
             {
-                Id = Guid.NewGuid(),
+                Id = new IntegrationId(Guid.NewGuid()),
                 CreatedAt = DateTime.Now.AddDays(-1)
             },
             new()
             {
-                Id = Guid.NewGuid(),
+                Id = new IntegrationId(Guid.NewGuid()),
                 CreatedAt = DateTime.Now.AddDays(-4)
             },
             new()
             {
-                Id = Guid.NewGuid(),
+                Id = new IntegrationId(Guid.NewGuid()),
                 CreatedAt = DateTime.Now.AddHours(-4)
             }
         });
@@ -36,7 +37,7 @@ internal sealed class OrdersShopSimulatorDrivingAdapter : IOrdersIntegrationDriv
     {
         return await Task.Run(() => new OrderIntegrationModel
         {
-            Id = Guid.NewGuid(),
+            Id = new IntegrationId(Guid.NewGuid()),
             CreatedAt = DateTime.Now.AddDays(-2)   
         });
     }

@@ -1,4 +1,5 @@
 using Integrify.Shared.Abstractions.Integrations;
+using Integrify.Shared.Abstractions.ValueObjects;
 
 namespace Integrify.Integrations.Stocks.Model;
 
@@ -7,7 +8,7 @@ namespace Integrify.Integrations.Stocks.Model;
 /// </summary>
 public sealed class StockIntegrationModel : IIntegrationModel
 {
-    public Guid Id { get; set; }
+    public IntegrationId Id { get; set; }
 
     public double Amount { get; set; }
 }
