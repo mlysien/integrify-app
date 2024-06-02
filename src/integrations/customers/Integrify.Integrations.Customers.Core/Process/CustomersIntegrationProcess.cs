@@ -1,6 +1,7 @@
 using Integrify.Integrations.Customers.Core.Abstractions;
 using Integrify.Integrations.Customers.Port.Driven;
 using Integrify.Integrations.Customers.Port.Driving;
+using Integrify.Shared.Abstractions.ValueObjects;
 using Microsoft.Extensions.Logging;
 
 namespace Integrify.Integrations.Customers.Core.Process;
@@ -10,11 +11,13 @@ internal sealed class CustomersIntegrationProcess(
     ICustomersIntegrationDrivingPort drivingPort,
     ICustomersIntegrationDrivenPort drivenPort) : ICustomersIntegrationProcess
 {
+    public IntegrationTimestamp LastIntegrationTimestamp { get; }
+
     public async Task ExecuteIntegrationProcess()
     {
         logger.LogInformation("Customers integration started");
 
-        var customersCollection = await drivingPort.FetchCollectionAsync();
+        var customersCollection = await drivingPort.FetchCollectionAsync(LastIntegrationTimestamp);
 
         logger.LogInformation("Received {count} customers", customersCollection.Count);
 

@@ -1,6 +1,7 @@
 using Integrify.Integrations.Stocks.Core.Abstractions;
 using Integrify.Integrations.Stocks.Port.Driven;
 using Integrify.Integrations.Stocks.Port.Driving;
+using Integrify.Shared.Abstractions.ValueObjects;
 using Microsoft.Extensions.Logging;
 
 namespace Integrify.Integrations.Stocks.Core.Process;
@@ -10,11 +11,13 @@ internal sealed class StocksIntegrationProcess(
     IStocksIntegrationDrivingPort drivingPort,
     IStocksIntegrationDrivenPort drivenPort) : IStocksIntegrationProcess
 {
+    public IntegrationTimestamp LastIntegrationTimestamp { get; }
+
     public async Task ExecuteIntegrationProcess()
     {
         logger.LogInformation("Stocks integration started");
         
-        var stocksCollection = await drivingPort.FetchCollectionAsync();
+        var stocksCollection = await drivingPort.FetchCollectionAsync(LastIntegrationTimestamp);
 
         logger.LogInformation("Received {count} stocks", stocksCollection.Count);
 

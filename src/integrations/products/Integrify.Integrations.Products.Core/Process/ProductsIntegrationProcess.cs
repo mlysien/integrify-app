@@ -1,6 +1,7 @@
 using Integrify.Integrations.Products.Core.Abstractions;
 using Integrify.Integrations.Products.Port.Driven;
 using Integrify.Integrations.Products.Port.Driving;
+using Integrify.Shared.Abstractions.ValueObjects;
 using Microsoft.Extensions.Logging;
 
 namespace Integrify.Integrations.Products.Core.Process;
@@ -10,11 +11,13 @@ internal sealed class ProductsIntegrationProcess(
     IProductsIntegrationDrivingPort drivingPort,
     IProductsIntegrationDrivenPort drivenPort) : IProductsIntegrationProcess
 {
+    public IntegrationTimestamp LastIntegrationTimestamp { get; }
+
     public async Task ExecuteIntegrationProcess()
     {
         logger.LogInformation("Products integration started");
         
-        var productsCollection = await drivingPort.FetchCollectionAsync();
+        var productsCollection = await drivingPort.FetchCollectionAsync(LastIntegrationTimestamp);
 
         logger.LogInformation("Received {count} products", productsCollection.Count);
 

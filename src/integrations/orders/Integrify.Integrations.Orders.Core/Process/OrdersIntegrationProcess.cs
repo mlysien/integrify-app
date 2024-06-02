@@ -1,6 +1,7 @@
 using Integrify.Integrations.Orders.Core.Abstractions;
 using Integrify.Integrations.Orders.Port.Driven;
 using Integrify.Integrations.Orders.Port.Driving;
+using Integrify.Shared.Abstractions.ValueObjects;
 using Microsoft.Extensions.Logging;
 
 namespace Integrify.Integrations.Orders.Core.Process;
@@ -10,11 +11,13 @@ internal class OrdersIntegrationProcess(
     IOrdersIntegrationDrivingPort drivingPort,
     IOrdersIntegrationDrivenPort drivenPort) : IOrdersIntegrationProcess
 {
+    public IntegrationTimestamp LastIntegrationTimestamp { get; }
+
     public async Task ExecuteIntegrationProcess()
     {
         logger.LogInformation("Orders integration started");
 
-        var ordersCollection = await drivingPort.FetchCollectionAsync();
+        var ordersCollection = await drivingPort.FetchCollectionAsync(LastIntegrationTimestamp);
 
         logger.LogInformation("Received {count} orders", ordersCollection.Count);
 
