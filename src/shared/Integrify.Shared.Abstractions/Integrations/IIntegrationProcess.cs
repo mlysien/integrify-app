@@ -1,3 +1,5 @@
+using Integrify.Shared.Abstractions.ValueObjects;
+
 namespace Integrify.Shared.Abstractions.Integrations;
 
 /// <summary>
@@ -5,6 +7,11 @@ namespace Integrify.Shared.Abstractions.Integrations;
 /// </summary>
 public interface IIntegrationProcess
 {
+    /// <summary>
+    /// Timestamp of last integration
+    /// </summary>
+    IntegrationTimestamp LastIntegrationTimestamp { get; }
+    
     /// <summary>
     /// Execute integration process
     /// </summary>
