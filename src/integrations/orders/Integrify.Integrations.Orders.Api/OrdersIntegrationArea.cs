@@ -1,5 +1,4 @@
 ﻿using Integrify.Integrations.Orders.Api.Public;
-using Integrify.Integrations.Orders.Api.Services;
 using Integrify.Integrations.Orders.Core;
 using Integrify.Shared.Abstractions.Integrations;
 using Microsoft.Extensions.DependencyInjection;
