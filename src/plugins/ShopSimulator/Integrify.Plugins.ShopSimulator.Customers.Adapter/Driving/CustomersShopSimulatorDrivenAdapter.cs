@@ -4,9 +4,10 @@ using Integrify.Shared.Abstractions.ValueObjects;
 
 namespace Integrify.Plugins.ShopSimulator.Customers.Adapter.Driving;
 
-public class CustomersShopSimulatorDrivingAdapter : ICustomersIntegrationDrivingPort
+internal sealed class CustomersShopSimulatorDrivingAdapter : ICustomersIntegrationDrivingPort
 {
-    public async Task<IReadOnlyCollection<CustomerIntegrationModel>> FetchCollectionAsync()
+    public async Task<IReadOnlyCollection<CustomerIntegrationModel>> FetchCollectionAsync(
+        IntegrationTimestamp timestamp)
     {
         return await Task.Run(() => new List<CustomerIntegrationModel>()
         {
@@ -31,7 +32,7 @@ public class CustomersShopSimulatorDrivingAdapter : ICustomersIntegrationDriving
         });
     }
 
-    public async Task<CustomerIntegrationModel> GetSingleAsync(Guid id)
+    public async Task<CustomerIntegrationModel> GetSingleAsync(IntegrationId id)
     {
         return await Task.Run(() => new CustomerIntegrationModel()
         {

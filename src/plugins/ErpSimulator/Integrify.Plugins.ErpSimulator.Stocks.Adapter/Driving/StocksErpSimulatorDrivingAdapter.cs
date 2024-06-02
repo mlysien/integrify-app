@@ -4,9 +4,9 @@ using Integrify.Shared.Abstractions.ValueObjects;
 
 namespace Integrify.Plugins.ErpSimulator.Stocks.Adapter.Driving;
 
-public class StocksErpSimulatorDrivingAdapter : IStocksIntegrationDrivingPort
+internal sealed class StocksErpSimulatorDrivingAdapter : IStocksIntegrationDrivingPort
 {
-    public async Task<IReadOnlyCollection<StockIntegrationModel>> FetchCollectionAsync()
+    public async Task<IReadOnlyCollection<StockIntegrationModel>> FetchCollectionAsync(IntegrationTimestamp timestamp)
     {
         return await Task.Run(() => new List<StockIntegrationModel>
         {
@@ -38,7 +38,7 @@ public class StocksErpSimulatorDrivingAdapter : IStocksIntegrationDrivingPort
         });
     }
 
-    public async Task<StockIntegrationModel> GetSingleAsync(Guid id)
+    public async Task<StockIntegrationModel> GetSingleAsync(IntegrationId id)
     {
         return await Task.Run(() => new StockIntegrationModel()
         {

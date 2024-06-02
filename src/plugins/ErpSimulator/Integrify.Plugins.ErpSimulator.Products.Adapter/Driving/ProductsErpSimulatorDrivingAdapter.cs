@@ -4,9 +4,9 @@ using Integrify.Shared.Abstractions.ValueObjects;
 
 namespace Integrify.Plugins.ErpSimulator.Products.Adapter.Driving;
 
-public class ProductsErpSimulatorDrivingAdapter : IProductsIntegrationDrivingPort
+internal sealed class ProductsErpSimulatorDrivingAdapter : IProductsIntegrationDrivingPort
 {
-    public async Task<IReadOnlyCollection<ProductIntegrationModel>> FetchCollectionAsync()
+    public async Task<IReadOnlyCollection<ProductIntegrationModel>> FetchCollectionAsync(IntegrationTimestamp timestamp)
     {
         return await Task.Run(() => new List<ProductIntegrationModel>()
             {
@@ -26,7 +26,7 @@ public class ProductsErpSimulatorDrivingAdapter : IProductsIntegrationDrivingPor
         );
     }
 
-    public async Task<ProductIntegrationModel> GetSingleAsync(Guid id)
+    public async Task<ProductIntegrationModel> GetSingleAsync(IntegrationId id)
     {
         return await Task.Run(() => new ProductIntegrationModel()
         {
