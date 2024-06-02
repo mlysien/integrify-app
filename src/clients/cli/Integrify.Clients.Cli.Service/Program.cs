@@ -4,10 +4,12 @@ using Integrify.Clients.Cli.Service.Services;
 using Integrify.Shared.Infrastructure.Integrations;
 using Integrify.Shared.Infrastructure.Logging;
 using Integrify.Shared.Infrastructure.Plugins;
+using Integrify.Shared.Infrastructure.Time;
 
 const string integrationAssemblyPrefix = "Integrify.Integrations."; 
 const string pluginAssemblyPrefix = "Integrify.Plugins."; 
 var builder = Host.CreateApplicationBuilder(args);
+builder.Services.AddClock();
 builder.Services.AddConsoleLogging();
 builder.Services.AddIntegrations(integrationAssemblyPrefix);
 builder.Services.AddPlugins(pluginAssemblyPrefix);
