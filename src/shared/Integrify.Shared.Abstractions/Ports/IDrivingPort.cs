@@ -1,4 +1,5 @@
 using Integrify.Shared.Abstractions.Integrations;
+using Integrify.Shared.Abstractions.ValueObjects;
 
 namespace Integrify.Shared.Abstractions.Ports;
 
@@ -11,11 +12,12 @@ public interface IDrivingPort<T> where T: class, IIntegrationModel
     /// <summary>
     /// Fetch collection of integration models
     /// </summary>
-    Task<IReadOnlyCollection<T>> FetchCollectionAsync();
+    /// <param name="timestamp">Timestamp of last integration</param>
+    Task<IReadOnlyCollection<T>> FetchCollectionAsync(IntegrationTimestamp timestamp);
 
     /// <summary>
     /// Get single integration model
     /// </summary>
     /// <param name="id">Unique identifier of integration model</param>
-    Task<T> GetSingleAsync(Guid id);
+    Task<T> GetSingleAsync(IntegrationId id);
 }
