@@ -4,7 +4,7 @@ namespace Integrify.Shared.Infrastructure.Time;
 
 public class Clock : IClock
 {
-    public long CurrentTimeTicks()
+    public long NowTicks()
     {
         return DateTime.UtcNow.Ticks;
     }

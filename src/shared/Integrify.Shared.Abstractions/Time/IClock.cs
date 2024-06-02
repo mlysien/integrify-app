@@ -2,5 +2,5 @@
 
 public interface IClock
 {
-    long CurrentTimeTicks();
+    long NowTicks();
 }
