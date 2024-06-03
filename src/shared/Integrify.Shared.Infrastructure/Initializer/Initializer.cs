@@ -1,41 +1,41 @@
-﻿using System.Text;
-using Integrify.Shared.Abstractions.Initializer;
+﻿using Integrify.Shared.Abstractions.Initializer;
 using Integrify.Shared.Abstractions.Integrations;
+using Integrify.Shared.Abstractions.Options;
 using Microsoft.Extensions.Logging;
 
 namespace Integrify.Shared.Infrastructure.Initializer;
 
-public class Initializer(
+internal sealed class Initializer(
     ILogger<Initializer> logger,
-    IList<IIntegrationArea> integrationAreas) 
+    IList<IIntegrationArea> integrationAreas,
+    IIntegrationOptionsProvider optionsProvider)
     : IInitializer
 {
-    private readonly string _repositoryDir =
-        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Integrify");
-    
-    
-    
-    public async Task InitIntegrationEnvironment()
+    public async Task InitializeAsync()
     {
-        if (!Directory.Exists(_repositoryDir))
+        var directory= Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Integrify");
+        
+        if (!Directory.Exists(directory))
         {
-            logger.LogWarning("Integrify directory doesn't exist, creating...");
-            Directory.CreateDirectory(_repositoryDir);
+            logger.LogWarning("{dir} config directory doesn't exist", "Integrify");
+            
+            Directory.CreateDirectory(directory);
+            
+            logger.LogInformation("{dir} config directory created", "Integrify");
         }
         
         foreach (var integrationArea in integrationAreas)
         {
-            var path = Path.Combine(_repositoryDir, $"{integrationArea.Name.ToLower()}.integration.config");
+            var path = Path.Combine(directory, $"{integrationArea.Name.ToLower()}.integration.json");
 
-            await WriteAsync(path, "Ile lat?");
+            if (!File.Exists(path))
+            {
+                logger.LogWarning("Not found config file for {area}", integrationArea.Name.ToLower());
+                
+                await optionsProvider.UpdateIntegrationOptions(integrationArea.Name, new IntegrationOptions());
+                
+                logger.LogInformation("{file} created", $"{integrationArea.Name.ToLower()}.integration.json");
+            }
         }
-    }
-    
-    private async Task WriteAsync(string path, string data)
-    {
-        var buffer = Encoding.UTF8.GetBytes(data);
-
-        await using var fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None, buffer.Length, true);
-        await fs.WriteAsync(buffer, 0, buffer.Length);
     }
 }
