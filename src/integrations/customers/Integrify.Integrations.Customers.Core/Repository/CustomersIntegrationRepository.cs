@@ -14,19 +14,19 @@ internal sealed class CustomersIntegrationRepository(
 
     public async Task<IntegrationTimestamp> GetLastIntegrationTimestampAsync()
     {
-        var options = await integrationOptionsProvider.GetIntegrationOptions(IntegrationArea);
+        var options = await integrationOptionsProvider.GetIntegrationOptionsAsync(IntegrationArea);
 
         return options.IntegrationTimestamp;
     }
 
     public async Task UpdateIntegrationTimestampAsync()
     {
-        var options = await integrationOptionsProvider.GetIntegrationOptions(IntegrationArea);
+        var options = await integrationOptionsProvider.GetIntegrationOptionsAsync(IntegrationArea);
 
         options.IntegrationTimestamp = new IntegrationTimestamp(clock.NowTicks());
 
         
         
-        await integrationOptionsProvider.UpdateIntegrationOptions(IntegrationArea, options);
+        await integrationOptionsProvider.UpdateIntegrationOptionsAsync(IntegrationArea, options);
     }
 }

@@ -32,7 +32,7 @@ internal sealed class Initializer(
             {
                 logger.LogWarning("Not found config file for {area}", integrationArea.Name.ToLower());
                 
-                await optionsProvider.UpdateIntegrationOptions(integrationArea.Name, new IntegrationOptions());
+                await optionsProvider.UpdateIntegrationOptionsAsync(integrationArea.Name, new IntegrationOptions());
                 
                 logger.LogInformation("{file} created", $"{integrationArea.Name.ToLower()}.integration.json");
             }

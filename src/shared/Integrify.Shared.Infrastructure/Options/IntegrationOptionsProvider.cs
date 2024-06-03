@@ -5,7 +5,7 @@ namespace Integrify.Shared.Infrastructure.Options;
 
 internal sealed class IntegrationOptionsProvider : IIntegrationOptionsProvider
 {
-    public async Task<IntegrationOptions> GetIntegrationOptions(string integrationArea)
+    public async Task<IntegrationOptions> GetIntegrationOptionsAsync(string integrationArea)
     {
         var optionsDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Integrify");
         var path = Path.Combine(optionsDirectory, $"{integrationArea.ToLower()}.integration.json");
@@ -17,7 +17,7 @@ internal sealed class IntegrationOptionsProvider : IIntegrationOptionsProvider
         return options ?? throw new InvalidCastException();
     }
 
-    public async Task UpdateIntegrationOptions(string integrationArea, IntegrationOptions options)
+    public async Task UpdateIntegrationOptionsAsync(string integrationArea, IntegrationOptions options)
     {
         var optionsDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Integrify");
         var path = Path.Combine(optionsDirectory, $"{integrationArea.ToLower()}.integration.json");
