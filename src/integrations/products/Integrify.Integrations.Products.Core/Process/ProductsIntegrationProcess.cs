@@ -1,24 +1,23 @@
 using Integrify.Integrations.Products.Core.Abstractions;
 using Integrify.Integrations.Products.Port.Driven;
 using Integrify.Integrations.Products.Port.Driving;
-using Integrify.Shared.Abstractions.Time;
-using Integrify.Shared.Abstractions.ValueObjects;
+using Integrify.Shared.Abstractions.Integrations;
 using Microsoft.Extensions.Logging;
 
 namespace Integrify.Integrations.Products.Core.Process;
 
 internal sealed class ProductsIntegrationProcess(
-    IClock clock,
-    IProductsIntegrationRepository repository,
     ILogger<ProductsIntegrationProcess> logger,
+    IIntegrationRepository integrationRepository,
     IProductsIntegrationDrivingPort drivingPort,
-    IProductsIntegrationDrivenPort drivenPort) : IProductsIntegrationProcess
+    IProductsIntegrationDrivenPort drivenPort) 
+    : IProductsIntegrationProcess
 {
     public async Task ExecuteIntegrationProcess()
     {
         logger.LogInformation("Products integration started");
 
-        var lastIntegrationTimestamp = await repository.GetLastIntegrationTimestamp();
+        var lastIntegrationTimestamp = await integrationRepository.GetLastIntegrationTimestamp("products");
         var productsCollection = await drivingPort.FetchCollectionAsync(lastIntegrationTimestamp);
 
         logger.LogInformation("Received {count} products", productsCollection.Count);
@@ -31,6 +30,6 @@ internal sealed class ProductsIntegrationProcess(
             await drivenPort.PushAsync(productModel);
         }
 
-        await repository.UpdateLastIntegrationTimestamp(new IntegrationTimestamp(clock.NowTicks()));
+        await integrationRepository.UpdateLastIntegrationTimestamp();
     }
 }
