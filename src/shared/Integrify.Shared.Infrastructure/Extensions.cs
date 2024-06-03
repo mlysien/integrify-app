@@ -1,8 +1,8 @@
 ﻿using Integrify.Shared.Infrastructure.Initializer;
 using Integrify.Shared.Infrastructure.Integrations;
 using Integrify.Shared.Infrastructure.Logging;
+using Integrify.Shared.Infrastructure.Options;
 using Integrify.Shared.Infrastructure.Plugins;
-using Integrify.Shared.Infrastructure.Repository;
 using Integrify.Shared.Infrastructure.Time;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,8 +16,8 @@ public static class Extensions
     {
         serviceCollection.AddClock();
         serviceCollection.AddInitializer();
+        serviceCollection.AddIntegrationOptionsProvider();
         serviceCollection.AddConsoleLogging();
-        serviceCollection.AddIntegrationRepository();
         serviceCollection.AddPlugins(pluginAssemblyPrefix);
         serviceCollection.AddIntegrations(integrationAssemblyPrefix);
     }

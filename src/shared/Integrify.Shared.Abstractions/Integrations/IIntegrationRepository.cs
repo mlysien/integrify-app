@@ -1,20 +1,16 @@
-﻿using Integrify.Shared.Abstractions.ValueObjects;
+﻿using Integrify.Shared.Abstractions.Options;
+using Integrify.Shared.Abstractions.ValueObjects;
 
 namespace Integrify.Shared.Abstractions.Integrations;
 
 /// <summary>
-/// Interface provide methods for get required data for integration area
+/// 
 /// </summary>
 public interface IIntegrationRepository
 {
-    /// <summary>
-    /// Returns timestamp of last integration
-    /// </summary>
-    Task<IntegrationTimestamp> GetLastIntegrationTimestamp();
+    public string IntegrationArea { get; }
     
-    /// <summary>
-    /// Updates timestamp of last integration
-    /// </summary>
-    /// <param name="timestamp">New timestamp</param>
-    Task UpdateLastIntegrationTimestamp(IntegrationTimestamp timestamp);
+    Task<IntegrationTimestamp> GetLastIntegrationTimestampAsync();
+    
+    Task UpdateIntegrationTimestampAsync();
 }
