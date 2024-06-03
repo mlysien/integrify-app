@@ -5,8 +5,8 @@ namespace Integrify.Integrations.Orders.Api;
 
 internal sealed class OrdersIntegrationApi(IOrdersIntegrationProcess ordersIntegrationProcess) : IOrdersIntegrationApi
 {
-    public async Task RunIntegration()
+    public async Task RunIntegrationAsync()
     {
-        await ordersIntegrationProcess.ExecuteIntegrationProcess();
+        await ordersIntegrationProcess.ExecuteIntegrationProcessAsync();
     }
 }

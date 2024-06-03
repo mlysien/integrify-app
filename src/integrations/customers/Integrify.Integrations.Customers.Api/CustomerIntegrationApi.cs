@@ -5,8 +5,8 @@ namespace Integrify.Integrations.Customers.Api;
 
 internal sealed class CustomerIntegrationApi(ICustomersIntegrationProcess customersIntegration) : ICustomersIntegrationApi
 {
-    public async Task RunIntegration()
+    public async Task RunIntegrationAsync()
     {
-        await customersIntegration.ExecuteIntegrationProcess();
+        await customersIntegration.ExecuteIntegrationProcessAsync();
     }
 }

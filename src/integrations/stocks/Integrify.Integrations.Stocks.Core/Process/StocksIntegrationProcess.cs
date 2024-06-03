@@ -11,7 +11,7 @@ internal sealed class StocksIntegrationProcess(
     IStocksIntegrationDrivingPort drivingPort,
     IStocksIntegrationDrivenPort drivenPort) : IStocksIntegrationProcess
 {
-    public async Task ExecuteIntegrationProcess()
+    public async Task ExecuteIntegrationProcessAsync()
     {
         logger.LogInformation("Stocks integration started");
 

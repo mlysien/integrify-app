@@ -8,5 +8,5 @@ public interface IIntegrationProcess
     /// <summary>
     /// Execute integration process
     /// </summary>
-    Task ExecuteIntegrationProcess();
+    Task ExecuteIntegrationProcessAsync();
 }

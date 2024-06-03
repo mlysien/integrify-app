@@ -8,5 +8,5 @@ public interface IIntegrationApi
     /// <summary>
     /// Method run integration
     /// </summary>
-    Task RunIntegration();
+    Task RunIntegrationAsync();
 }

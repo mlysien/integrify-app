@@ -13,7 +13,7 @@ internal sealed class CustomersIntegrationProcess(
     ICustomersIntegrationDrivenPort drivenPort) 
     : ICustomersIntegrationProcess
 {
-    public async Task ExecuteIntegrationProcess()
+    public async Task ExecuteIntegrationProcessAsync()
     {
         logger.LogInformation("Customers integration started");
 

@@ -5,8 +5,8 @@ namespace Integrify.Integrations.Products.Api;
 
 internal sealed class ProductsIntegrationApi(IProductsIntegrationProcess integrationProcess) : IProductsIntegrationApi
 {
-    public async Task RunIntegration()
+    public async Task RunIntegrationAsync()
     {
-        await integrationProcess.ExecuteIntegrationProcess();
+        await integrationProcess.ExecuteIntegrationProcessAsync();
     }
 }

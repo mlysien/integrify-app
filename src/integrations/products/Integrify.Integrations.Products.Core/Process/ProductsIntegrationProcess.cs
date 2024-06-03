@@ -12,7 +12,7 @@ internal sealed class ProductsIntegrationProcess(
     IProductsIntegrationDrivenPort drivenPort) 
     : IProductsIntegrationProcess
 {
-    public async Task ExecuteIntegrationProcess()
+    public async Task ExecuteIntegrationProcessAsync()
     {
         logger.LogInformation("Products integration started");
 

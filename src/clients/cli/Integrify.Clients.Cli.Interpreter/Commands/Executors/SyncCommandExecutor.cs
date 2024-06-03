@@ -37,7 +37,7 @@ public class SyncCommandExecutor(
         
         if (integrationApi is not null)
         {
-            await integrationApi.RunIntegration();
+            await integrationApi.RunIntegrationAsync();
         }
     }
 

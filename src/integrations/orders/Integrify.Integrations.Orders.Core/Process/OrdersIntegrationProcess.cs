@@ -12,7 +12,7 @@ internal class OrdersIntegrationProcess(
     IOrdersIntegrationDrivenPort drivenPort) 
     : IOrdersIntegrationProcess
 {
-    public async Task ExecuteIntegrationProcess()
+    public async Task ExecuteIntegrationProcessAsync()
     {
         logger.LogInformation("Orders integration started");
 
