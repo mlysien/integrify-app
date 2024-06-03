@@ -8,11 +8,6 @@ namespace Integrify.Shared.Abstractions.Integrations;
 public interface IIntegrationRepository
 {
     /// <summary>
-    /// Returns name of integration area
-    /// </summary>
-    public string IntegrationArea { get; }
-    
-    /// <summary>
     /// Returns timestamp of last integration
     /// </summary>
     Task<IntegrationTimestamp> GetLastIntegrationTimestampAsync();

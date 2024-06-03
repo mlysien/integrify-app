@@ -1,7 +1,6 @@
 using Integrify.Integrations.Customers.Core.Abstractions;
 using Integrify.Integrations.Customers.Port.Driven;
 using Integrify.Integrations.Customers.Port.Driving;
-using Integrify.Shared.Abstractions.Integrations;
 using Microsoft.Extensions.Logging;
 
 namespace Integrify.Integrations.Customers.Core.Process;

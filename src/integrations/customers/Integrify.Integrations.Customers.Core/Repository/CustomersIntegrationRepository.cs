@@ -10,7 +10,7 @@ internal sealed class CustomersIntegrationRepository(
     IIntegrationOptionsProvider integrationOptionsProvider)
     : ICustomersIntegrationRepository
 {
-    public string IntegrationArea => "customers";
+    private const string IntegrationArea = "customers";
 
     public async Task<IntegrationTimestamp> GetLastIntegrationTimestampAsync()
     {
