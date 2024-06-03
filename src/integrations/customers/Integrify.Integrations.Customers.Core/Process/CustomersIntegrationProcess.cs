@@ -8,7 +8,7 @@ namespace Integrify.Integrations.Customers.Core.Process;
 
 internal sealed class CustomersIntegrationProcess(
     ILogger<CustomersIntegrationProcess> logger,
-    IIntegrationRepository integrationRepository,
+    ICustomersIntegrationRepository repository,
     ICustomersIntegrationDrivingPort drivingPort,
     ICustomersIntegrationDrivenPort drivenPort) 
     : ICustomersIntegrationProcess
@@ -17,9 +17,8 @@ internal sealed class CustomersIntegrationProcess(
     {
         logger.LogInformation("Customers integration started");
 
-        var lastIntegrationTimestamp = await integrationRepository.GetLastIntegrationTimestamp("customers");
-        
-        var customersCollection = await drivingPort.FetchCollectionAsync(lastIntegrationTimestamp);
+        var timestamp = await repository.GetLastIntegrationTimestampAsync();
+        var customersCollection = await drivingPort.FetchCollectionAsync(timestamp);
 
         logger.LogInformation("Received {count} customers", customersCollection.Count);
 
@@ -35,6 +34,6 @@ internal sealed class CustomersIntegrationProcess(
             await drivenPort.PushAsync(customerModel);
         }
 
-        await integrationRepository.UpdateLastIntegrationTimestamp();
+        await repository.UpdateIntegrationTimestampAsync();
     }
 }
