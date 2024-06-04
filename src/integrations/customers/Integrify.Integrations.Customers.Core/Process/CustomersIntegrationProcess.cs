@@ -23,16 +23,19 @@ internal sealed class CustomersIntegrationProcess(
 
         foreach (var customerModel in customersCollection)
         {
-            logger.LogInformation("Processing customer with Id: {id}", customerModel.Id);
+            logger.LogInformation("Processing customer with Id: {id}, Name: {name}", 
+                customerModel.Id.Value, customerModel.Name);
 
             if (customerModel.IsActive is not true)
             {
                 logger.LogWarning("Customer is not active, skipped");
             }
-            
+
             await drivenPort.PushAsync(customerModel);
         }
-
+        
         await repository.UpdateIntegrationTimestampAsync();
+        
+        logger.LogInformation("Customers integration finished");
     }
 }

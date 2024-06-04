@@ -24,11 +24,13 @@ internal class OrdersIntegrationProcess(
         foreach (var orderModel in ordersCollection)
         {
             logger.LogInformation("Processing order with Id: {id}, createdAt: {date}", 
-                orderModel.Id, orderModel.CreatedAt);
+                orderModel.Id.Value, orderModel.CreatedAt);
 
             await drivenPort.PushAsync(orderModel);
         }
 
         await repository.UpdateIntegrationTimestampAsync();
+        
+        logger.LogInformation("Orders integration finished");
     }
 }

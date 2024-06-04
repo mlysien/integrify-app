@@ -22,8 +22,8 @@ internal sealed class StocksIntegrationProcess(
 
         foreach (var stockModel in stocksCollection)
         {
-            logger.LogInformation("Processing stock with Id: {id}, Amount: {amount}", 
-                stockModel.Id, stockModel.Amount);
+            logger.LogInformation("Processing stock with Id: {id} of Product: {product}, Amount: {amount}", 
+                stockModel.Id.Value, stockModel.Product.Name, stockModel.Amount);
 
             await drivenPort.PushAsync(stockModel);
         }

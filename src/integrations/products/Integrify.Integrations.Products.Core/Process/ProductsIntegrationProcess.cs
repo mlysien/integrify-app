@@ -30,5 +30,7 @@ internal sealed class ProductsIntegrationProcess(
         }
 
         await repository.UpdateIntegrationTimestampAsync();
+        
+        logger.LogInformation("Products integration finished");
     }
 }
