@@ -1,4 +1,5 @@
 ﻿using Integrify.Plugins.ErpSimulator.Customers.Adapter;
+using Integrify.Plugins.ErpSimulator.Domain;
 using Integrify.Plugins.ErpSimulator.Orders.Adapter;
 using Integrify.Plugins.ErpSimulator.Products.Adapter;
 using Integrify.Plugins.ErpSimulator.Stocks.Adapter;
@@ -13,6 +14,7 @@ public class ErpSimulatorPlugin : IPlugin
     
     public void AddPluginDependencies(IServiceCollection serviceCollection)
     {
+        serviceCollection.AddErpSimulatorDomain();
         serviceCollection.AddCustomersAdapters();
         serviceCollection.AddOrdersAdapters();
         serviceCollection.AddProductsAdapters();

@@ -48,13 +48,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ErpSimulator", "ErpSimulato
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ErpSimulator.Api", "plugins\ErpSimulator\Integrify.Plugins.ErpSimulator.Api\Integrify.Plugins.ErpSimulator.Api.csproj", "{6A47E351-8960-4BC6-815B-715C89B085A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ErpSimulator.Customers.Adapter", "plugins\ErpSimulator\Integrify.Plugins.ErpSimulator.Customers.Adapter\Integrify.Plugins.ErpSimulator.Customers.Adapter.csproj", "{3E07BFAE-866F-4485-A98F-9986144AA57F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ErpSimulator.Customers.Adapter", "plugins\ErpSimulator\Adapters\Integrify.Plugins.ErpSimulator.Customers.Adapter\Integrify.Plugins.ErpSimulator.Customers.Adapter.csproj", "{3E07BFAE-866F-4485-A98F-9986144AA57F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ErpSimulator.Orders.Adapter", "plugins\ErpSimulator\Integrify.Plugins.ErpSimulator.Orders.Adapter\Integrify.Plugins.ErpSimulator.Orders.Adapter.csproj", "{8E42CC78-FCEB-48A8-9C00-E04AE14A9E61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ErpSimulator.Orders.Adapter", "plugins\ErpSimulator\Adapters\Integrify.Plugins.ErpSimulator.Orders.Adapter\Integrify.Plugins.ErpSimulator.Orders.Adapter.csproj", "{8E42CC78-FCEB-48A8-9C00-E04AE14A9E61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ErpSimulator.Products.Adapter", "plugins\ErpSimulator\Integrify.Plugins.ErpSimulator.Products.Adapter\Integrify.Plugins.ErpSimulator.Products.Adapter.csproj", "{24F9AFEE-E2E6-400A-927C-ABE0F44FF7C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ErpSimulator.Products.Adapter", "plugins\ErpSimulator\Adapters\Integrify.Plugins.ErpSimulator.Products.Adapter\Integrify.Plugins.ErpSimulator.Products.Adapter.csproj", "{24F9AFEE-E2E6-400A-927C-ABE0F44FF7C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ErpSimulator.Stocks.Adapter", "plugins\ErpSimulator\Integrify.Plugins.ErpSimulator.Stocks.Adapter\Integrify.Plugins.ErpSimulator.Stocks.Adapter.csproj", "{E8049A58-B802-466B-B79A-0980B48743C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ErpSimulator.Stocks.Adapter", "plugins\ErpSimulator\Adapters\Integrify.Plugins.ErpSimulator.Stocks.Adapter\Integrify.Plugins.ErpSimulator.Stocks.Adapter.csproj", "{E8049A58-B802-466B-B79A-0980B48743C6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShopSimulator", "ShopSimulator", "{4B646CAA-957E-457C-BB71-65CC0E6175B0}"
 EndProject
@@ -82,6 +82,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Integrations.Prod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Integrations.Stocks.Model", "integrations\stocks\Integrify.Integrations.Stocks.Model\Integrify.Integrations.Stocks.Model.csproj", "{22862C9C-F651-446A-A3BF-3D0661DDC5D5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapters", "Adapters", "{66D29777-A98C-459D-8A85-ADA41373AAB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ErpSimulator.Domain", "plugins\ErpSimulator\Integrify.Plugins.ErpSimulator.Domain\Integrify.Plugins.ErpSimulator.Domain.csproj", "{A1D93017-9760-401D-A46E-44F5CB327DD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -108,10 +112,6 @@ Global
 		{66EA8B78-2F3E-47AA-96B8-D4E3EFCEF580} = {092239E2-E99D-41DE-ABDE-4EACFDBE4528}
 		{ADF5E769-CBF1-4827-AAD5-35A76F2C6FFF} = {7A53ACF2-C0C2-4760-BA08-D41E3EBD82BD}
 		{6A47E351-8960-4BC6-815B-715C89B085A2} = {ADF5E769-CBF1-4827-AAD5-35A76F2C6FFF}
-		{3E07BFAE-866F-4485-A98F-9986144AA57F} = {ADF5E769-CBF1-4827-AAD5-35A76F2C6FFF}
-		{8E42CC78-FCEB-48A8-9C00-E04AE14A9E61} = {ADF5E769-CBF1-4827-AAD5-35A76F2C6FFF}
-		{24F9AFEE-E2E6-400A-927C-ABE0F44FF7C0} = {ADF5E769-CBF1-4827-AAD5-35A76F2C6FFF}
-		{E8049A58-B802-466B-B79A-0980B48743C6} = {ADF5E769-CBF1-4827-AAD5-35A76F2C6FFF}
 		{4B646CAA-957E-457C-BB71-65CC0E6175B0} = {7A53ACF2-C0C2-4760-BA08-D41E3EBD82BD}
 		{735B9325-B448-4D2E-9917-87A8B84C467D} = {4B646CAA-957E-457C-BB71-65CC0E6175B0}
 		{06DEC7A3-A281-46D8-9B08-AA12870C02C9} = {4B646CAA-957E-457C-BB71-65CC0E6175B0}
@@ -125,6 +125,12 @@ Global
 		{BAD5F5AD-2FD3-4A65-B395-7CC1F692971C} = {6AD84724-9F07-4F9E-AF1A-D67AB4F5E328}
 		{6336BF7E-FB8A-49E6-BCA6-7A27F65431B6} = {F9356A39-EC98-4A6D-9ABD-5491AD55CFC7}
 		{22862C9C-F651-446A-A3BF-3D0661DDC5D5} = {092239E2-E99D-41DE-ABDE-4EACFDBE4528}
+		{66D29777-A98C-459D-8A85-ADA41373AAB7} = {ADF5E769-CBF1-4827-AAD5-35A76F2C6FFF}
+		{3E07BFAE-866F-4485-A98F-9986144AA57F} = {66D29777-A98C-459D-8A85-ADA41373AAB7}
+		{8E42CC78-FCEB-48A8-9C00-E04AE14A9E61} = {66D29777-A98C-459D-8A85-ADA41373AAB7}
+		{24F9AFEE-E2E6-400A-927C-ABE0F44FF7C0} = {66D29777-A98C-459D-8A85-ADA41373AAB7}
+		{E8049A58-B802-466B-B79A-0980B48743C6} = {66D29777-A98C-459D-8A85-ADA41373AAB7}
+		{A1D93017-9760-401D-A46E-44F5CB327DD9} = {ADF5E769-CBF1-4827-AAD5-35A76F2C6FFF}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{00C3D8DA-F2CC-43E8-A56D-B3B1DAFA6BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -247,5 +253,9 @@ Global
 		{22862C9C-F651-446A-A3BF-3D0661DDC5D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22862C9C-F651-446A-A3BF-3D0661DDC5D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22862C9C-F651-446A-A3BF-3D0661DDC5D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1D93017-9760-401D-A46E-44F5CB327DD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1D93017-9760-401D-A46E-44F5CB327DD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1D93017-9760-401D-A46E-44F5CB327DD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1D93017-9760-401D-A46E-44F5CB327DD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

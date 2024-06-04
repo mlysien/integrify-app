@@ -7,10 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\integrations\orders\Integrify.Integrations.Orders.Port\Integrify.Integrations.Orders.Port.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
+      <PackageReference Include="Bogus" Version="35.5.1" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
     </ItemGroup>
 

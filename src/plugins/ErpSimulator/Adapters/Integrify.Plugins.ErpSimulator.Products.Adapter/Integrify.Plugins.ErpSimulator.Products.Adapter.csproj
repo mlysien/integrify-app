@@ -7,10 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\integrations\stocks\Integrify.Integrations.Stocks.Port\Integrify.Integrations.Stocks.Port.csproj" />
+      <ProjectReference Include="..\..\..\..\integrations\products\Integrify.Integrations.Products.Port\Integrify.Integrations.Products.Port.csproj" />
+      <ProjectReference Include="..\..\Integrify.Plugins.ErpSimulator.Domain\Integrify.Plugins.ErpSimulator.Domain.csproj" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Bogus" Version="35.5.1" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
     </ItemGroup>
 

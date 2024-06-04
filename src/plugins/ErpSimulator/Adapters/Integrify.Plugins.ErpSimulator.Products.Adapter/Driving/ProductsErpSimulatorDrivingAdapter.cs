@@ -1,0 +1,44 @@
+using Integrify.Integrations.Products.Model;
+using Integrify.Integrations.Products.Port.Driving;
+using Integrify.Plugins.ErpSimulator.Domain.Repositories.Abstractions;
+using Integrify.Shared.Abstractions.ValueObjects;
+
+namespace Integrify.Plugins.ErpSimulator.Products.Adapter.Driving;
+
+internal sealed class ProductsErpSimulatorDrivingAdapter(IProductRepository repository) : IProductsIntegrationDrivingPort
+{
+    public async Task<IReadOnlyCollection<ProductIntegrationModel>> FetchCollectionAsync(IntegrationTimestamp timestamp)
+    {
+        var integrationModelProducts = new List<ProductIntegrationModel>();
+        var products = await repository.GetProductsAsync();
+        
+        foreach (var product in products)
+        {
+            if (product.LastUpdated.Ticks >= timestamp.Ticks)
+            {
+                integrationModelProducts.Add(new ProductIntegrationModel()
+                {
+                    Id = new IntegrationId(product.Id),
+                    Name = product.Name,
+                    Category = product.Category,
+                    Price = product.Price,
+                    TaxRate = product.Tax
+                });
+            }
+        }
+
+        return integrationModelProducts;
+    }
+
+    public async Task<ProductIntegrationModel> GetSingleAsync(IntegrationId id)
+    {
+        return await Task.Run(() => new ProductIntegrationModel()
+        {    
+            Id = new IntegrationId(Guid.NewGuid()),
+            Name = "Windows10 Home Edition",
+            Category = "Software",
+            TaxRate = 0.23f,
+            Price = 100.0
+        });
+    }
+}

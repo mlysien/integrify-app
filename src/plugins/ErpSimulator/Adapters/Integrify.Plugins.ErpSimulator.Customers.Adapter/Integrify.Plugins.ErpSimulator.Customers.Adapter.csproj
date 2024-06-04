@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\integrations\customers\Integrify.Integrations.Customers.Port\Integrify.Integrations.Customers.Port.csproj" />
+      <ProjectReference Include="..\..\Integrify.Plugins.ErpSimulator.Domain\Integrify.Plugins.ErpSimulator.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
