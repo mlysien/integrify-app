@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\integrations\customers\Integrify.Integrations.Customers.Port\Integrify.Integrations.Customers.Port.csproj" />
+      <ProjectReference Include="..\..\..\..\integrations\customers\Integrify.Integrations.Customers.Port\Integrify.Integrations.Customers.Port.csproj" />
     </ItemGroup>
 
 </Project>

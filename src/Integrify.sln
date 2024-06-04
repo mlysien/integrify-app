@@ -60,13 +60,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShopSimulator", "ShopSimula
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ShopSimulator.Api", "plugins\ShopSimulator\Integrify.Plugins.ShopSimulator.Api\Integrify.Plugins.ShopSimulator.Api.csproj", "{735B9325-B448-4D2E-9917-87A8B84C467D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ShopSimulator.Customers.Adapter", "plugins\ShopSimulator\Integrify.Plugins.ShopSimulator.Customers.Adapter\Integrify.Plugins.ShopSimulator.Customers.Adapter.csproj", "{06DEC7A3-A281-46D8-9B08-AA12870C02C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ShopSimulator.Customers.Adapter", "plugins\ShopSimulator\Adapters\Integrify.Plugins.ShopSimulator.Customers.Adapter\Integrify.Plugins.ShopSimulator.Customers.Adapter.csproj", "{06DEC7A3-A281-46D8-9B08-AA12870C02C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ShopSimulator.Orders.Adapter", "plugins\ShopSimulator\Integrify.Plugins.ShopSimulator.Orders.Adapter\Integrify.Plugins.ShopSimulator.Orders.Adapter.csproj", "{0E99BF1F-F427-4C2F-A1A0-1FF7998D1C64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ShopSimulator.Orders.Adapter", "plugins\ShopSimulator\Adapters\Integrify.Plugins.ShopSimulator.Orders.Adapter\Integrify.Plugins.ShopSimulator.Orders.Adapter.csproj", "{0E99BF1F-F427-4C2F-A1A0-1FF7998D1C64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ShopSimulator.Products.Adapter", "plugins\ShopSimulator\Integrify.Plugins.ShopSimulator.Products.Adapter\Integrify.Plugins.ShopSimulator.Products.Adapter.csproj", "{89E82790-B839-44A4-823F-BB1FC06D4BA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ShopSimulator.Products.Adapter", "plugins\ShopSimulator\Adapters\Integrify.Plugins.ShopSimulator.Products.Adapter\Integrify.Plugins.ShopSimulator.Products.Adapter.csproj", "{89E82790-B839-44A4-823F-BB1FC06D4BA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ShopSimulator.Stocks.Adapter", "plugins\ShopSimulator\Integrify.Plugins.ShopSimulator.Stocks.Adapter\Integrify.Plugins.ShopSimulator.Stocks.Adapter.csproj", "{A95D7D48-8AB5-4A60-95E2-96AAE34874CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrify.Plugins.ShopSimulator.Stocks.Adapter", "plugins\ShopSimulator\Adapters\Integrify.Plugins.ShopSimulator.Stocks.Adapter\Integrify.Plugins.ShopSimulator.Stocks.Adapter.csproj", "{A95D7D48-8AB5-4A60-95E2-96AAE34874CC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cli", "Cli", "{61158FEC-63BB-4CCF-9B1D-B93C1A0E860D}"
 EndProject
