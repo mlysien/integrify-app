@@ -12,6 +12,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\..\integrations\orders\Integrify.Integrations.Orders.Port\Integrify.Integrations.Orders.Port.csproj" />
+      <ProjectReference Include="..\..\Integrify.Plugins.ShopSimulator.Domain\Integrify.Plugins.ShopSimulator.Domain.csproj" />
     </ItemGroup>
 
 </Project>

@@ -16,7 +16,7 @@ internal sealed class StockRepository : Faker<Stock>, IStockRepository
             Description = f.Commerce.ProductDescription()
         });
         RuleFor(d => d.Amount, f => f.Random.Number(1, 20));
-        RuleFor(d => d.LastUpdated, f => DateTime.UtcNow.AddSeconds(f.Random.Number(-30, 5)));
+        RuleFor(d => d.LastUpdated, f => DateTime.UtcNow.AddHours(f.Random.Number(-5, 1)));
     }
     
     public Task<List<Stock>> GetStocksAsync()

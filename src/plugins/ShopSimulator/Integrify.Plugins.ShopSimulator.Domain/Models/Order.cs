@@ -1,4 +1,4 @@
-﻿namespace Integrify.Plugins.ErpSimulator.Domain.Models;
+﻿namespace Integrify.Plugins.ShopSimulator.Domain.Models;
 
 public class Order
 {

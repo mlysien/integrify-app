@@ -32,13 +32,15 @@ internal sealed class ProductsErpSimulatorDrivingAdapter(IProductRepository repo
 
     public async Task<ProductIntegrationModel> GetSingleAsync(IntegrationId id)
     {
-        return await Task.Run(() => new ProductIntegrationModel()
-        {    
-            Id = new IntegrationId(Guid.NewGuid()),
-            Name = "Windows10 Home Edition",
-            Category = "Software",
-            TaxRate = 0.23f,
-            Price = 100.0
-        });
+        var product = await repository.GetProductAsync(id.Value);
+
+        return new ProductIntegrationModel()
+        {
+            Id = id,
+            Name = product.Name,
+            Price = product.Price,
+            TaxRate = product.Tax,
+            Category = product.Category
+        };
     }
 }

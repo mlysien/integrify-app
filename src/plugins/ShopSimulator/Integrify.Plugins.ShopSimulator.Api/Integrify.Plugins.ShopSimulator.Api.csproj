@@ -12,6 +12,7 @@
       <ProjectReference Include="..\Adapters\Integrify.Plugins.ShopSimulator.Orders.Adapter\Integrify.Plugins.ShopSimulator.Orders.Adapter.csproj" />
       <ProjectReference Include="..\Adapters\Integrify.Plugins.ShopSimulator.Products.Adapter\Integrify.Plugins.ShopSimulator.Products.Adapter.csproj" />
       <ProjectReference Include="..\Adapters\Integrify.Plugins.ShopSimulator.Stocks.Adapter\Integrify.Plugins.ShopSimulator.Stocks.Adapter.csproj" />
+      <ProjectReference Include="..\Integrify.Plugins.ShopSimulator.Domain\Integrify.Plugins.ShopSimulator.Domain.csproj" />
     </ItemGroup>
 
 </Project>

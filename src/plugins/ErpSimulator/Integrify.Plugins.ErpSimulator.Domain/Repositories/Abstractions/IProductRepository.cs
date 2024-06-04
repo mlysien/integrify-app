@@ -5,4 +5,6 @@ namespace Integrify.Plugins.ErpSimulator.Domain.Repositories.Abstractions;
 public interface IProductRepository
 {
     Task<List<Product>> GetProductsAsync();
+
+    Task<Product> GetProductAsync(Guid id);
 }

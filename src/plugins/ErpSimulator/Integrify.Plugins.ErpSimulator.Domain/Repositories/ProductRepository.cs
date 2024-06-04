@@ -14,11 +14,16 @@ internal sealed class ProductRepository : Faker<Product>, IProductRepository
         RuleFor(d => d.Category, f => f.Commerce.Categories(1).First());
         RuleFor(d => d.Price, f => f.Commerce.Random.Number(1,100));
         RuleFor(d => d.Tax, f => 0.23);
-        RuleFor(d => d.LastUpdated, f => DateTime.UtcNow.AddSeconds(f.Random.Number(-30, 5)));
+        RuleFor(d => d.LastUpdated, f => DateTime.UtcNow.AddHours(f.Random.Number(-5, 1)));
     }
     
     public Task<List<Product>> GetProductsAsync()
     {
         return Task.Run(() => Generate(20));
+    }
+
+    public Task<Product> GetProductAsync(Guid id)
+    {
+        return Task.Run(() => Generate());
     }
 }

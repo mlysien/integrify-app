@@ -1,44 +1,40 @@
 using Integrify.Integrations.Orders.Model;
 using Integrify.Integrations.Orders.Port.Driving;
+using Integrify.Plugins.ShopSimulator.Domain.Repositories.Abstractions;
 using Integrify.Shared.Abstractions.ValueObjects;
 
 namespace Integrify.Plugins.ShopSimulator.Orders.Adapter.Driving;
 
-internal sealed class OrdersShopSimulatorDrivingAdapter : IOrdersIntegrationDrivingPort
+internal sealed class OrdersShopSimulatorDrivingAdapter(IOrderRepository repository) : IOrdersIntegrationDrivingPort
 {
     public async Task<IReadOnlyCollection<OrderIntegrationModel>> FetchCollectionAsync(IntegrationTimestamp timestamp)
     {
-        return await Task.Run(() => new List<OrderIntegrationModel>()
+        var models = new List<OrderIntegrationModel>();
+        var ordersList = await repository.GetOrdersAsync();
+        
+        foreach (var order in ordersList)
         {
-            new()
+            if (order.UpdatedAt.Ticks >= timestamp.Ticks)
             {
-                Id = new IntegrationId(Guid.NewGuid()),
-                CreatedAt = DateTime.Now.AddDays(-2)
-            },
-            new()
-            {
-                Id = new IntegrationId(Guid.NewGuid()),
-                CreatedAt = DateTime.Now.AddDays(-1)
-            },
-            new()
-            {
-                Id = new IntegrationId(Guid.NewGuid()),
-                CreatedAt = DateTime.Now.AddDays(-4)
-            },
-            new()
-            {
-                Id = new IntegrationId(Guid.NewGuid()),
-                CreatedAt = DateTime.Now.AddHours(-4)
+                models.Add(new OrderIntegrationModel()
+                {
+                    Id = new IntegrationId(order.Id),
+                    CreatedAt = order.CreatedAt
+                });
             }
-        });
+        }
+
+        return models;
     }
 
     public async Task<OrderIntegrationModel> GetSingleAsync(IntegrationId id)
     {
-        return await Task.Run(() => new OrderIntegrationModel
+        var order = await repository.GetOrderAsync(id.Value);
+
+        return new OrderIntegrationModel()
         {
-            Id = new IntegrationId(Guid.NewGuid()),
-            CreatedAt = DateTime.Now.AddDays(-2)   
-        });
+            Id = new IntegrationId(order.Id),
+            CreatedAt = order.CreatedAt
+        };
     }
 }

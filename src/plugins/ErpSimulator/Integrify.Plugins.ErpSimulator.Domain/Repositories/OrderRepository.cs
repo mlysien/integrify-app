@@ -7,6 +7,6 @@ public class OrderRepository : IOrderRepository
 {
     public async Task SaveOrderAsync(Order order)
     {
-        await Task.Delay(1000);
+        await Task.Delay(new Random().Next(100, 1000));
     }
 }
