@@ -17,7 +17,16 @@ internal sealed class StocksShopSimulatorDrivenAdapter(
         {
             Id = integrationModel.Id.Value,
             Amount = integrationModel.Amount,
-            LastUpdated = clock.NowDateTime()
+            LastUpdated = clock.NowDateTime(),
+            Product = new Product()
+            {
+                Id = integrationModel.Product.Id.Value,
+                Name = integrationModel.Product.Name,
+                Category = integrationModel.Product.Category,
+                Price = integrationModel.Product.Price,
+                Tax = integrationModel.Product.TaxRate,
+                Description = string.Empty,
+            }
         };
 
         await repository.SaveStockAsync(stock);

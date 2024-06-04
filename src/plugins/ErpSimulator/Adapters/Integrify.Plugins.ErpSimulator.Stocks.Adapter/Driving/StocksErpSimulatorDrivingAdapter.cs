@@ -1,3 +1,4 @@
+using Integrify.Integrations.Products.Model;
 using Integrify.Integrations.Stocks.Model;
 using Integrify.Integrations.Stocks.Port.Driving;
 using Integrify.Plugins.ErpSimulator.Domain.Repositories.Abstractions;
@@ -19,7 +20,15 @@ internal sealed class StocksErpSimulatorDrivingAdapter(IStockRepository reposito
                 integrationModels.Add(new StockIntegrationModel()
                 {
                     Id = new IntegrationId(stock.Id),
-                    Amount = stock.Amount
+                    Amount = stock.Amount,
+                    Product = new ProductIntegrationModel()
+                    {
+                        Id = new IntegrationId(stock.Product.Id),
+                        Name = stock.Product.Name,
+                        Price = stock.Product.Price,
+                        TaxRate = stock.Product.Tax,
+                        Category = stock.Product.Category
+                    }
                 });
             }
         }
@@ -29,10 +38,20 @@ internal sealed class StocksErpSimulatorDrivingAdapter(IStockRepository reposito
 
     public async Task<StockIntegrationModel> GetSingleAsync(IntegrationId id)
     {
-        return await Task.Run(() => new StockIntegrationModel()
+        var stock = await repository.GetStockAsync(id.Value);
+        
+        return new StockIntegrationModel
         {
-            Id = new IntegrationId(Guid.NewGuid()),
-            Amount = 100
-        });
+            Id = id,
+            Amount = stock.Amount,
+            Product = new ProductIntegrationModel()
+            {
+                Id = new IntegrationId(stock.Product.Id),
+                Name = stock.Product.Name,
+                Price = stock.Product.Price,
+                TaxRate = stock.Product.Tax,
+                Category = stock.Product.Category
+            }
+        };
     }
 }

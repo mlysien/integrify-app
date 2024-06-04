@@ -23,4 +23,9 @@ internal sealed class StockRepository : Faker<Stock>, IStockRepository
     {
         return Task.Run(() => Generate(10));
     }
+
+    public Task<Stock> GetStockAsync(Guid id)
+    {
+        return Task.Run(() => Generate());
+    }
 }

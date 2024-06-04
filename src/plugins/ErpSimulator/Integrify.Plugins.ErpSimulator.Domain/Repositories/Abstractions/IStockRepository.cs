@@ -5,4 +5,6 @@ namespace Integrify.Plugins.ErpSimulator.Domain.Repositories.Abstractions;
 public interface IStockRepository
 {
     Task<List<Stock>> GetStocksAsync();
+
+    Task<Stock> GetStockAsync(Guid id);
 }
