@@ -3,5 +3,5 @@
 /// <summary>
 /// Represents integration model entity unique identifier
 /// </summary>
-/// <param name="Id">Unique identifier</param>
-public record IntegrationId(Guid Id);
+/// <param name="Value">Value of unique identifier</param>
+public record IntegrationId(Guid Value);
