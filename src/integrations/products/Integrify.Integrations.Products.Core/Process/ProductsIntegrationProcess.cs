@@ -24,7 +24,7 @@ internal sealed class ProductsIntegrationProcess(
         foreach (var productModel in productsCollection)
         {
             logger.LogInformation("Processing product with Id: {id}, Name: {name}", 
-                productModel.Id, productModel.Name);
+                productModel.Id.Value, productModel.Name);
 
             await drivenPort.PushAsync(productModel);
         }

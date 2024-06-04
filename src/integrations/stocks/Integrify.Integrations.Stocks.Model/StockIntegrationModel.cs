@@ -8,7 +8,7 @@ namespace Integrify.Integrations.Stocks.Model;
 /// </summary>
 public sealed class StockIntegrationModel : IIntegrationModel
 {
-    public IntegrationId Id { get; set; }
+    public required IntegrationId Id { get; set; }
 
     public double Amount { get; set; }
 }
