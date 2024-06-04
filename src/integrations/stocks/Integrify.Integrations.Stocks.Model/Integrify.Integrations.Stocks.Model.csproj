@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\shared\Integrify.Shared.Abstractions\Integrify.Shared.Abstractions.csproj" />
+      <ProjectReference Include="..\..\products\Integrify.Integrations.Products.Model\Integrify.Integrations.Products.Model.csproj" />
     </ItemGroup>
 
 </Project>
