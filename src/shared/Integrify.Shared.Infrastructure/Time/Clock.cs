@@ -2,10 +2,15 @@
 
 namespace Integrify.Shared.Infrastructure.Time;
 
-public class Clock : IClock
+internal sealed class Clock : IClock
 {
     public long NowTicks()
     {
         return DateTime.UtcNow.Ticks;
+    }
+
+    public DateTime NowDateTime()
+    {
+        return DateTime.UtcNow;
     }
 }

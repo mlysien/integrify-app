@@ -9,4 +9,6 @@ public interface IClock
     /// Returns current UTC time in ticks
     /// </summary>
     long NowTicks();
+
+    DateTime NowDateTime();
 }
