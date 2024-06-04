@@ -13,29 +13,32 @@ internal sealed class Initializer(
 {
     public async Task InitializeAsync()
     {
-        var directory= Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Integrify");
-        
-        if (!Directory.Exists(directory))
+        await Task.Run(async ()  =>
         {
-            logger.LogWarning("{dir} config directory doesn't exist", "Integrify");
-            
-            Directory.CreateDirectory(directory);
-            
-            logger.LogInformation("{dir} config directory created", "Integrify");
-        }
+            var directory= Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Integrify");
         
-        foreach (var integrationArea in integrationAreas)
-        {
-            var path = Path.Combine(directory, $"{integrationArea.Name.ToLower()}.integration.json");
-
-            if (!File.Exists(path))
+            if (!Directory.Exists(directory))
             {
-                logger.LogWarning("Not found config file for {area}", integrationArea.Name.ToLower());
-                
-                await optionsProvider.UpdateIntegrationOptionsAsync(integrationArea.Name, new IntegrationOptions());
-                
-                logger.LogInformation("{file} created", $"{integrationArea.Name.ToLower()}.integration.json");
+                logger.LogWarning("{dir} config directory doesn't exist", "Integrify");
+            
+                Directory.CreateDirectory(directory);
+            
+                logger.LogInformation("{dir} config directory created", "Integrify");
             }
-        }
+        
+            foreach (var integrationArea in integrationAreas)
+            {
+                var path = Path.Combine(directory, $"{integrationArea.Name.ToLower()}.integration.json");
+
+                if (!File.Exists(path))
+                {
+                    logger.LogWarning("Not found config file for {area}", integrationArea.Name.ToLower());
+                
+                    await optionsProvider.UpdateIntegrationOptionsAsync(integrationArea.Name, new IntegrationOptions());
+                
+                    logger.LogInformation("{file} created", $"{integrationArea.Name.ToLower()}.integration.json");
+                }
+            }
+        });
     }
 }
