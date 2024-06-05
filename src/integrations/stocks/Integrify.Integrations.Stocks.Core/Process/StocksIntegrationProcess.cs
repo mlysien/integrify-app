@@ -22,12 +22,14 @@ internal sealed class StocksIntegrationProcess(
 
         foreach (var stockModel in stocksCollection)
         {
-            logger.LogInformation("Processing stock with Id: {id} of Product Id: {product}, Amount: {amount}", 
-                stockModel.Id.Value, stockModel.ProductId.Value, stockModel.Amount);
+            logger.LogInformation("Processing stock of ProductId: {product} ({name}), Stock: {stock}", 
+                stockModel.ProductId.Value, stockModel.ProductName, stockModel.StockAmmount);
 
             await drivenPort.PushAsync(stockModel);
         }
 
         await repository.UpdateIntegrationTimestampAsync();
+        
+        logger.LogInformation("Stocks integration finished");
     }
 }

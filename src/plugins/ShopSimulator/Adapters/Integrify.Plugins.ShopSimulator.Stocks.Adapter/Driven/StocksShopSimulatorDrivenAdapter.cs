@@ -19,7 +19,7 @@ internal sealed class StocksShopSimulatorDrivenAdapter(
         var stock = new Stock()
         {
             Id = integrationModel.Id.Value,
-            Amount = integrationModel.Amount,
+            Amount = integrationModel.StockAmmount,
             LastUpdated = clock.NowDateTime(),
             Product = product
         };

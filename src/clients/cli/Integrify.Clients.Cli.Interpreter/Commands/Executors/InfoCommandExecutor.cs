@@ -8,23 +8,24 @@ public class InfoCommandExecutor(IList<IPlugin> plugins, IList<IIntegrationArea>
 {
     public string Keyword => "info";
 
-    public async Task Execute(params string[] options)
+    public Task Execute(params string[] options)
     {
         var option = options.FirstOrDefault()?.ToLower();
         
         if (option != null && option.Contains("--areas"))
         {
             PrintAvailableIntegrationAreas();
-            return;
+            return Task.CompletedTask;
         }
 
         if (option != null && option.Contains("--plugins"))
         {
             PrintLoadedPlugins();
-            return;
+            return Task.CompletedTask;
         }
 
         Help();
+        return Task.CompletedTask;
     }
 
     public void Help()

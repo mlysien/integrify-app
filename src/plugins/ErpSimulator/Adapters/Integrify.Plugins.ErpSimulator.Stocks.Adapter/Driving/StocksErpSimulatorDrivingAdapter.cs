@@ -19,8 +19,9 @@ internal sealed class StocksErpSimulatorDrivingAdapter(IStockRepository reposito
                 integrationModels.Add(new StockIntegrationModel()
                 {
                     Id = new IntegrationId(stock.Id),
-                    Amount = stock.Amount,
-                    ProductId = new IntegrationId(stock.Product.Id)
+                    StockAmmount = stock.Amount,
+                    ProductId = new IntegrationId(stock.Product.Id),
+                    ProductName = stock.Product.Name
                 });
             }
         }
@@ -34,9 +35,10 @@ internal sealed class StocksErpSimulatorDrivingAdapter(IStockRepository reposito
         
         return new StockIntegrationModel
         {
-            Id = id,
-            Amount = stock.Amount,
-            ProductId = new IntegrationId(stock.Product.Id)
+            Id = new IntegrationId(stock.Id),
+            StockAmmount = stock.Amount,
+            ProductId = new IntegrationId(stock.Product.Id),
+            ProductName = stock.Product.Name
         };
     }
 }
