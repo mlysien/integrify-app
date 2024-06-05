@@ -11,6 +11,7 @@ internal sealed class CustomerRepository : Faker<Customer>, ICustomerRepository
         RuleFor(d => d.Id, f => Guid.NewGuid());
         RuleFor(d => d.Name, f => f.Person.FullName);
         RuleFor(d => d.AccountActivated, f => f.Random.Bool());
+        RuleFor(d => d.IsB2B, f => f.Random.Bool());
         RuleFor(d => d.LastUpdated, f => DateTime.UtcNow.AddHours(f.Random.Number(-5, 1)));
     }
     

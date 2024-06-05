@@ -1,3 +1,4 @@
+using Integrify.Integrations.Customers.Model.Enums;
 using Integrify.Shared.Abstractions.Integrations;
 using Integrify.Shared.Abstractions.ValueObjects;
 
@@ -14,4 +15,5 @@ public sealed class CustomerIntegrationModel : IIntegrationModel
 
     public bool IsActive { get; set; }
 
+    public CustomerType CustomerType { get; set; }
 }

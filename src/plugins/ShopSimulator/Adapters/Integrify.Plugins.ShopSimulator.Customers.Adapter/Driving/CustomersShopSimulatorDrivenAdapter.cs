@@ -1,4 +1,5 @@
 using Integrify.Integrations.Customers.Model;
+using Integrify.Integrations.Customers.Model.Enums;
 using Integrify.Integrations.Customers.Port.Driving;
 using Integrify.Plugins.ShopSimulator.Domain.Repositories.Abstractions;
 using Integrify.Shared.Abstractions.ValueObjects;
@@ -21,7 +22,8 @@ internal sealed class CustomersShopSimulatorDrivingAdapter(ICustomerRepository r
                 {
                     Id = new IntegrationId(customer.Id),
                     Name = customer.Name,
-                    IsActive = customer.AccountActivated
+                    IsActive = customer.AccountActivated,
+                    CustomerType = customer.IsB2B ? CustomerType.B2B : CustomerType.B2C
                 });
             }
         }
@@ -37,7 +39,8 @@ internal sealed class CustomersShopSimulatorDrivingAdapter(ICustomerRepository r
         {
             Id = id,
             Name = customer.Name,
-            IsActive = customer.AccountActivated
+            IsActive = customer.AccountActivated,
+            CustomerType = customer.IsB2B ? CustomerType.B2B : CustomerType.B2C
         };
     }
 }

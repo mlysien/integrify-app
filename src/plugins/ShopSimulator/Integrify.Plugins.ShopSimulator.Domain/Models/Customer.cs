@@ -9,4 +9,6 @@ public class Customer
     public bool AccountActivated { get; init; }
     
     public DateTime LastUpdated { get; init; }
+
+    public bool IsB2B { get; init; }
 }

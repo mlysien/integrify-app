@@ -23,8 +23,8 @@ internal sealed class CustomersIntegrationProcess(
 
         foreach (var customerModel in customersCollection)
         {
-            logger.LogInformation("Processing customer with Id: {id}, Name: {name}", 
-                customerModel.Id.Value, customerModel.Name);
+            logger.LogInformation("Processing customer with Id: {id}, Name: {name}, Type: {type}", 
+                customerModel.Id.Value, customerModel.Name, customerModel.CustomerType);
 
             if (customerModel.IsActive is not true)
             {
