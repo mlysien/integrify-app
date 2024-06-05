@@ -1,3 +1,4 @@
+using Integrify.Integrations.Orders.Model.Enums;
 using Integrify.Shared.Abstractions.Integrations;
 using Integrify.Shared.Abstractions.ValueObjects;
 
@@ -11,4 +12,6 @@ public sealed class OrderIntegrationModel : IIntegrationModel
     public IntegrationId Id { get; set; }
 
     public DateTime CreatedAt { get; set; }
+
+    public OrderStatus Status { get; set; }
 }

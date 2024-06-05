@@ -1,4 +1,5 @@
 using Integrify.Integrations.Orders.Model;
+using Integrify.Integrations.Orders.Model.Enums;
 using Integrify.Integrations.Orders.Port.Driving;
 using Integrify.Plugins.ShopSimulator.Domain.Repositories.Abstractions;
 using Integrify.Shared.Abstractions.ValueObjects;
@@ -19,7 +20,8 @@ internal sealed class OrdersShopSimulatorDrivingAdapter(IOrderRepository reposit
                 models.Add(new OrderIntegrationModel()
                 {
                     Id = new IntegrationId(order.Id),
-                    CreatedAt = order.CreatedAt
+                    CreatedAt = order.CreatedAt,
+                    Status = (OrderStatus)order.Status
                 });
             }
         }

@@ -12,6 +12,7 @@ public sealed class OrderRepository : Faker<Order>, IOrderRepository
         RuleFor(d => d.TotalAmmount, f => f.Random.Number(10, 200));
         RuleFor(d => d.CreatedAt, f => DateTime.UtcNow.AddMinutes(f.Random.Number(1, 20)));
         RuleFor(d => d.UpdatedAt, f => DateTime.UtcNow.AddHours(f.Random.Number(-5, 1)));
+        RuleFor(d => d.Status, f => f.Random.Number(0, 5));
         RuleFor(d => d.Customer, f => new Customer()
         {
             Id = Guid.NewGuid(),

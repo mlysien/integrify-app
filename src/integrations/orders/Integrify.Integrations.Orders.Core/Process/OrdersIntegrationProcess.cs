@@ -23,8 +23,8 @@ internal class OrdersIntegrationProcess(
 
         foreach (var orderModel in ordersCollection)
         {
-            logger.LogInformation("Processing order with Id: {id}, createdAt: {date}", 
-                orderModel.Id.Value, orderModel.CreatedAt);
+            logger.LogInformation("Processing order with Id: {id}, Created: {date}, Status: {status}", 
+                orderModel.Id.Value, orderModel.CreatedAt, orderModel.Status);
 
             await drivenPort.PushAsync(orderModel);
         }
