@@ -8,27 +8,22 @@ namespace Integrify.Plugins.ShopSimulator.Stocks.Adapter.Driven;
 
 internal sealed class StocksShopSimulatorDrivenAdapter(
     IClock clock, 
-    IStockRepository repository)
+    IProductRepository productRepository,
+    IStockRepository stockRepository)
     : IStocksIntegrationDrivenPort
 {
     public async Task PushAsync(StockIntegrationModel integrationModel)
     {
+        var product = await productRepository.GetProductAsync(integrationModel.ProductId.Value);
+      
         var stock = new Stock()
         {
             Id = integrationModel.Id.Value,
             Amount = integrationModel.Amount,
             LastUpdated = clock.NowDateTime(),
-            Product = new Product()
-            {
-                Id = integrationModel.Product.Id.Value,
-                Name = integrationModel.Product.Name,
-                Category = integrationModel.Product.Category,
-                Price = integrationModel.Product.Price,
-                Tax = integrationModel.Product.TaxRate,
-                Description = string.Empty,
-            }
+            Product = product
         };
 
-        await repository.SaveStockAsync(stock);
+        await stockRepository.SaveStockAsync(stock);
     }
 }

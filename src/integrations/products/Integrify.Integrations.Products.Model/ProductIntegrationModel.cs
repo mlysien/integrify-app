@@ -12,11 +12,7 @@ public sealed class ProductIntegrationModel : IIntegrationModel
 
     public required string Name { get; init; }
     
-    
-    public string Category { get; init; }
-    
     public required double Price { get; init; }
-    
     
     public required double TaxRate  { get; init; }
 }

@@ -20,7 +20,6 @@ internal sealed class ProductsErpSimulatorDrivingAdapter(IProductRepository repo
                 {
                     Id = new IntegrationId(product.Id),
                     Name = product.Name,
-                    Category = product.Category,
                     Price = product.Price,
                     TaxRate = product.Tax
                 });
@@ -39,8 +38,7 @@ internal sealed class ProductsErpSimulatorDrivingAdapter(IProductRepository repo
             Id = id,
             Name = product.Name,
             Price = product.Price,
-            TaxRate = product.Tax,
-            Category = product.Category
+            TaxRate = product.Tax
         };
     }
 }

@@ -1,4 +1,3 @@
-using Integrify.Integrations.Products.Model;
 using Integrify.Integrations.Stocks.Model;
 using Integrify.Integrations.Stocks.Port.Driving;
 using Integrify.Plugins.ErpSimulator.Domain.Repositories.Abstractions;
@@ -21,14 +20,7 @@ internal sealed class StocksErpSimulatorDrivingAdapter(IStockRepository reposito
                 {
                     Id = new IntegrationId(stock.Id),
                     Amount = stock.Amount,
-                    Product = new ProductIntegrationModel()
-                    {
-                        Id = new IntegrationId(stock.Product.Id),
-                        Name = stock.Product.Name,
-                        Price = stock.Product.Price,
-                        TaxRate = stock.Product.Tax,
-                        Category = stock.Product.Category
-                    }
+                    ProductId = new IntegrationId(stock.Product.Id)
                 });
             }
         }
@@ -44,14 +36,7 @@ internal sealed class StocksErpSimulatorDrivingAdapter(IStockRepository reposito
         {
             Id = id,
             Amount = stock.Amount,
-            Product = new ProductIntegrationModel()
-            {
-                Id = new IntegrationId(stock.Product.Id),
-                Name = stock.Product.Name,
-                Price = stock.Product.Price,
-                TaxRate = stock.Product.Tax,
-                Category = stock.Product.Category
-            }
+            ProductId = new IntegrationId(stock.Product.Id)
         };
     }
 }

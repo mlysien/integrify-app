@@ -25,8 +25,6 @@ public sealed class OrderRepository : Faker<Order>, IOrderRepository
             {
                 Id = Guid.NewGuid(),
                 Name = f.Commerce.ProductName(),
-                Category = f.Commerce.Categories(1).First(),
-                Description = f.Commerce.ProductDescription(),
                 Price = f.Random.Number(10, 50),
                 Tax = 0.23,
                 LastUpdated = f.Date.Past()

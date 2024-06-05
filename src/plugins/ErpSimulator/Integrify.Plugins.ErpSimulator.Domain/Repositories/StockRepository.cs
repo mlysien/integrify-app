@@ -11,6 +11,7 @@ internal sealed class StockRepository : Faker<Stock>, IStockRepository
         RuleFor(d => d.Id, f => Guid.NewGuid());
         RuleFor(d => d.Product, f => new Product
         {
+            Id = Guid.NewGuid(),
             Name = f.Commerce.Product(),
             Category = f.Commerce.Categories(1).First(),
             Description = f.Commerce.ProductDescription()

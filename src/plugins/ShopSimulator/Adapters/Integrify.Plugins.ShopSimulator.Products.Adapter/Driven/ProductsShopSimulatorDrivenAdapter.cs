@@ -16,8 +16,6 @@ internal sealed class ProductsShopSimulatorDrivenAdapter(
         {
             Id = integrationModel.Id.Value,
             Name = integrationModel.Name,
-            Category = integrationModel.Category,
-            Description = integrationModel.Category,
             Price = integrationModel.Price,
             Tax = integrationModel.TaxRate,
             LastUpdated = clock.NowDateTime()
