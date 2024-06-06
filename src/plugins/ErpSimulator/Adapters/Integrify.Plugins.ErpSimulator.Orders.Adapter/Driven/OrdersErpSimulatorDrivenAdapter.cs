@@ -12,7 +12,8 @@ public class OrdersErpSimulatorDrivenAdapter(IOrderRepository repository) : IOrd
         var order = new Order()
         {
             Id = integrationModel.Id.Value,
-            CreatedAt = integrationModel.CreatedAt
+            CreatedAt = integrationModel.CreatedAt,
+            OrderStateId = (int)integrationModel.Status
         };
 
         await repository.SaveOrderAsync(order);
