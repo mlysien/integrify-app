@@ -8,6 +8,11 @@ public sealed class OrderRepository : Faker<Order>, IOrderRepository
 {
     public OrderRepository()
     {
+        var orderItemFaker = new Faker<OrderItem>()
+            .RuleFor(o => o.ProductId, f => Guid.NewGuid())
+            .RuleFor(o => o.Price, f => f.Random.Number(1, 50))
+            .RuleFor(o => o.Amount, f => f.Random.Number(1, 10));
+        
         RuleFor(d => d.Id, f => Guid.NewGuid());
         RuleFor(d => d.TotalAmmount, f => f.Random.Number(10, 200));
         RuleFor(d => d.CreatedAt, f => DateTime.UtcNow.AddMinutes(f.Random.Number(1, 20)));
@@ -20,18 +25,7 @@ public sealed class OrderRepository : Faker<Order>, IOrderRepository
             LastUpdated = f.Date.Past(),
             AccountActivated = f.Random.Bool()
         });
-        RuleFor(d => d.Products, f =>
-        [
-            new()
-            {
-                Id = Guid.NewGuid(),
-                Name = f.Commerce.ProductName(),
-                Price = f.Random.Number(10, 50),
-                Tax = 0.23,
-                LastUpdated = f.Date.Past()
-            }
-        ]);
-
+        RuleFor(d => d.OrderItems, f => orderItemFaker.Generate(new Random().Next(1, 5)));
     }
     
     public Task<List<Order>> GetOrdersAsync()
