@@ -14,4 +14,6 @@ public sealed class OrderIntegrationModel : IIntegrationModel
     public DateTime CreatedAt { get; set; }
 
     public OrderStatus Status { get; set; }
+
+    public List<OrderItemModel> OrderProducts { get; set; }
 }
