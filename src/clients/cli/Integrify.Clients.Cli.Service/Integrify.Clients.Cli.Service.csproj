@@ -5,6 +5,8 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UserSecretsId>dotnet-Integrify.Clients.Cli.Service-8B772270-9778-43B3-A61E-64850963E943</UserSecretsId>
+        <AssemblyName>Integrify</AssemblyName>
+        <Company>Homeverest</Company>
     </PropertyGroup>
 
     <ItemGroup>
