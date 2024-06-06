@@ -9,4 +9,6 @@ public class Order
     public DateTime UpdatedAt { get; init; }
     
     public int OrderStateId { get; init; }
+
+    public List<Product> Products { get; set; }
 }
