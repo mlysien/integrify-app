@@ -53,6 +53,3 @@ The creation of the Integrify tool is intended to help solve the above problem t
 
 # License
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-
-> [!NOTE]  
-> Project is participating in the [100commitow](https://100commitow.pl/ "100commitow.pl") competition.
