@@ -33,6 +33,9 @@ The creation of the Integrify tool is intended to help solve the above problem t
 * `info` - displays information about loaded plugins and integration areas.
 * `sync` - begins integration process of specified integration area.
 
+### Requirements
+* .NET Runtime 8
+
 # Dictionary 📘
 
 **Integration** - specified area contains integration process focuses only on integration model included in the area.
